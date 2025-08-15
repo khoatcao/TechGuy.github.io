@@ -1,1 +1,0 @@
-# TechGuy.github.io
