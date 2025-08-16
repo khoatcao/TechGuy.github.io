@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Sorting Algorithms
-category: computer-science
 ---
 
 # 🔄 Sorting Algorithms

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Computer Science
-category: computer-science
 ---
 
 # 🖥️ Computer Science

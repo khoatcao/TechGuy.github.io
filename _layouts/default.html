@@ -11,9 +11,21 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <h1 class="site-title">
-                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-            </h1>
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                </h1>
+                
+                <div class="header-controls">
+                    <button class="dark-mode-toggle" data-tooltip="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" data-tooltip="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
             <nav class="site-nav">
                 <ul>
                     <li><a href="{{ '/' | relative_url }}">Home</a></li>
@@ -27,14 +39,127 @@
 
     <main class="site-main">
         <div class="container">
+            <!-- Search Box -->
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="🔍 Search content... (Ctrl+K)" data-tooltip="Search through all content">
+            </div>
+            
             {{ content }}
         </div>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{{ '/computer-science/' | relative_url }}">CS Notes</a></li>
+                        <li><a href="{{ '/duolingo/' | relative_url }}">Language Learning</a></li>
+                        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" data-tooltip="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="#" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Progress</h3>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <span>CS Algorithms</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="65%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Spanish</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}. All rights reserved.</p>
+                <p>Built with ❤️ using Jekyll and GitHub Pages</p>
+            </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    
+    <!-- Additional interactive features -->
+    <script>
+        // Add some interactive elements specific to the current page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add algorithm visualization buttons if on CS pages
+            if (window.location.pathname.includes('/computer-science/')) {
+                addAlgorithmButtons();
+            }
+            
+            // Add language progress tracking if on Duolingo pages
+            if (window.location.pathname.includes('/duolingo/')) {
+                addLanguageProgress();
+            }
+        });
+        
+        function addAlgorithmButtons() {
+            const codeBlocks = document.querySelectorAll('pre code');
+            codeBlocks.forEach(block => {
+                const container = block.parentElement;
+                const runBtn = document.createElement('button');
+                runBtn.className = 'run-algorithm-btn';
+                runBtn.innerHTML = '▶️ Run';
+                runBtn.style.cssText = `
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    background: #28a745;
+                    color: white;
+                    border: none;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 12px;
+                `;
+                
+                runBtn.addEventListener('click', () => {
+                    runAlgorithm(block.textContent);
+                });
+                
+                container.appendChild(runBtn);
+            });
+        }
+        
+        function addLanguageProgress() {
+            const progressElements = document.querySelectorAll('.progress-fill');
+            progressElements.forEach(element => {
+                element.addEventListener('click', () => {
+                    showProgressDetails(element);
+                });
+            });
+        }
+        
+        function runAlgorithm(code) {
+            // This would execute the algorithm code
+            console.log('Running algorithm:', code.substring(0, 50) + '...');
+            alert('Algorithm execution feature coming soon!');
+        }
+        
+        function showProgressDetails(element) {
+            const language = element.parentElement.previousElementSibling.textContent;
+            alert(`${language} progress details coming soon!`);
+        }
+    </script>
 </body>
 </html>

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Duolingo
-category: duolingo
 ---
 
 # 🌍 Duolingo Language Learning

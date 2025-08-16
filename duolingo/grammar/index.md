@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Grammar Notes
-category: duolingo
 ---
 
 # 📚 Grammar Notes

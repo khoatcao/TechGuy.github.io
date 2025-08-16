@@ -8,36 +8,7 @@ baseurl: ""
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: /:categories/:title/
-
-# Collections
-collections:
-  cs_notes:
-    output: true
-    permalink: /computer-science/:title/
-  duolingo_notes:
-    output: true
-    permalink: /duolingo/:title/
-
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "cs_notes"
-    values:
-      layout: "cs_note"
-      category: "computer-science"
-  - scope:
-      path: ""
-      type: "duolingo_notes"
-    values:
-      layout: "duolingo_note"
-      category: "duolingo"
+permalink: /:title/
 
 # Plugins
 plugins:
