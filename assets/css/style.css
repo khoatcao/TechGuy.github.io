@@ -231,360 +231,107 @@ p {
 
 /* Homepage specific styles */
 
-/* Quick Navigation Cards */
-.quick-nav {
+/* Category Grid */
+.category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
 }
 
-.nav-card {
+.category-card {
     background: white;
     border-radius: 15px;
     padding: 2rem;
-    text-decoration: none;
-    color: inherit;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    position: relative;
-    overflow: hidden;
+    text-align: center;
 }
 
-.nav-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-}
-
-.nav-card:hover {
+.category-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.cs-card::before {
-    background: linear-gradient(90deg, #e74c3c, #c0392b);
+.cs-card {
+    border-color: #e74c3c;
 }
 
-.duolingo-card::before {
-    background: linear-gradient(90deg, #f39c12, #e67e22);
+.duolingo-card {
+    border-color: #f39c12;
 }
 
-.card-icon {
-    font-size: 3rem;
+.category-icon {
+    font-size: 4rem;
     margin-bottom: 1rem;
     display: block;
 }
 
-.nav-card h3 {
+.category-card h2 {
     color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border: none;
 }
 
-.nav-card p {
+.category-card p {
     color: #6c757d;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.category-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
     margin-bottom: 1.5rem;
 }
 
-.card-progress {
-    margin-top: 1rem;
-}
-
-.card-progress span {
-    display: block;
-    margin-bottom: 0.5rem;
+.topic-tag {
+    background: #e9ecef;
+    color: #495057;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
     font-size: 0.9rem;
-    color: #6c757d;
-}
-
-/* Achievements Grid */
-.achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-.achievement-item {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.achievement-item:hover {
-    transform: scale(1.05);
-}
-
-.achievement-icon {
-    font-size: 1.5rem;
-}
-
-/* Languages Grid */
-.languages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-}
-
-.language-card {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    border-left: 4px solid #3498db;
-}
-
-.language-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-.language-card.spanish {
-    border-left-color: #e74c3c;
-}
-
-.language-card.french {
-    border-left-color: #3498db;
-}
-
-.language-card.german {
-    border-left-color: #f39c12;
-}
-
-.language-card.japanese {
-    border-left-color: #9b59b6;
-}
-
-.language-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.flag {
-    font-size: 2rem;
-}
-
-.language-header h4 {
-    margin: 0;
-    flex: 1;
-    color: #2c3e50;
-}
-
-.level {
-    background: #3498db;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.language-stats {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.stat {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.stat-label {
-    color: #6c757d;
-    font-size: 0.9rem;
-}
-
-.stat-value {
-    font-weight: 600;
-    color: #2c3e50;
-}
-
-/* Weekly Goals */
-.weekly-goals {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.goal-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid #e9ecef;
-}
-
-.goal-item:last-child {
-    border-bottom: none;
-}
-
-.goal-checkbox {
-    width: 20px;
-    height: 20px;
-    accent-color: #28a745;
-}
-
-.goal-item label {
-    flex: 1;
-    cursor: pointer;
     font-weight: 500;
 }
 
-.goal-progress {
-    background: #e9ecef;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    color: #6c757d;
+.cs-card .topic-tag {
+    background: #fdf2f2;
+    color: #c53030;
 }
 
-/* Activity Feed */
-.activity-feed {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.duolingo-card .topic-tag {
+    background: #fffbeb;
+    color: #d97706;
 }
 
-.activity-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid #e9ecef;
-}
-
-.activity-item:last-child {
-    border-bottom: none;
-}
-
-.activity-time {
-    color: #6c757d;
-    font-size: 0.8rem;
-    min-width: 100px;
-}
-
-.activity-icon {
-    font-size: 1.2rem;
-    min-width: 30px;
-}
-
-.activity-text {
-    flex: 1;
-}
-
-/* Quick Actions */
-.quick-actions {
-    display: flex;
-    gap: 1rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
-}
-
-.action-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 1.5rem;
+.category-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     text-decoration: none;
     border-radius: 25px;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
+    font-size: 1.1rem;
 }
 
-.action-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-    text-decoration: none;
-    color: white;
-}
-
-.cs-btn {
+.cs-card .category-btn {
     background: linear-gradient(135deg, #e74c3c, #c0392b);
 }
 
-.duolingo-btn {
+.duolingo-card .category-btn {
     background: linear-gradient(135deg, #f39c12, #e67e22);
 }
 
-.about-btn {
-    background: linear-gradient(135deg, #9b59b6, #8e44ad);
-}
-
-.action-icon {
-    font-size: 1.2rem;
-}
-
-/* Progress Summary Grid */
-.progress-summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.progress-card {
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.progress-card h4 {
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-}
-
-.progress-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-}
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.stat-number {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #3498db;
-    margin-bottom: 0.5rem;
-}
-
-.stat-label {
-    font-size: 0.8rem;
-    color: #6c757d;
-    text-align: center;
+.category-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    text-decoration: none;
+    color: white;
 }
 
 /* Tables */
@@ -928,24 +675,8 @@ mark {
         justify-content: center;
     }
     
-    .quick-nav {
+    .category-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .languages-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .progress-summary-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .quick-actions {
-        flex-direction: column;
-    }
-    
-    .action-btn {
-        justify-content: center;
     }
 }
 
@@ -973,17 +704,13 @@ mark {
         height: 35px;
     }
     
-    .nav-card {
+    .category-card {
         padding: 1.5rem;
     }
     
-    .language-card {
-        padding: 1rem;
-    }
-    
-    .weekly-goals,
-    .activity-feed {
-        padding: 1rem;
+    .topic-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
     }
 }
 

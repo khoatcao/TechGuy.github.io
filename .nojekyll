@@ -1,0 +1,2 @@
+# This file tells GitHub Pages to serve files directly without Jekyll processing
+# This will fix the routing issues for subdirectories
