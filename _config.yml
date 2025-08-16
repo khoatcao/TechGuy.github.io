@@ -1,2 +1,56 @@
-title: My Study Hub
-theme: minima
+title: TechGuy's Learning Hub
+description: Personal notes on Computer Science algorithms and Duolingo language learning
+author: TechGuy
+email: your-email@example.com
+url: "https://techguy.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Collections
+collections:
+  cs_notes:
+    output: true
+    permalink: /computer-science/:title/
+  duolingo_notes:
+    output: true
+    permalink: /duolingo/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "cs_notes"
+    values:
+      layout: "cs_note"
+      category: "computer-science"
+  - scope:
+      path: ""
+      type: "duolingo_notes"
+    values:
+      layout: "duolingo_note"
+      category: "duolingo"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
