@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duolingo - TechGuy's Learning Hub</title>
+    <meta name="description" content="Personal notes on Computer Science algorithms and Duolingo language learning">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="../index.html">TechGuy's Learning Hub</a>
+                </h1>
+                
+                <div class="header-controls">
+                    <button class="dark-mode-toggle" data-tooltip="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" data-tooltip="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../computer-science/">Computer Science</a></li>
+                    <li><a href="index.html">Duolingo</a></li>
+                    <li><a href="../about/">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <!-- Search Box -->
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="🔍 Search content... (Ctrl+K)" data-tooltip="Search through all content">
+            </div>
+            
+            <h1>🌍 Duolingo Language Learning</h1>
+
+            <p>Welcome to my language learning journey! I'm currently studying <strong>Spanish</strong>, <strong>French</strong>, <strong>German</strong>, and <strong>Japanese</strong> using Duolingo and other resources.</p>
+
+            <hr>
+
+            <h2>🎯 Current Languages & Progress</h2>
+
+            <div class="category-grid">
+                <div class="category-card spanish-card">
+                    <div class="category-icon">🇪🇸</div>
+                    <h2>Spanish</h2>
+                    <p>Current Level: <strong>B1</strong></p>
+                    <p>Target: <strong>B2 (DELE)</strong></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="75%"></div>
+                    </div>
+                    <p>Progress: <strong>75%</strong></p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Grammar</span>
+                        <span class="topic-tag">Vocabulary</span>
+                        <span class="topic-tag">Conversation</span>
+                        <span class="topic-tag">DELE Prep</span>
+                    </div>
+                    <a href="grammar/" class="category-btn">Study Spanish →</a>
+                </div>
+
+                <div class="category-card french-card">
+                    <div class="category-icon">🇫🇷</div>
+                    <h2>French</h2>
+                    <p>Current Level: <strong>A2</strong></p>
+                    <p>Target: <strong>B1 (DELF)</strong></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="45%"></div>
+                    </div>
+                    <p>Progress: <strong>45%</strong></p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Grammar</span>
+                        <span class="topic-tag">Vocabulary</span>
+                        <span class="topic-tag">Conversation</span>
+                        <span class="topic-tag">DELF Prep</span>
+                    </div>
+                    <a href="grammar/" class="category-btn">Study French →</a>
+                </div>
+
+                <div class="category-card german-card">
+                    <div class="category-icon">🇩🇪</div>
+                    <h2>German</h2>
+                    <p>Current Level: <strong>A1</strong></p>
+                    <p>Target: <strong>A2 (Goethe)</strong></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="25%"></div>
+                    </div>
+                    <p>Progress: <strong>25%</strong></p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Grammar</span>
+                        <span class="topic-tag">Vocabulary</span>
+                        <span class="topic-tag">Conversation</span>
+                        <span class="topic-tag">Goethe Prep</span>
+                    </div>
+                    <a href="grammar/" class="category-btn">Study German →</a>
+                </div>
+
+                <div class="category-card japanese-card">
+                    <div class="category-icon">🇯🇵</div>
+                    <h2>Japanese</h2>
+                    <p>Current Level: <strong>A1</strong></p>
+                    <p>Target: <strong>A2 (JLPT N5)</strong></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="15%"></div>
+                    </div>
+                    <p>Progress: <strong>15%</strong></p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Grammar</span>
+                        <span class="topic-tag">Vocabulary</span>
+                        <span class="topic-tag">Hiragana</span>
+                        <span class="topic-tag">JLPT Prep</span>
+                    </div>
+                    <a href="grammar/" class="category-btn">Study Japanese →</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>📚 Study Categories</h2>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">📖</div>
+                    <h2>Grammar Notes</h2>
+                    <p>Comprehensive grammar reference for all languages</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Verb Conjugations</span>
+                        <span class="topic-tag">Sentence Structure</span>
+                        <span class="topic-tag">Tenses</span>
+                        <span class="topic-tag">Cases</span>
+                    </div>
+                    <a href="grammar/" class="category-btn">View Grammar →</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">📝</div>
+                    <h2>Vocabulary Building</h2>
+                    <p>Topic-based word lists and learning strategies</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Daily Life</span>
+                        <span class="topic-tag">Travel</span>
+                        <span class="topic-tag">Business</span>
+                        <span class="topic-tag">Academic</span>
+                    </div>
+                    <a href="vocabulary/" class="category-btn">Learn Vocabulary →</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🎯</div>
+                    <h2>Exam Preparation</h2>
+                    <p>Study materials for proficiency tests</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">DELE (Spanish)</span>
+                        <span class="topic-tag">DELF (French)</span>
+                        <span class="topic-tag">Goethe (German)</span>
+                        <span class="topic-tag">JLPT (Japanese)</span>
+                    </div>
+                    <a href="exams/" class="category-btn">Prepare for Exams →</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🎬</div>
+                    <h2>Media & Culture</h2>
+                    <p>Movies, music, and cultural content</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Movies</span>
+                        <span class="topic-tag">Music</span>
+                        <span class="topic-tag">Books</span>
+                        <span class="topic-tag">Podcasts</span>
+                    </div>
+                    <a href="media/" class="category-btn">Explore Culture →</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>📊 Learning Statistics</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Language</th>
+                        <th>Current Streak</th>
+                        <th>Total XP</th>
+                        <th>Lessons Completed</th>
+                        <th>Words Learned</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🇪🇸 Spanish</strong></td>
+                        <td>🔥 45 days</td>
+                        <td>🌟 12,450</td>
+                        <td>📚 156</td>
+                        <td>💬 2,340</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🇫🇷 French</strong></td>
+                        <td>🔥 23 days</td>
+                        <td>🌟 8,230</td>
+                        <td>📚 98</td>
+                        <td>💬 1,567</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🇩🇪 German</strong></td>
+                        <td>🔥 12 days</td>
+                        <td>🌟 3,120</td>
+                        <td>📚 45</td>
+                        <td>💬 890</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🇯🇵 Japanese</strong></td>
+                        <td>🔥 8 days</td>
+                        <td>🌟 1,890</td>
+                        <td>📚 23</td>
+                        <td>💬 456</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2>🎯 This Week's Goals</h2>
+
+            <h3>Daily Practice (30 minutes each)</h3>
+            <ul>
+                <li>✅ <strong>Spanish</strong> - Past tense review (5/7 days)</li>
+                <li>✅ <strong>French</strong> - Present tense conjugations (4/7 days)</li>
+                <li>🔄 <strong>German</strong> - Basic greetings and introductions (3/7 days)</li>
+                <li>🔄 <strong>Japanese</strong> - Hiragana practice (2/7 days)</li>
+            </ul>
+
+            <h3>Weekly Milestones</h3>
+            <ul>
+                <li>📚 <strong>Spanish</strong> - Complete 3 new lessons</li>
+                <li>📚 <strong>French</strong> - Master 20 new vocabulary words</li>
+                <li>📚 <strong>German</strong> - Learn 15 basic phrases</li>
+                <li>📚 <strong>Japanese</strong> - Memorize 10 hiragana characters</li>
+            </ul>
+
+            <hr>
+
+            <h2>🚀 Learning Strategies</h2>
+
+            <h3>Spaced Repetition</h3>
+            <p>I use Anki flashcards to review vocabulary and grammar concepts at optimal intervals for long-term retention.</p>
+
+            <h3>Immersion Techniques</h3>
+            <ul>
+                <li><strong>Media Consumption</strong> - Watch movies and TV shows in target languages</li>
+                <li><strong>Reading Practice</strong> - Start with children's books and gradually increase difficulty</li>
+                <li><strong>Conversation Practice</strong> - Use language exchange apps and find native speakers</li>
+                <li><strong>Cultural Context</strong> - Learn about the culture and history of each language</li>
+            </ul>
+
+            <h3>Duolingo Best Practices</h3>
+            <ul>
+                <li><strong>Daily Consistency</strong> - Even 10 minutes daily is better than 2 hours once a week</li>
+                <li><strong>Skill Mastery</strong> - Don't rush through lessons; ensure complete understanding</li>
+                <li><strong>Practice Mode</strong> - Use the practice feature to reinforce weak areas</li>
+                <li><strong>Stories & Podcasts</strong> - Supplement lessons with additional content</li>
+            </ul>
+
+            <hr>
+
+            <h2>📖 Featured Content</h2>
+
+            <h3>Grammar Notes</h3>
+            <ul>
+                <li><strong><a href="grammar/">Complete Grammar Reference</a></strong> - All languages covered</li>
+                <li><strong>Verb Conjugation Tables</strong> - Present, past, and future tenses</li>
+                <li><strong>Sentence Structure Guides</strong> - Word order and syntax rules</li>
+                <li><strong>Common Grammar Mistakes</strong> - What to avoid when learning</li>
+            </ul>
+
+            <h3>Vocabulary Lists</h3>
+            <ul>
+                <li><strong>Essential Words</strong> - Most common vocabulary in each language</li>
+                <li><strong>Topic-Based Lists</strong> - Food, travel, business, family, etc.</li>
+                <li><strong>False Friends</strong> - Words that look similar but mean different things</li>
+                <li><strong>Idiomatic Expressions</strong> - Common phrases and sayings</li>
+            </ul>
+
+            <hr>
+
+            <h2>🎓 Exam Preparation</h2>
+
+            <h3>Spanish - DELE B2</h3>
+            <ul>
+                <li><strong>Reading</strong> - Practice with authentic texts and articles</li>
+                <li><strong>Writing</strong> - Essay writing and formal letter composition</li>
+                <li><strong>Listening</strong> - Audio comprehension exercises</li>
+                <li><strong>Speaking</strong> - Conversation practice and presentation skills</li>
+            </ul>
+
+            <h3>French - DELF B1</h3>
+            <ul>
+                <li><strong>Grammar Review</strong> - Focus on intermediate-level structures</li>
+                <li><strong>Vocabulary Expansion</strong> - Learn 2,000+ words</li>
+                <li><strong>Cultural Knowledge</strong> - French history, literature, and current events</li>
+                <li><strong>Practice Tests</strong> - Simulate exam conditions</li>
+            </ul>
+
+            <h3>German - Goethe A2</h3>
+            <ul>
+                <li><strong>Basic Grammar</strong> - Articles, cases, and verb conjugations</li>
+                <li><strong>Essential Vocabulary</strong> - 1,000+ common words</li>
+                <li><strong>Pronunciation</strong> - Master German sounds and intonation</li>
+                <li><strong>Cultural Awareness</strong> - German customs and traditions</li>
+            </ul>
+
+            <h3>Japanese - JLPT N5</h3>
+            <ul>
+                <li><strong>Hiragana & Katakana</strong> - Master both syllabaries</li>
+                <li><strong>Basic Kanji</strong> - Learn 100 essential characters</li>
+                <li><strong>Grammar Patterns</strong> - Basic sentence structures</li>
+                <li><strong>Listening Skills</strong> - Understand simple conversations</li>
+            </ul>
+
+            <hr>
+
+            <h2>🔗 Quick Navigation</h2>
+
+            <ul>
+                <li><strong><a href="grammar/">Grammar Notes</a></strong> - Complete grammar reference</li>
+                <li><strong><a href="vocabulary/">Vocabulary Lists</a></strong> - Topic-based word learning</li>
+                <li><strong><a href="exams/">Exam Preparation</a></strong> - Study materials for tests</li>
+                <li><strong><a href="media/">Media & Culture</a></strong> - Movies, music, and books</li>
+                <li><strong><a href="../computer-science/">Computer Science</a></strong> - Switch to CS learning</li>
+                <li><strong><a href="../index.html">Back to Home</a></strong> - Return to homepage</li>
+            </ul>
+
+            <hr>
+
+            <h2>💡 Language Learning Tips</h2>
+
+            <blockquote>
+                <strong>"Language learning is a marathon, not a sprint. Consistency beats intensity every time."</strong>
+            </blockquote>
+
+            <blockquote>
+                <strong>"The best way to learn a language is to use it. Don't be afraid to make mistakes!"</strong>
+            </blockquote>
+
+            <h3>My Top Tips</h3>
+            <ol>
+                <li><strong>Start Speaking Early</strong> - Don't wait until you're "ready"</li>
+                <li><strong>Learn in Context</strong> - Study words and phrases in sentences, not isolation</li>
+                <li><strong>Use Multiple Resources</strong> - Don't rely on just one app or method</li>
+                <li><strong>Practice Daily</strong> - Even 15 minutes is better than nothing</li>
+                <li><strong>Embrace Mistakes</strong> - They're part of the learning process</li>
+                <li><strong>Find Your Motivation</strong> - Connect learning to your personal goals</li>
+            </ol>
+
+            <hr>
+
+            <p><em>"One language sets you in a corridor for life. Two languages open every door along the way."</em> - Frank Smith</p>
+
+            <p><em>"To have another language is to possess a second soul."</em> - Charlemagne</p>
+
+            <hr>
+
+            <p><strong>Ready to start your language learning journey? Choose a language above and begin! 🌍</strong></p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../computer-science/">CS Notes</a></li>
+                        <li><a href="index.html">Language Learning</a></li>
+                        <li><a href="../about/">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" data-tooltip="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="#" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Progress</h3>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <span>Spanish</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>French</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechGuy. All rights reserved.</p>
+                <p>Built with ❤️ using Jekyll and GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
