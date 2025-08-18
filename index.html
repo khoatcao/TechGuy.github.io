@@ -239,11 +239,249 @@
         </div>
     </footer>
 
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <div class="chatbot-header" onclick="toggleChatbot()">
+            <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info">
+                <h4>AI Learning Assistant</h4>
+                <p>Ask me about algorithms, languages, or anything!</p>
+            </div>
+            <div class="chatbot-toggle">
+                <i class="fas fa-comments" id="chat-icon"></i>
+                <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+            </div>
+        </div>
+        
+        <div class="chatbot-body" id="chatbot-body" style="display: none;">
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>👋 Hi! I'm your AI learning assistant. I can help you with:</p>
+                        <ul>
+                            <li>📚 Computer Science concepts and algorithms</li>
+                            <li>🌍 Language learning tips and grammar</li>
+                            <li>💡 Study strategies and resources</li>
+                            <li>🎯 Learning path recommendations</li>
+                        </ul>
+                        <p>What would you like to learn about today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500">
+                    <button id="send-message" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="askQuestion('Tell me about sorting algorithms')">Sorting Algorithms</button>
+                    <button class="quick-btn" onclick="askQuestion('How to improve English vocabulary?')">English Tips</button>
+                    <button class="quick-btn" onclick="askQuestion('Best study strategies for algorithms')">Study Tips</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
     
-    <!-- Additional interactive features -->
+    <!-- AI Chatbot Script -->
     <script>
+        // Chatbot functionality
+        let isChatbotOpen = false;
+        let chatHistory = [];
+
+        function toggleChatbot() {
+            const body = document.getElementById('chatbot-body');
+            const icon = document.getElementById('chat-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (isChatbotOpen) {
+                body.style.display = 'none';
+                icon.style.display = 'inline-block';
+                closeIcon.style.display = 'none';
+                isChatbotOpen = false;
+            } else {
+                body.style.display = 'block';
+                icon.style.display = 'none';
+                closeIcon.style.display = 'inline-block';
+                isChatbotOpen = true;
+                document.getElementById('chat-input').focus();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                
+                // Simulate AI response
+                setTimeout(() => {
+                    const response = generateAIResponse(message);
+                    addMessage(response, 'bot');
+                }, 1000);
+            }
+        }
+
+        function askQuestion(question) {
+            addMessage(question, 'user');
+            
+            setTimeout(() => {
+                const response = generateAIResponse(question);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            
+            if (sender === 'user') {
+                avatar.innerHTML = '<i class="fas fa-user"></i>';
+            } else {
+                avatar.innerHTML = '<i class="fas fa-robot"></i>';
+            }
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            content.innerHTML = `<p>${text}</p>`;
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content);
+            messagesContainer.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Store in history
+            chatHistory.push({ sender, text, timestamp: new Date() });
+        }
+
+        function generateAIResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            // Computer Science responses
+            if (message.includes('sorting') || message.includes('algorithm')) {
+                return `🔄 <strong>Sorting Algorithms</strong><br><br>
+                Here are the main sorting algorithms you should know:<br>
+                • <strong>Bubble Sort</strong> - O(n²) time complexity, simple but inefficient<br>
+                • <strong>Quick Sort</strong> - O(n log n) average case, very efficient<br>
+                • <strong>Merge Sort</strong> - O(n log n) guaranteed, stable sort<br>
+                • <strong>Heap Sort</strong> - O(n log n), in-place sorting<br><br>
+                Check out our <a href="/computer-science/sorting/" style="color: #3498db;">detailed sorting guide</a> for implementations and examples!`;
+            }
+            
+            if (message.includes('data structure')) {
+                return `🏗️ <strong>Data Structures</strong><br><br>
+                Essential data structures for algorithms:<br>
+                • <strong>Arrays</strong> - Fast access, fixed size<br>
+                • <strong>Linked Lists</strong> - Dynamic size, easy insertion/deletion<br>
+                • <strong>Stacks & Queues</strong> - LIFO and FIFO operations<br>
+                • <strong>Trees</strong> - Binary trees, BST, AVL trees<br>
+                • <strong>Graphs</strong> - Adjacency matrix/list representations<br><br>
+                Each has specific use cases and trade-offs!`;
+            }
+            
+            if (message.includes('dynamic programming') || message.includes('dp')) {
+                return `⚡ <strong>Dynamic Programming</strong><br><br>
+                DP is a method for solving complex problems by breaking them down into simpler subproblems:<br><br>
+                <strong>Key Concepts:</strong><br>
+                • Memoization (top-down)<br>
+                • Tabulation (bottom-up)<br>
+                • Optimal substructure<br>
+                • Overlapping subproblems<br><br>
+                <strong>Classic Problems:</strong><br>
+                • Fibonacci sequence<br>
+                • Longest Common Subsequence<br>
+                • Knapsack problem<br>
+                • Edit distance<br><br>
+                Practice these to master DP!`;
+            }
+            
+            // Language Learning responses
+            if (message.includes('english') || message.includes('vocabulary')) {
+                return `📚 <strong>English Vocabulary Tips</strong><br><br>
+                Here are effective strategies to improve your English vocabulary:<br><br>
+                <strong>1. Context Learning</strong><br>
+                Learn words in sentences, not in isolation<br><br>
+                <strong>2. Spaced Repetition</strong><br>
+                Use apps like Anki to review words at optimal intervals<br><br>
+                <strong>3. Active Usage</strong><br>
+                Try to use new words in your own sentences<br><br>
+                <strong>4. Reading</strong><br>
+                Read books, articles, and news in English<br><br>
+                Check out our <a href="/duolingo/vocabulary/" style="color: #3498db;">vocabulary section</a> for more resources!`;
+            }
+            
+            if (message.includes('grammar') || message.includes('tense')) {
+                return `📝 <strong>English Grammar</strong><br><br>
+                Key grammar concepts to master:<br><br>
+                <strong>Verb Tenses:</strong><br>
+                • Present Simple - habits and facts<br>
+                • Present Continuous - actions happening now<br>
+                • Past Simple - completed actions<br>
+                • Future - plans and predictions<br><br>
+                <strong>Important Rules:</strong><br>
+                • Subject-verb agreement<br>
+                • Article usage (a, an, the)<br>
+                • Prepositions<br>
+                • Word order<br><br>
+                Visit our <a href="/duolingo/grammar/" style="color: #3498db;">grammar section</a> for detailed explanations!`;
+            }
+            
+            if (message.includes('study') || message.includes('learning')) {
+                return `🎯 <strong>Study Strategies</strong><br><br>
+                Effective learning techniques:<br><br>
+                <strong>For Algorithms:</strong><br>
+                • Practice coding daily<br>
+                • Solve problems on LeetCode/HackerRank<br>
+                • Implement algorithms from scratch<br>
+                • Understand time/space complexity<br><br>
+                <strong>For Languages:</strong><br>
+                • Immerse yourself in the language<br>
+                • Practice speaking regularly<br>
+                • Use spaced repetition<br>
+                • Learn in context<br><br>
+                <strong>General Tips:</strong><br>
+                • Set specific goals<br>
+                • Track your progress<br>
+                • Stay consistent<br>
+                • Teach others to reinforce learning`;
+            }
+            
+            // Default response
+            return `🤖 I'm here to help you learn! I can assist with:<br><br>
+            📚 <strong>Computer Science:</strong> algorithms, data structures, problem-solving<br>
+            🌍 <strong>Language Learning:</strong> grammar, vocabulary, study tips<br>
+            💡 <strong>Learning Strategies:</strong> effective study methods and resources<br><br>
+            Try asking me about specific topics like "sorting algorithms", "English grammar", or "study strategies"!`;
+        }
+
+        // Enter key to send message
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('chat-input');
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+
         // Add some interactive elements specific to the current page
         document.addEventListener('DOMContentLoaded', function() {
             // Add algorithm visualization buttons if on CS pages
@@ -305,6 +543,222 @@
             alert(`${language} progress details coming soon!`);
         }
     </script>
+
+    <style>
+        /* Chatbot Styles */
+        .chatbot-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-family: inherit;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chatbot-avatar {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .chatbot-info {
+            flex: 1;
+        }
+
+        .chatbot-info h4 {
+            margin: 0 0 2px 0;
+            font-size: 1rem;
+        }
+
+        .chatbot-info p {
+            margin: 0;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .chatbot-toggle {
+            font-size: 1.2rem;
+        }
+
+        .chatbot-body {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        .message {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .message-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .bot-message .message-avatar {
+            background: #3498db;
+            color: white;
+        }
+
+        .user-message .message-avatar {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .message-content {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+        }
+
+        .user-message .message-content {
+            background: #3498db;
+            color: white;
+            margin-left: auto;
+        }
+
+        .message-content p {
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .message-content ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .message-content li {
+            margin: 5px 0;
+        }
+
+        .chat-input-container {
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input-wrapper {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        #chat-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        #chat-input:focus {
+            border-color: #3498db;
+        }
+
+        #send-message {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #send-message:hover {
+            background: #2980b9;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .quick-btn {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quick-btn:hover {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+
+        /* Dark mode support */
+        body.dark-mode .chatbot-widget {
+            background: #2d2d2d;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .message-content {
+            background: #3d3d3d;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode #chat-input {
+            background: #3d3d3d;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+        body.dark-mode .quick-btn {
+            background: #3d3d3d;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .chatbot-widget {
+                width: calc(100vw - 40px);
+                right: 20px;
+                left: 20px;
+            }
+        }
+    </style>
 </body>
 </html>
 
