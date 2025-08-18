@@ -6,7 +6,67 @@
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/chatbot.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Emergency chatbot styles to ensure visibility */
+        .chatbot-widget {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            width: 350px !important;
+            background: white !important;
+            border-radius: 15px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+            z-index: 9999 !important;
+            font-family: inherit !important;
+            overflow: hidden !important;
+            transition: all 0.3s ease !important;
+            border: 1px solid #e0e0e0 !important;
+            display: block !important;
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        }
+        
+        .chatbot-avatar {
+            width: 40px !important;
+            height: 40px !important;
+            background: rgba(255,255,255,0.2) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 1.2rem !important;
+        }
+        
+        .chatbot-info {
+            flex: 1 !important;
+        }
+        
+        .chatbot-info h4 {
+            margin: 0 0 2px 0 !important;
+            font-size: 1rem !important;
+            font-weight: 600 !important;
+        }
+        
+        .chatbot-info p {
+            margin: 0 !important;
+            font-size: 0.8rem !important;
+            opacity: 0.9 !important;
+        }
+        
+        .chatbot-toggle {
+            font-size: 1.2rem !important;
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -95,8 +155,60 @@
         </div>
     </footer>
 
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <div class="chatbot-header" onclick="toggleChatbot()">
+            <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info">
+                <h4>AI Learning Assistant</h4>
+                <p>Ask me about algorithms, languages, or anything!</p>
+            </div>
+            <div class="chatbot-toggle">
+                <i class="fas fa-comments" id="chat-icon"></i>
+                <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+            </div>
+        </div>
+        
+        <div class="chatbot-body" id="chatbot-body" style="display: none;">
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>👋 Hi! I'm your AI learning assistant. I can help you with:</p>
+                        <ul>
+                            <li>📚 Computer Science concepts and algorithms</li>
+                            <li>🌍 Language learning tips and grammar</li>
+                            <li>💡 Study strategies and resources</li>
+                            <li>🎯 Learning path recommendations</li>
+                        </ul>
+                        <p>What would you like to learn about today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500">
+                    <button id="send-message" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="askQuestion('Tell me about sorting algorithms')">Sorting Algorithms</button>
+                    <button class="quick-btn" onclick="askQuestion('How to improve English vocabulary?')">English Tips</button>
+                    <button class="quick-btn" onclick="askQuestion('Best study strategies for algorithms')">Study Tips</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/chatbot.js"></script>
     
     <!-- Additional interactive features -->
     <script>

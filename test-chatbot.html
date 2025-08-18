@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Test - TechGuy's Learning Hub</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/chatbot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/">TechGuy's Learning Hub</a>
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <h1>🤖 AI Chatbot Test Page</h1>
+            <p>This page is to test the AI chatbot functionality. Look for the chatbot widget in the bottom-right corner!</p>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3>Test Instructions:</h3>
+                <ol>
+                    <li>Look for the blue chatbot widget in the bottom-right corner</li>
+                    <li>Click on it to open the chat interface</li>
+                    <li>Try typing a message or using the quick action buttons</li>
+                    <li>Test different topics like "sorting algorithms", "English grammar", etc.</li>
+                </ol>
+            </div>
+
+            <h2>Expected Features:</h2>
+            <ul>
+                <li>✅ Floating chatbot widget</li>
+                <li>✅ Click to open/close</li>
+                <li>✅ Type messages and get AI responses</li>
+                <li>✅ Quick action buttons</li>
+                <li>✅ Typing indicators</li>
+                <li>✅ Message history</li>
+                <li>✅ Dark mode support</li>
+                <li>✅ Mobile responsive</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <div class="chatbot-header" onclick="toggleChatbot()">
+            <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info">
+                <h4>AI Learning Assistant</h4>
+                <p>Ask me about algorithms, languages, or anything!</p>
+            </div>
+            <div class="chatbot-toggle">
+                <i class="fas fa-comments" id="chat-icon"></i>
+                <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+            </div>
+        </div>
+        
+        <div class="chatbot-body" id="chatbot-body" style="display: none;">
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>👋 Hi! I'm your AI learning assistant. I can help you with:</p>
+                        <ul>
+                            <li>📚 Computer Science concepts and algorithms</li>
+                            <li>🌍 Language learning tips and grammar</li>
+                            <li>💡 Study strategies and resources</li>
+                            <li>🎯 Learning path recommendations</li>
+                        </ul>
+                        <p>What would you like to learn about today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500">
+                    <button id="send-message" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="quick-actions">
+                    <button class="quick-btn" data-question="Tell me about sorting algorithms">Sorting Algorithms</button>
+                    <button class="quick-btn" data-question="How to improve English vocabulary?">English Tips</button>
+                    <button class="quick-btn" data-question="Best study strategies for algorithms">Study Tips</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chatbot.js"></script>
+</body>
+</html>
