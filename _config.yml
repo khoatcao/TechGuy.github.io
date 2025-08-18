@@ -2,8 +2,8 @@ title: TechGuy's Learning Hub
 description: Personal notes on Computer Science algorithms and Duolingo language learning
 author: TechGuy
 email: your-email@example.com
-url: "https://khoatcao.github.io"
-baseurl: "/TechGuy.github.io"
+url: "https://techguy.blog"
+baseurl: ""
 
 # Build settings
 markdown: kramdown
