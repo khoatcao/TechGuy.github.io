@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening Practice - Duolingo Learning - TechGuy's Learning Hub</title>
+    <meta name="description" content="Practice DET listening skills with adaptive exercises, audio clips, and comprehension questions">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/">TechGuy's Learning Hub</a>
+                </h1>
+                
+                <div class="header-controls">
+                    <button class="dark-mode-toggle" data-tooltip="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" data-tooltip="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/computer-science/">Computer Science</a></li>
+                    <li><a href="/duolingo/">Duolingo</a></li>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb">
+                <a href="/">Home</a> &gt; 
+                <a href="/duolingo/">Duolingo</a> &gt; 
+                <span>Listening Practice</span>
+            </nav>
+
+            <!-- Search Box -->
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="🔍 Search listening exercises... (Ctrl+K)" data-tooltip="Search through listening content">
+            </div>
+            
+            <h1>🎧 DET Listening Practice</h1>
+            <p>Improve your listening skills for the Duolingo English Test with adaptive exercises, audio clips, and comprehension questions.</p>
+
+            <hr>
+
+            <h2>🎯 Listening Skills</h2>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🎵</div>
+                    <h3>Audio Comprehension</h3>
+                    <p>Understand spoken English in various contexts</p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Conversations</span>
+                        <span class="topic-tag">Lectures</span>
+                        <span class="topic-tag">News</span>
+                    </div>
+                    <a href="#comprehension" class="category-btn">Practice Comprehension →</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🔊</div>
+                    <h3>Accent Recognition</h3>
+                    <p>Understand different English accents</p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">American</span>
+                        <span class="topic-tag">British</span>
+                        <span class="topic-tag">Australian</span>
+                    </div>
+                    <a href="#accents" class="category-btn">Practice Accents →</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3>Speed Adaptation</h3>
+                    <p>Understand fast and slow speech</p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Slow Speech</span>
+                        <span class="topic-tag">Normal Speed</span>
+                        <span class="topic-tag">Fast Speech</span>
+                    </div>
+                    <a href="#speed" class="category-btn">Practice Speed →</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🎯</div>
+                    <h3>Detail Recognition</h3>
+                    <p>Identify specific information in audio</p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Numbers</span>
+                        <span class="topic-tag">Names</span>
+                        <span class="topic-tag">Dates</span>
+                    </div>
+                    <a href="#details" class="category-btn">Practice Details →</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 id="comprehension">🎵 Audio Comprehension Practice</h2>
+
+            <div class="listening-section">
+                <h3>Conversation Practice</h3>
+                
+                <div class="audio-exercise">
+                    <div class="audio-player">
+                        <div class="audio-controls">
+                            <button class="play-btn" onclick="playAudio('conversation1')">
+                                <i class="fas fa-play"></i> Play Audio
+                            </button>
+                            <div class="audio-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress1"></div>
+                                </div>
+                                <span class="time-display" id="time1">0:00 / 0:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exercise-content">
+                        <h4>Listen to the conversation and answer the questions:</h4>
+                        
+                        <div class="question-container">
+                            <p><strong>Question 1:</strong> What is the main topic of the conversation?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="a"> a) Planning a vacation</label>
+                                <label><input type="radio" name="q1" value="b"> b) Discussing work projects</label>
+                                <label><input type="radio" name="q1" value="c"> c) Talking about family</label>
+                                <label><input type="radio" name="q1" value="d"> d) Shopping for groceries</label>
+                            </div>
+                        </div>
+
+                        <div class="question-container">
+                            <p><strong>Question 2:</strong> What does Sarah suggest they do?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="a"> a) Stay at home</label>
+                                <label><input type="radio" name="q2" value="b"> b) Go to the beach</label>
+                                <label><input type="radio" name="q2" value="c"> c) Visit a museum</label>
+                                <label><input type="radio" name="q2" value="d"> d) Watch a movie</label>
+                            </div>
+                        </div>
+
+                        <button class="check-answers-btn" onclick="checkListeningAnswers()">Check Answers</button>
+                    </div>
+                </div>
+
+                <div class="transcript-section">
+                    <h4>Transcript (Click to reveal):</h4>
+                    <button class="transcript-toggle" onclick="toggleTranscript('transcript1')">Show Transcript</button>
+                    <div class="transcript" id="transcript1" style="display: none;">
+                        <p><strong>John:</strong> Hey Sarah, what are your plans for the weekend?</p>
+                        <p><strong>Sarah:</strong> I was thinking we could go to the beach. The weather forecast looks great!</p>
+                        <p><strong>John:</strong> That sounds like a good idea. Should we invite Mike and Lisa too?</p>
+                        <p><strong>Sarah:</strong> Absolutely! The more the merrier. We can bring some snacks and drinks.</p>
+                        <p><strong>John:</strong> Perfect! Let's meet at the beach at 10 AM on Saturday.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 id="accents">🔊 Accent Recognition</h2>
+
+            <div class="listening-section">
+                <h3>Different English Accents</h3>
+                
+                <div class="accent-exercise">
+                    <div class="accent-card">
+                        <h4>American Accent</h4>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('american')">
+                                <i class="fas fa-play"></i> Play American
+                            </button>
+                        </div>
+                        <p class="accent-description">Listen to the American pronunciation of common words.</p>
+                    </div>
+
+                    <div class="accent-card">
+                        <h4>British Accent</h4>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('british')">
+                                <i class="fas fa-play"></i> Play British
+                            </button>
+                        </div>
+                        <p class="accent-description">Listen to the British pronunciation of common words.</p>
+                    </div>
+
+                    <div class="accent-card">
+                        <h4>Australian Accent</h4>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('australian')">
+                                <i class="fas fa-play"></i> Play Australian
+                            </button>
+                        </div>
+                        <p class="accent-description">Listen to the Australian pronunciation of common words.</p>
+                    </div>
+                </div>
+
+                <div class="accent-comparison">
+                    <h4>Accent Comparison Exercise</h4>
+                    <p>Listen to the same sentence in different accents and identify the differences:</p>
+                    
+                    <div class="comparison-item">
+                        <p><strong>Sentence:</strong> "I'm going to the store to buy some tomatoes."</p>
+                        <div class="accent-buttons">
+                            <button onclick="playAudio('tomato-american')">American</button>
+                            <button onclick="playAudio('tomato-british')">British</button>
+                            <button onclick="playAudio('tomato-australian')">Australian</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 id="speed">⚡ Speed Adaptation</h2>
+
+            <div class="listening-section">
+                <h3>Understanding Different Speech Speeds</h3>
+                
+                <div class="speed-exercise">
+                    <div class="speed-card">
+                        <h4>Slow Speech (Beginner)</h4>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('slow-speech')">
+                                <i class="fas fa-play"></i> Play Slow
+                            </button>
+                        </div>
+                        <p>Clear, slow pronunciation for beginners</p>
+                    </div>
+
+                    <div class="speed-card">
+                        <h4>Normal Speed (Intermediate)</h4>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('normal-speech')">
+                                <i class="fas fa-play"></i> Play Normal
+                            </button>
+                        </div>
+                        <p>Natural conversation speed</p>
+                    </div>
+
+                    <div class="speed-card">
+                        <h4>Fast Speech (Advanced)</h4>
+                        <div class="audio-player">
+                            <button class="play-btn" onclick="playAudio('fast-speech')">
+                                <i class="fas fa-play"></i> Play Fast
+                            </button>
+                        </div>
+                        <p>Quick, natural speech patterns</p>
+                    </div>
+                </div>
+
+                <div class="speed-practice">
+                    <h4>Speed Practice Exercise</h4>
+                    <p>Listen to the same passage at different speeds and answer questions:</p>
+                    
+                    <div class="speed-controls">
+                        <label>Speed: <select id="speed-selector" onchange="changeSpeed()">
+                            <option value="0.5">Slow (0.5x)</option>
+                            <option value="1.0" selected>Normal (1.0x)</option>
+                            <option value="1.5">Fast (1.5x)</option>
+                            <option value="2.0">Very Fast (2.0x)</option>
+                        </select></label>
+                    </div>
+
+                    <div class="audio-player">
+                        <button class="play-btn" onclick="playAudio('speed-practice')">
+                            <i class="fas fa-play"></i> Play Passage
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 id="details">🎯 Detail Recognition</h2>
+
+            <div class="listening-section">
+                <h3>Identifying Specific Information</h3>
+                
+                <div class="detail-exercise">
+                    <div class="audio-player">
+                        <button class="play-btn" onclick="playAudio('details1')">
+                            <i class="fas fa-play"></i> Play Audio
+                        </button>
+                    </div>
+
+                    <div class="detail-questions">
+                        <h4>Listen carefully and identify the following details:</h4>
+                        
+                        <div class="detail-question">
+                            <p><strong>1. What is the person's name?</strong></p>
+                            <input type="text" id="name-answer" placeholder="Enter the name">
+                        </div>
+
+                        <div class="detail-question">
+                            <p><strong>2. What time is the meeting?</strong></p>
+                            <input type="text" id="time-answer" placeholder="Enter the time">
+                        </div>
+
+                        <div class="detail-question">
+                            <p><strong>3. What is the phone number?</strong></p>
+                            <input type="text" id="phone-answer" placeholder="Enter the phone number">
+                        </div>
+
+                        <div class="detail-question">
+                            <p><strong>4. What is the address?</strong></p>
+                            <input type="text" id="address-answer" placeholder="Enter the address">
+                        </div>
+
+                        <button class="check-details-btn" onclick="checkDetailAnswers()">Check Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>📊 Listening Progress Tracker</h2>
+
+            <div class="progress-section">
+                <div class="progress-card">
+                    <h3>Comprehension Skills</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="70%"></div>
+                    </div>
+                    <p>70% - Good understanding of main ideas</p>
+                </div>
+
+                <div class="progress-card">
+                    <h3>Accent Recognition</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="55%"></div>
+                    </div>
+                    <p>55% - Need more practice with different accents</p>
+                </div>
+
+                <div class="progress-card">
+                    <h3>Speed Adaptation</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="80%"></div>
+                    </div>
+                    <p>80% - Excellent at understanding different speeds</p>
+                </div>
+
+                <div class="progress-card">
+                    <h3>Detail Recognition</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="65%"></div>
+                    </div>
+                    <p>65% - Good at catching specific information</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>📚 Listening Tips</h2>
+
+            <div class="tips-section">
+                <ul>
+                    <li><strong>🎧 Active Listening:</strong> Focus completely on the audio without distractions</li>
+                    <li><strong>📝 Note-taking:</strong> Write down key words and phrases while listening</li>
+                    <li><strong>🔄 Repetition:</strong> Listen to the same audio multiple times</li>
+                    <li><strong>🎯 Predict:</strong> Try to predict what will be said next</li>
+                    <li><strong>🌍 Variety:</strong> Practice with different accents and speeds</li>
+                    <li><strong>📱 Daily Practice:</strong> Listen to English podcasts, news, or videos daily</li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="navigation-links">
+                <a href="/duolingo/vocabulary/" class="nav-btn">← Vocabulary</a>
+                <a href="/duolingo/" class="nav-btn">Back to Duolingo</a>
+                <a href="/duolingo/writing-speaking/" class="nav-btn">Writing & Speaking →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/computer-science/">CS Notes</a></li>
+                        <li><a href="/duolingo/">Language Learning</a></li>
+                        <li><a href="/about/">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" data-tooltip="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="#" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Progress</h3>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <span>Listening</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Speaking</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechGuy. All rights reserved.</p>
+                <p>Built with ❤️ using Jekyll and GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+        // Mock audio functionality (in a real implementation, you'd have actual audio files)
+        function playAudio(audioId) {
+            console.log(`Playing audio: ${audioId}`);
+            // Simulate audio playing
+            alert(`Audio ${audioId} would play here. In a real implementation, this would be an actual audio file.`);
+        }
+
+        function checkListeningAnswers() {
+            const answers = {
+                q1: 'a', // Planning a vacation
+                q2: 'b'  // Go to the beach
+            };
+            
+            let score = 0;
+            let total = Object.keys(answers).length;
+            
+            for (let question in answers) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === answers[question]) {
+                    score++;
+                }
+            }
+            
+            const percentage = Math.round((score / total) * 100);
+            alert(`Listening quiz completed! You got ${score} out of ${total} correct (${percentage}%)`);
+        }
+
+        function checkDetailAnswers() {
+            const correctAnswers = {
+                name: "John Smith",
+                time: "2:30 PM",
+                phone: "555-1234",
+                address: "123 Main Street"
+            };
+            
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+            
+            const userAnswers = {
+                name: document.getElementById('name-answer').value.trim(),
+                time: document.getElementById('time-answer').value.trim(),
+                phone: document.getElementById('phone-answer').value.trim(),
+                address: document.getElementById('address-answer').value.trim()
+            };
+            
+            for (let field in correctAnswers) {
+                if (userAnswers[field].toLowerCase() === correctAnswers[field].toLowerCase()) {
+                    score++;
+                }
+            }
+            
+            const percentage = Math.round((score / total) * 100);
+            alert(`Detail recognition completed! You got ${score} out of ${total} correct (${percentage}%)`);
+        }
+
+        function toggleTranscript(transcriptId) {
+            const transcript = document.getElementById(transcriptId);
+            const button = event.target;
+            
+            if (transcript.style.display === 'none') {
+                transcript.style.display = 'block';
+                button.textContent = 'Hide Transcript';
+            } else {
+                transcript.style.display = 'none';
+                button.textContent = 'Show Transcript';
+            }
+        }
+
+        function changeSpeed() {
+            const speed = document.getElementById('speed-selector').value;
+            console.log(`Changed speed to: ${speed}x`);
+            // In a real implementation, this would change the audio playback speed
+        }
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .audio-exercise, .accent-exercise, .speed-exercise, .detail-exercise {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        .audio-player {
+            margin: 15px 0;
+        }
+
+        .play-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .play-btn:hover {
+            background: #2980b9;
+        }
+
+        .audio-progress {
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #3498db;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .time-display {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .question-container {
+            margin: 15px 0;
+        }
+
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        .check-answers-btn, .check-details-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .check-answers-btn:hover, .check-details-btn:hover {
+            background: #229954;
+        }
+
+        .transcript-toggle {
+            background: #f39c12;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        .transcript {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+
+        .accent-card, .speed-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .accent-buttons button {
+            background: #9b59b6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .accent-buttons button:hover {
+            background: #8e44ad;
+        }
+
+        .detail-question {
+            margin: 15px 0;
+        }
+
+        .detail-question input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        .progress-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .speed-controls {
+            margin: 15px 0;
+        }
+
+        .speed-controls select {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</body>
+</html>

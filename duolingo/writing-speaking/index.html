@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing & Speaking - Duolingo Learning - TechGuy's Learning Hub</title>
+    <meta name="description" content="Practice DET writing and speaking skills with exercises, prompts, and feedback">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/">TechGuy's Learning Hub</a>
+                </h1>
+                
+                <div class="header-controls">
+                    <button class="dark-mode-toggle" data-tooltip="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" data-tooltip="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/computer-science/">Computer Science</a></li>
+                    <li><a href="/duolingo/">Duolingo</a></li>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb">
+                <a href="/">Home</a> &gt; 
+                <a href="/duolingo/">Duolingo</a> &gt; 
+                <span>Writing & Speaking</span>
+            </nav>
+
+            <!-- Search Box -->
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="🔍 Search writing & speaking exercises... (Ctrl+K)" data-tooltip="Search through writing and speaking content">
+            </div>
+            
+            <h1>✍️ DET Writing & Speaking Practice</h1>
+            <p>Master the writing and speaking components of the Duolingo English Test with comprehensive practice exercises and feedback.</p>
+
+            <hr>
+
+            <h2>🎯 Writing & Speaking Skills</h2>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">📝</div>
+                    <h3>Essay Writing</h3>
+                    <p>Practice academic essay writing</p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Argumentative</span>
+                        <span class="topic-tag">Descriptive</span>
+                        <span class="topic-tag">Compare/Contrast</span>
+                    </div>
+                    <a href="#essays" class="category-btn">Practice Essays →</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">📋</div>
+                    <h3>Summary Writing</h3>
+                    <p>Learn to write effective summaries</p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Main Ideas</span>
+                        <span class="topic-tag">Key Points</span>
+                        <span class="topic-tag">Concise Writing</span>
+                    </div>
+                    <a href="#summaries" class="category-btn">Practice Summaries →</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🎤</div>
+                    <h3>Speaking Tasks</h3>
+                    <p>Improve oral communication skills</p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Fluency</span>
+                        <span class="topic-tag">Pronunciation</span>
+                        <span class="topic-tag">Confidence</span>
+                    </div>
+                    <a href="#speaking" class="category-btn">Practice Speaking →</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">⏱️</div>
+                    <h3>Timed Practice</h3>
+                    <p>Practice under test conditions</p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Time Management</span>
+                        <span class="topic-tag">Pressure</span>
+                        <span class="topic-tag">Efficiency</span>
+                    </div>
+                    <a href="#timed" class="category-btn">Timed Practice →</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 id="essays">📝 Essay Writing Practice</h2>
+
+            <div class="writing-section">
+                <h3>Argumentative Essay</h3>
+                
+                <div class="essay-prompt">
+                    <h4>Prompt:</h4>
+                    <p>"Some people believe that technology has made our lives easier, while others think it has made life more complicated. What is your opinion? Support your answer with specific examples and reasons."</p>
+                    
+                    <div class="prompt-details">
+                        <p><strong>Time Limit:</strong> 5 minutes</p>
+                        <p><strong>Word Count:</strong> 50-100 words</p>
+                        <p><strong>Focus:</strong> Clear argument, supporting examples, logical structure</p>
+                    </div>
+                </div>
+
+                <div class="writing-area">
+                    <h4>Your Response:</h4>
+                    <textarea id="essay-response" placeholder="Start writing your essay here..." rows="8"></textarea>
+                    <div class="writing-controls">
+                        <div class="word-counter">
+                            <span id="word-count">0</span> words
+                        </div>
+                        <div class="timer">
+                            <span id="essay-timer">5:00</span> remaining
+                        </div>
+                        <button class="submit-btn" onclick="submitEssay()">Submit Essay</button>
+                    </div>
+                </div>
+
+                <div class="essay-tips">
+                    <h4>Essay Writing Tips:</h4>
+                    <ul>
+                        <li><strong>Introduction:</strong> State your position clearly in the first sentence</li>
+                        <li><strong>Body:</strong> Provide 2-3 specific examples to support your argument</li>
+                        <li><strong>Conclusion:</strong> Restate your position and summarize your main points</li>
+                        <li><strong>Language:</strong> Use clear, academic vocabulary and varied sentence structures</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 id="summaries">📋 Summary Writing Practice</h2>
+
+            <div class="writing-section">
+                <h3>Reading Passage Summary</h3>
+                
+                <div class="reading-passage">
+                    <h4>Read the following passage:</h4>
+                    <div class="passage-content">
+                        <p>Climate change is one of the most pressing issues facing humanity today. The Earth's average temperature has increased by approximately 1.1 degrees Celsius since pre-industrial times, primarily due to human activities such as burning fossil fuels and deforestation.</p>
+                        <p>Scientists predict that if current trends continue, global temperatures could rise by 2-4 degrees Celsius by the end of the century. This would have catastrophic consequences for ecosystems, agriculture, and human societies.</p>
+                    </div>
+                </div>
+
+                <div class="summary-instructions">
+                    <h4>Write a summary of the main points:</h4>
+                    <p><strong>Requirements:</strong> Include main topic and key points, use your own words, keep it concise (30-50 words)</p>
+                </div>
+
+                <div class="writing-area">
+                    <textarea id="summary-response" placeholder="Write your summary here..." rows="4"></textarea>
+                    <div class="writing-controls">
+                        <div class="word-counter">
+                            <span id="summary-word-count">0</span> words
+                        </div>
+                        <button class="submit-btn" onclick="submitSummary()">Submit Summary</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 id="speaking">🎤 Speaking Practice</h2>
+
+            <div class="speaking-section">
+                <h3>Speaking Tasks</h3>
+                
+                <div class="speaking-exercise">
+                    <h4>Task 1: Describe a Picture</h4>
+                    <div class="speaking-prompt">
+                        <p><strong>Instructions:</strong> Look at the image below and describe what you see. Speak for 30-60 seconds.</p>
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <i class="fas fa-image"></i>
+                                <p>Image: A busy city street with people walking and cars driving</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="speaking-controls">
+                        <button class="record-btn" onclick="startRecording()">
+                            <i class="fas fa-microphone"></i> Start Recording
+                        </button>
+                        <button class="stop-btn" onclick="stopRecording()" style="display: none;">
+                            <i class="fas fa-stop"></i> Stop Recording
+                        </button>
+                        <div class="recording-timer">
+                            <span id="speaking-timer">0:00</span>
+                        </div>
+                    </div>
+
+                    <div class="speaking-tips">
+                        <h4>Speaking Tips:</h4>
+                        <ul>
+                            <li><strong>Structure:</strong> Start with a general description, then add details</li>
+                            <li><strong>Vocabulary:</strong> Use descriptive adjectives and specific nouns</li>
+                            <li><strong>Fluency:</strong> Speak at a natural pace, don't rush</li>
+                            <li><strong>Confidence:</strong> Speak clearly and with confidence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>📊 Progress Tracking</h2>
+
+            <div class="progress-section">
+                <div class="progress-card">
+                    <h3>Essay Writing</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="75%"></div>
+                    </div>
+                    <p>75% - Strong argument development and structure</p>
+                </div>
+
+                <div class="progress-card">
+                    <h3>Summary Writing</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="60%"></div>
+                    </div>
+                    <p>60% - Good at identifying main points</p>
+                </div>
+
+                <div class="progress-card">
+                    <h3>Speaking Fluency</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="70%"></div>
+                    </div>
+                    <p>70% - Natural pace and good pronunciation</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="navigation-links">
+                <a href="/duolingo/listening/" class="nav-btn">← Listening Practice</a>
+                <a href="/duolingo/" class="nav-btn">Back to Duolingo</a>
+                <a href="/duolingo/grammar/" class="nav-btn">Grammar →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/computer-science/">CS Notes</a></li>
+                        <li><a href="/duolingo/">Language Learning</a></li>
+                        <li><a href="/about/">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" data-tooltip="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="#" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Progress</h3>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <span>Writing</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Speaking</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechGuy. All rights reserved.</p>
+                <p>Built with ❤️ using Jekyll and GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+        // Word counter for essay
+        document.getElementById('essay-response').addEventListener('input', function() {
+            const words = this.value.trim().split(/\s+/).filter(word => word.length > 0);
+            document.getElementById('word-count').textContent = words.length;
+        });
+
+        // Word counter for summary
+        document.getElementById('summary-response').addEventListener('input', function() {
+            const words = this.value.trim().split(/\s+/).filter(word => word.length > 0);
+            document.getElementById('summary-word-count').textContent = words.length;
+        });
+
+        function submitEssay() {
+            const response = document.getElementById('essay-response').value;
+            if (response.trim().length === 0) {
+                alert('Please write something before submitting.');
+                return;
+            }
+            alert('Essay submitted! In a real implementation, this would be sent for evaluation.');
+        }
+
+        function submitSummary() {
+            const response = document.getElementById('summary-response').value;
+            if (response.trim().length === 0) {
+                alert('Please write a summary before submitting.');
+                return;
+            }
+            alert('Summary submitted! In a real implementation, this would be evaluated.');
+        }
+
+        function startRecording() {
+            document.querySelector('.record-btn').style.display = 'none';
+            document.querySelector('.stop-btn').style.display = 'inline-block';
+            alert('Recording started! In a real implementation, this would record your voice.');
+        }
+
+        function stopRecording() {
+            document.querySelector('.record-btn').style.display = 'inline-block';
+            document.querySelector('.stop-btn').style.display = 'none';
+            alert('Recording stopped! In a real implementation, this would save your audio.');
+        }
+    </script>
+
+    <style>
+        .writing-section, .speaking-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        .essay-prompt, .speaking-prompt {
+            background: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
+
+        .writing-area textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        .writing-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .submit-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .speaking-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .record-btn, .stop-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .image-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .progress-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</body>
+</html>
