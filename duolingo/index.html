@@ -7,6 +7,67 @@
     <meta name="description" content="Personal notes and strategies for learning English and preparing for the Duolingo English Test (DET)">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Emergency chatbot visibility styles */
+        #chatbot-widget {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            width: 350px !important;
+            background: white !important;
+            border-radius: 15px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+            z-index: 99999 !important;
+            font-family: inherit !important;
+            overflow: hidden !important;
+            transition: all 0.3s ease !important;
+            border: 1px solid #e0e0e0 !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        }
+        
+        .chatbot-avatar {
+            width: 40px !important;
+            height: 40px !important;
+            background: rgba(255,255,255,0.2) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 1.2rem !important;
+        }
+        
+        .chatbot-info {
+            flex: 1 !important;
+        }
+        
+        .chatbot-info h4 {
+            margin: 0 0 2px 0 !important;
+            font-size: 1rem !important;
+            font-weight: 600 !important;
+        }
+        
+        .chatbot-info p {
+            margin: 0 !important;
+            font-size: 0.8rem !important;
+            opacity: 0.9 !important;
+        }
+        
+        .chatbot-toggle {
+            font-size: 1.2rem !important;
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
