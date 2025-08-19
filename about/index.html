@@ -195,6 +195,10 @@
                         <i class="fas fa-file-pdf"></i>
                         Export to PDF
                     </button>
+                    <button id="print-pdf" class="export-btn print-btn" onclick="exportToPDFAlternative()" style="margin-left: 10px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
+                        <i class="fas fa-print"></i>
+                        Print to PDF
+                    </button>
                 </div>
 
                 <div class="contact-info">
@@ -1158,52 +1162,92 @@
     <!-- PDF Export JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
-        function exportToPDF() {
-            // Show loading state
-            const exportBtn = document.getElementById('export-pdf');
-            const originalText = exportBtn.innerHTML;
-            exportBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
-            exportBtn.disabled = true;
+            function exportToPDF() {
+        // Show loading state
+        const exportBtn = document.getElementById('export-pdf');
+        const originalText = exportBtn.innerHTML;
+        exportBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+        exportBtn.disabled = true;
+        
+        // Create a clone of the content to avoid modifying the original
+        const originalContainer = document.querySelector('.container');
+        const clonedContainer = originalContainer.cloneNode(true);
+        
+        // Remove elements that shouldn't be in the PDF
+        const elementsToRemove = clonedContainer.querySelectorAll('.site-header, .site-nav, .search-container, .export-controls, #chatbot-widget');
+        elementsToRemove.forEach(el => el.remove());
+        
+        // Add PDF-specific styles to the cloned element
+        clonedContainer.style.cssText = `
+            background: white !important;
+            color: black !important;
+            font-family: Arial, sans-serif !important;
+            font-size: 12px !important;
+            line-height: 1.4 !important;
+            padding: 20px !important;
+            margin: 0 !important;
+            max-width: none !important;
+            width: 100% !important;
+        `;
+        
+        // Temporarily add the cloned element to the page (hidden)
+        clonedContainer.style.position = 'absolute';
+        clonedContainer.style.left = '-9999px';
+        clonedContainer.style.top = '0';
+        document.body.appendChild(clonedContainer);
+        
+        // Configure PDF options
+        const opt = {
+            margin: [15, 15, 15, 15],
+            filename: 'Khoa_Cao_Resume.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { 
+                scale: 2,
+                useCORS: true,
+                letterRendering: true,
+                allowTaint: true,
+                backgroundColor: '#ffffff'
+            },
+            jsPDF: { 
+                unit: 'mm', 
+                format: 'a4', 
+                orientation: 'portrait' 
+            }
+        };
+        
+        // Generate PDF
+        console.log('Starting PDF generation...');
+        console.log('Cloned container:', clonedContainer);
+        console.log('Container content length:', clonedContainer.innerHTML.length);
+        
+        html2pdf().set(opt).from(clonedContainer).save().then(() => {
+            console.log('PDF generated successfully');
+            // Clean up
+            document.body.removeChild(clonedContainer);
             
-            // Get the main content to export
-            const element = document.querySelector('.container');
+            // Restore button state
+            exportBtn.innerHTML = originalText;
+            exportBtn.disabled = false;
             
-            // Configure PDF options
-            const opt = {
-                margin: [10, 10, 10, 10],
-                filename: 'Khoa_Cao_Resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { 
-                    scale: 2,
-                    useCORS: true,
-                    letterRendering: true
-                },
-                jsPDF: { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait' 
-                }
-            };
+            // Show success message
+            showNotification('PDF exported successfully!', 'success');
+        }).catch((error) => {
+            console.error('PDF generation failed:', error);
+            console.error('Error details:', error.message);
             
-            // Generate PDF
-            html2pdf().set(opt).from(element).save().then(() => {
-                // Restore button state
-                exportBtn.innerHTML = originalText;
-                exportBtn.disabled = false;
-                
-                // Show success message
-                showNotification('PDF exported successfully!', 'success');
-            }).catch((error) => {
-                console.error('PDF generation failed:', error);
-                
-                // Restore button state
-                exportBtn.innerHTML = originalText;
-                exportBtn.disabled = false;
-                
-                // Show error message
-                showNotification('PDF generation failed. Please try again.', 'error');
-            });
-        }
+            // Clean up
+            if (clonedContainer.parentNode) {
+                document.body.removeChild(clonedContainer);
+            }
+            
+            // Restore button state
+            exportBtn.innerHTML = originalText;
+            exportBtn.disabled = false;
+            
+            // Show error message with more details
+            showNotification(`PDF generation failed: ${error.message}`, 'error');
+        });
+    }
         
         function showNotification(message, type) {
             // Create notification element
@@ -1260,13 +1304,51 @@
             }, 3000);
         }
         
-        // Add keyboard shortcut (Ctrl+P for PDF export)
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.key === 'p') {
-                e.preventDefault();
-                exportToPDF();
-            }
+            // Alternative PDF export method using window.print()
+    function exportToPDFAlternative() {
+        // Show loading state
+        const exportBtn = document.getElementById('export-pdf');
+        const originalText = exportBtn.innerHTML;
+        exportBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening Print Dialog...';
+        exportBtn.disabled = true;
+        
+        // Hide elements that shouldn't be printed
+        const elementsToHide = document.querySelectorAll('.site-header, .site-nav, .search-container, .export-controls, #chatbot-widget');
+        elementsToHide.forEach(el => {
+            el.style.display = 'none';
         });
+        
+        // Trigger print dialog
+        window.print();
+        
+        // Restore elements after a delay
+        setTimeout(() => {
+            elementsToHide.forEach(el => {
+                el.style.display = '';
+            });
+            
+            // Restore button state
+            exportBtn.innerHTML = originalText;
+            exportBtn.disabled = false;
+            
+            showNotification('Print dialog opened. Save as PDF from there.', 'success');
+        }, 1000);
+    }
+    
+    // Add keyboard shortcut (Ctrl+P for PDF export)
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && e.key === 'p') {
+            e.preventDefault();
+            exportToPDF();
+        }
+    });
+    
+    // Add right-click context menu option
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.closest('.container')) {
+            // You could add a custom context menu here if needed
+        }
+    });
     </script>
 </body>
 </html>
