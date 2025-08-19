@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating Systems - TechGuy's Learning Hub</title>
+    <meta name="description" content="Comprehensive guide to operating systems concepts">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/">TechGuy's Learning Hub</a>
+                </h1>
+                
+                <div class="header-controls">
+                    <button class="dark-mode-toggle" data-tooltip="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" data-tooltip="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/computer-science/">Computer Science</a></li>
+                    <li><a href="/duolingo/">Duolingo</a></li>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a> → 
+                <a href="/computer-science/">Computer Science</a> → 
+                <span>Operating Systems</span>
+            </nav>
+            
+            <h1>💻 Operating Systems</h1>
+
+            <p>Learn about the fundamental concepts of operating systems, including process management, memory management, file systems, and system architecture.</p>
+
+            <h2>📚 Core Concepts</h2>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">⚙️</div>
+                    <h3><a href="process-management/">Process Management</a></h3>
+                    <p>Managing processes, threads, and CPU scheduling</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Processes</span>
+                        <span class="topic-tag">Threads</span>
+                        <span class="topic-tag">Scheduling</span>
+                        <span class="topic-tag">Synchronization</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🧠</div>
+                    <h3><a href="memory-management/">Memory Management</a></h3>
+                    <p>Managing physical and virtual memory systems</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Virtual Memory</span>
+                        <span class="topic-tag">Paging</span>
+                        <span class="topic-tag">Segmentation</span>
+                        <span class="topic-tag">Page Replacement</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">📁</div>
+                    <h3><a href="file-systems/">File Systems</a></h3>
+                    <p>Organizing and managing data storage</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">File Organization</span>
+                        <span class="topic-tag">Directory Structures</span>
+                        <span class="topic-tag">Access Methods</span>
+                        <span class="topic-tag">File Allocation</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🔗</div>
+                    <h3><a href="inter-process-communication/">Inter-Process Communication</a></h3>
+                    <p>Communication mechanisms between processes</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Pipes</span>
+                        <span class="topic-tag">Sockets</span>
+                        <span class="topic-tag">Shared Memory</span>
+                        <span class="topic-tag">Message Passing</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🛡️</div>
+                    <h3><a href="security/">Security & Protection</a></h3>
+                    <p>Protecting system resources and user data</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Access Control</span>
+                        <span class="topic-tag">Authentication</span>
+                        <span class="topic-tag">Encryption</span>
+                        <span class="topic-tag">Malware Protection</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🌐</div>
+                    <h3><a href="networking/">Networking</a></h3>
+                    <p>Network protocols and communication</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">TCP/IP</span>
+                        <span class="topic-tag">Network Layers</span>
+                        <span class="topic-tag">Routing</span>
+                        <span class="topic-tag">Network Security</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>⚙️ Process Management</h2>
+
+            <div class="concept-section">
+                <h3>Process vs Thread</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Process</th>
+                            <th>Thread</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Definition</strong></td>
+                            <td>Program in execution</td>
+                            <td>Lightweight process within a process</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Memory</strong></td>
+                            <td>Separate memory space</td>
+                            <td>Shared memory space</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Creation</strong></td>
+                            <td>Expensive (fork)</td>
+                            <td>Inexpensive</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Communication</strong></td>
+                            <td>IPC mechanisms needed</td>
+                            <td>Direct communication possible</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>🔄 CPU Scheduling Algorithms</h2>
+
+            <div class="scheduling-section">
+                <div class="algorithm-card">
+                    <h4>First Come First Serve (FCFS)</h4>
+                    <p><strong>Principle:</strong> Processes are executed in order of arrival</p>
+                    <p><strong>Advantages:</strong> Simple, fair</p>
+                    <p><strong>Disadvantages:</strong> Poor performance, convoy effect</p>
+                </div>
+
+                <div class="algorithm-card">
+                    <h4>Shortest Job First (SJF)</h4>
+                    <p><strong>Principle:</strong> Process with shortest burst time executes first</p>
+                    <p><strong>Advantages:</strong> Optimal average waiting time</p>
+                    <p><strong>Disadvantages:</strong> Starvation, hard to predict burst time</p>
+                </div>
+
+                <div class="algorithm-card">
+                    <h4>Round Robin (RR)</h4>
+                    <p><strong>Principle:</strong> Each process gets a fixed time quantum</p>
+                    <p><strong>Advantages:</strong> Fair, no starvation</p>
+                    <p><strong>Disadvantages:</strong> Overhead, depends on time quantum</p>
+                </div>
+            </div>
+
+            <h2>🧠 Memory Management</h2>
+
+            <div class="memory-section">
+                <h3>Virtual Memory Concepts</h3>
+                
+                <div class="concept-grid">
+                    <div class="concept-item">
+                        <h4>Paging</h4>
+                        <p>Memory management scheme that eliminates the need for contiguous allocation of physical memory.</p>
+                        <ul>
+                            <li>Physical memory divided into frames</li>
+                            <li>Logical memory divided into pages</li>
+                            <li>Page table maps logical to physical addresses</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-item">
+                        <h4>Page Replacement</h4>
+                        <p>Algorithm to decide which page to replace when a page fault occurs.</p>
+                        <ul>
+                            <li><strong>FIFO:</strong> First In First Out</li>
+                            <li><strong>LRU:</strong> Least Recently Used</li>
+                            <li><strong>Optimal:</strong> Replace page not used for longest time</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>📈 Progress Tracking</h2>
+
+            <div class="progress-grid">
+                <div class="progress-item">
+                    <h4>Process Management</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="70%"></div>
+                    </div>
+                    <span>70% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Memory Management</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="60%"></div>
+                    </div>
+                    <span>60% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>File Systems</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="50%"></div>
+                    </div>
+                    <span>50% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Security & Protection</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="40%"></div>
+                    </div>
+                    <span>40% Complete</span>
+                </div>
+            </div>
+
+            <hr>
+
+            <p><em>"An operating system is a program that manages the computer hardware. It also provides a basis for application programs and acts as an intermediary between the computer user and the computer hardware."</em> - Abraham Silberschatz</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/computer-science/">CS Notes</a></li>
+                        <li><a href="/duolingo/">Language Learning</a></li>
+                        <li><a href="/about/">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" data-tooltip="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="#" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Progress</h3>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <span>Operating Systems</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="55%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechGuy. All rights reserved.</p>
+                <p>Built with ❤️ using Jekyll and GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" style="
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 350px !important;
+        background: white !important;
+        border-radius: 15px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+        z-index: 9999 !important;
+        font-family: inherit !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid #e0e0e0 !important;
+        display: block !important;
+    ">
+        <div class="chatbot-header" onclick="toggleChatbot()" style="
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        ">
+            <div class="chatbot-avatar" style="
+                width: 40px !important;
+                height: 40px !important;
+                background: rgba(255,255,255,0.2) !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 1.2rem !important;
+            ">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info" style="flex: 1 !important;">
+                <h4 style="margin: 0 0 2px 0 !important; font-size: 1rem !important; font-weight: 600 !important;">AI Learning Assistant</h4>
+                <p style="margin: 0 !important; font-size: 0.8rem !important; opacity: 0.9 !important;">Ask me about operating systems!</p>
+            </div>
+            <div class="chatbot-toggle" style="font-size: 1.2rem !important;">
+                <i class="fas fa-comments" id="chat-icon"></i>
+                <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+            </div>
+        </div>
+        
+        <div class="chatbot-body" id="chatbot-body" style="
+            height: 400px !important;
+            display: none !important;
+            flex-direction: column !important;
+            background: #f8f9fa !important;
+        ">
+            <div class="chat-messages" id="chat-messages" style="
+                flex: 1 !important;
+                padding: 15px !important;
+                overflow-y: auto !important;
+                max-height: 300px !important;
+            ">
+                <div class="message bot-message" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 15px !important;
+                ">
+                    <div class="message-avatar" style="
+                        width: 30px !important;
+                        height: 30px !important;
+                        border-radius: 50% !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        font-size: 0.9rem !important;
+                        flex-shrink: 0 !important;
+                        background: #3498db !important;
+                        color: white !important;
+                    ">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content" style="
+                        background: #f8f9fa !important;
+                        padding: 10px 15px !important;
+                        border-radius: 15px !important;
+                        max-width: 80% !important;
+                    ">
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">💻 Hi! I'm your OS assistant. I can help you with:</p>
+                        <ul style="margin: 10px 0 !important; padding-left: 20px !important;">
+                            <li style="margin: 5px 0 !important;">⚙️ Process Management & Scheduling</li>
+                            <li style="margin: 5px 0 !important;">🧠 Memory Management & Virtual Memory</li>
+                            <li style="margin: 5px 0 !important;">📁 File Systems & Storage</li>
+                            <li style="margin: 5px 0 !important;">🔗 Inter-Process Communication</li>
+                            <li style="margin: 5px 0 !important;">🛡️ Security & Protection</li>
+                        </ul>
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">What would you like to learn about?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container" style="
+                padding: 15px !important;
+                border-top: 1px solid #eee !important;
+            ">
+                <div class="chat-input-wrapper" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 10px !important;
+                ">
+                    <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500" style="
+                        flex: 1 !important;
+                        padding: 10px 15px !important;
+                        border: 1px solid #ddd !important;
+                        border-radius: 20px !important;
+                        outline: none !important;
+                        font-size: 0.9rem !important;
+                    ">
+                    <button id="send-message" onclick="sendMessage()" style="
+                        background: #3498db !important;
+                        color: white !important;
+                        border: none !important;
+                        padding: 10px 15px !important;
+                        border-radius: 50% !important;
+                        cursor: pointer !important;
+                    ">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="quick-actions" style="
+                    display: flex !important;
+                    gap: 8px !important;
+                    flex-wrap: wrap !important;
+                ">
+                    <button class="quick-btn" onclick="askQuestion('Explain CPU scheduling algorithms')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">CPU Scheduling</button>
+                    <button class="quick-btn" onclick="askQuestion('What is virtual memory?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Virtual Memory</button>
+                    <button class="quick-btn" onclick="askQuestion('How do file systems work?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">File Systems</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    
+    <!-- Chatbot JavaScript -->
+    <script>
+        // Chatbot functionality
+        let isChatbotOpen = false;
+
+        function toggleChatbot() {
+            const body = document.getElementById('chatbot-body');
+            const icon = document.getElementById('chat-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (isChatbotOpen) {
+                body.style.display = 'none';
+                icon.style.display = 'inline-block';
+                closeIcon.style.display = 'none';
+                isChatbotOpen = false;
+            } else {
+                body.style.display = 'flex';
+                icon.style.display = 'none';
+                closeIcon.style.display = 'inline-block';
+                isChatbotOpen = true;
+                document.getElementById('chat-input').focus();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                
+                // Simulate AI response
+                setTimeout(() => {
+                    const response = generateAIResponse(message);
+                    addMessage(response, 'bot');
+                }, 1000);
+            }
+        }
+
+        function askQuestion(question) {
+            addMessage(question, 'user');
+            
+            setTimeout(() => {
+                const response = generateAIResponse(question);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.style.cssText = `
+                display: flex !important;
+                gap: 10px !important;
+                margin-bottom: 15px !important;
+            `;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.style.cssText = `
+                width: 30px !important;
+                height: 30px !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 0.9rem !important;
+                flex-shrink: 0 !important;
+                background: ${sender === 'user' ? '#e74c3c' : '#3498db'} !important;
+                color: white !important;
+            `;
+            
+            if (sender === 'user') {
+                avatar.innerHTML = '<i class="fas fa-user"></i>';
+            } else {
+                avatar.innerHTML = '<i class="fas fa-robot"></i>';
+            }
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            content.style.cssText = `
+                background: ${sender === 'user' ? '#3498db' : '#f8f9fa'} !important;
+                color: ${sender === 'user' ? 'white' : 'inherit'} !important;
+                padding: 10px 15px !important;
+                border-radius: 15px !important;
+                max-width: 80% !important;
+                margin-left: ${sender === 'user' ? 'auto' : '0'} !important;
+            `;
+            content.innerHTML = `<p style="margin: 0 !important; line-height: 1.4 !important;">${text}</p>`;
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content);
+            messagesContainer.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function generateAIResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            if (message.includes('cpu scheduling') || message.includes('scheduling')) {
+                return `⚙️ <strong>CPU Scheduling Algorithms</strong><br><br>
+                <strong>Purpose:</strong> Decide which process gets CPU time when multiple processes are ready<br><br>
+                <strong>Key Algorithms:</strong><br><br>
+                <strong>1. First Come First Serve (FCFS):</strong><br>
+                • Processes execute in order of arrival<br>
+                • Simple but can cause convoy effect<br>
+                • Non-preemptive<br><br>
+                <strong>2. Shortest Job First (SJF):</strong><br>
+                • Process with shortest burst time executes first<br>
+                • Optimal average waiting time<br>
+                • Can cause starvation<br><br>
+                <strong>3. Round Robin (RR):</strong><br>
+                • Each process gets fixed time quantum<br>
+                • Fair, no starvation<br>
+                • Performance depends on time quantum size`;
+            }
+            
+            if (message.includes('virtual memory') || message.includes('memory management')) {
+                return `🧠 <strong>Virtual Memory</strong><br><br>
+                <strong>Definition:</strong> Memory management technique that provides an idealized abstraction of the storage resources<br><br>
+                <strong>Key Concepts:</strong><br><br>
+                <strong>1. Paging:</strong><br>
+                • Physical memory divided into frames<br>
+                • Logical memory divided into pages<br>
+                • Page table maps logical to physical addresses<br>
+                • Eliminates external fragmentation<br><br>
+                <strong>2. Page Replacement:</strong><br>
+                • FIFO: First In First Out<br>
+                • LRU: Least Recently Used<br>
+                • Optimal: Replace page not used for longest time<br><br>
+                <strong>Benefits:</strong><br>
+                • Larger address space than physical memory<br>
+                • Memory protection<br>
+                • Efficient memory allocation`;
+            }
+            
+            if (message.includes('file system') || message.includes('file systems')) {
+                return `📁 <strong>File Systems</strong><br><br>
+                <strong>Purpose:</strong> Organize and manage data storage on storage devices<br><br>
+                <strong>Key Components:</strong><br><br>
+                <strong>1. File Organization:</strong><br>
+                • Sequential access<br>
+                • Direct access<br>
+                • Indexed access<br><br>
+                <strong>2. Directory Structure:</strong><br>
+                • Hierarchical organization<br>
+                • Path names<br>
+                • File attributes<br><br>
+                <strong>3. Common File Systems:</strong><br>
+                • FAT: Simple, widely supported<br>
+                • NTFS: Windows, feature-rich<br>
+                • ext4: Linux, performance-focused<br>
+                • APFS: Apple, flash-optimized`;
+            }
+            
+            return `💻 I'm here to help with Operating Systems! I can assist with:<br><br>
+            ⚙️ <strong>Process Management:</strong> Processes, threads, scheduling<br>
+            🧠 <strong>Memory Management:</strong> Virtual memory, paging, segmentation<br>
+            📁 <strong>File Systems:</strong> File organization, allocation methods<br>
+            🔗 <strong>IPC:</strong> Inter-process communication mechanisms<br>
+            🛡️ <strong>Security:</strong> Access control, authentication, protection<br><br>
+            Try asking me about specific topics like "CPU scheduling algorithms", "virtual memory", or "file systems"!`;
+        }
+
+        // Enter key to send message
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('chat-input');
+            if (input) {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

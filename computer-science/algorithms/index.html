@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures & Algorithms - TechGuy's Learning Hub</title>
+    <meta name="description" content="Comprehensive guide to data structures and algorithms">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/">TechGuy's Learning Hub</a>
+                </h1>
+                
+                <div class="header-controls">
+                    <button class="dark-mode-toggle" data-tooltip="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" data-tooltip="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/computer-science/">Computer Science</a></li>
+                    <li><a href="/duolingo/">Duolingo</a></li>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a> → 
+                <a href="/computer-science/">Computer Science</a> → 
+                <span>Data Structures & Algorithms</span>
+            </nav>
+            
+            <h1>🔧 Data Structures & Algorithms</h1>
+
+            <p>Master the fundamental building blocks of computer science. This section covers essential data structures, algorithms, and problem-solving techniques.</p>
+
+            <h2>📚 Learning Path</h2>
+
+            <div class="learning-path">
+                <div class="path-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Basic Data Structures</h3>
+                        <p>Arrays, Linked Lists, Stacks, Queues</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Advanced Data Structures</h3>
+                        <p>Trees, Graphs, Heaps, Hash Tables</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Basic Algorithms</h3>
+                        <p>Sorting, Searching, Recursion</p>
+                    </div>
+                </div>
+                <div class="path-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Advanced Algorithms</h3>
+                        <p>Dynamic Programming, Graph Algorithms</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>🗂️ Data Structures</h2>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">📋</div>
+                    <h3><a href="data-structures/arrays/">Arrays & Strings</a></h3>
+                    <p>Linear data structures for storing and manipulating data</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Arrays</span>
+                        <span class="topic-tag">Strings</span>
+                        <span class="topic-tag">2D Arrays</span>
+                        <span class="topic-tag">Dynamic Arrays</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🔗</div>
+                    <h3><a href="data-structures/linked-lists/">Linked Lists</a></h3>
+                    <p>Dynamic data structure with nodes connected by pointers</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Singly Linked</span>
+                        <span class="topic-tag">Doubly Linked</span>
+                        <span class="topic-tag">Circular</span>
+                        <span class="topic-tag">Operations</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🌳</div>
+                    <h3><a href="data-structures/trees/">Trees</a></h3>
+                    <p>Hierarchical data structure with nodes and edges</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Binary Trees</span>
+                        <span class="topic-tag">BST</span>
+                        <span class="topic-tag">AVL Trees</span>
+                        <span class="topic-tag">Heaps</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🕸️</div>
+                    <h3><a href="data-structures/graphs/">Graphs</a></h3>
+                    <p>Network of nodes connected by edges</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Directed</span>
+                        <span class="topic-tag">Undirected</span>
+                        <span class="topic-tag">Weighted</span>
+                        <span class="topic-tag">Representations</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>🔄 Algorithms</h2>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🔄</div>
+                    <h3><a href="algorithms/sorting/">Sorting Algorithms</a></h3>
+                    <p>Algorithms to arrange elements in a specific order</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Bubble Sort</span>
+                        <span class="topic-tag">Quick Sort</span>
+                        <span class="topic-tag">Merge Sort</span>
+                        <span class="topic-tag">Heap Sort</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🔍</div>
+                    <h3><a href="algorithms/searching/">Searching Algorithms</a></h3>
+                    <p>Algorithms to find elements in data structures</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Linear Search</span>
+                        <span class="topic-tag">Binary Search</span>
+                        <span class="topic-tag">DFS</span>
+                        <span class="topic-tag">BFS</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3><a href="algorithms/dynamic-programming/">Dynamic Programming</a></h3>
+                    <p>Optimization technique for solving complex problems</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Memoization</span>
+                        <span class="topic-tag">Tabulation</span>
+                        <span class="topic-tag">LCS</span>
+                        <span class="topic-tag">Knapsack</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🕸️</div>
+                    <h3><a href="algorithms/graph-algorithms/">Graph Algorithms</a></h3>
+                    <p>Algorithms for processing and analyzing graphs</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Dijkstra</span>
+                        <span class="topic-tag">Bellman-Ford</span>
+                        <span class="topic-tag">Kruskal</span>
+                        <span class="topic-tag">Prim</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>📊 Complexity Analysis</h2>
+
+            <div class="complexity-section">
+                <h3>Time Complexity Cheat Sheet</h3>
+                <table class="complexity-table">
+                    <thead>
+                        <tr>
+                            <th>Complexity</th>
+                            <th>Description</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>O(1)</strong></td>
+                            <td>Constant time</td>
+                            <td>Array access, Hash table lookup</td>
+                        </tr>
+                        <tr>
+                            <td><strong>O(log n)</strong></td>
+                            <td>Logarithmic time</td>
+                            <td>Binary search, Binary tree operations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>O(n)</strong></td>
+                            <td>Linear time</td>
+                            <td>Linear search, Array traversal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>O(n log n)</strong></td>
+                            <td>Linearithmic time</td>
+                            <td>Merge sort, Quick sort, Heap sort</td>
+                        </tr>
+                        <tr>
+                            <td><strong>O(n²)</strong></td>
+                            <td>Quadratic time</td>
+                            <td>Bubble sort, Selection sort, Nested loops</td>
+                        </tr>
+                        <tr>
+                            <td><strong>O(2ⁿ)</strong></td>
+                            <td>Exponential time</td>
+                            <td>Recursive Fibonacci, Subset generation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>📈 Progress Tracking</h2>
+
+            <div class="progress-grid">
+                <div class="progress-item">
+                    <h4>Data Structures</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="80%"></div>
+                    </div>
+                    <span>80% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Sorting Algorithms</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="90%"></div>
+                    </div>
+                    <span>90% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Dynamic Programming</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="60%"></div>
+                    </div>
+                    <span>60% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Graph Algorithms</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="70%"></div>
+                    </div>
+                    <span>70% Complete</span>
+                </div>
+            </div>
+
+            <hr>
+
+            <p><em>"The best way to learn algorithms is to implement them yourself. Don't just read about them - code them!"</em></p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/computer-science/">CS Notes</a></li>
+                        <li><a href="/duolingo/">Language Learning</a></li>
+                        <li><a href="/about/">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" data-tooltip="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="#" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Progress</h3>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <span>Algorithms</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechGuy. All rights reserved.</p>
+                <p>Built with ❤️ using Jekyll and GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" style="
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 350px !important;
+        background: white !important;
+        border-radius: 15px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+        z-index: 9999 !important;
+        font-family: inherit !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid #e0e0e0 !important;
+        display: block !important;
+    ">
+        <div class="chatbot-header" onclick="toggleChatbot()" style="
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        ">
+            <div class="chatbot-avatar" style="
+                width: 40px !important;
+                height: 40px !important;
+                background: rgba(255,255,255,0.2) !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 1.2rem !important;
+            ">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info" style="flex: 1 !important;">
+                <h4 style="margin: 0 0 2px 0 !important; font-size: 1rem !important; font-weight: 600 !important;">AI Learning Assistant</h4>
+                <p style="margin: 0 !important; font-size: 0.8rem !important; opacity: 0.9 !important;">Ask me about algorithms and data structures!</p>
+            </div>
+            <div class="chatbot-toggle" style="font-size: 1.2rem !important;">
+                <i class="fas fa-comments" id="chat-icon"></i>
+                <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+            </div>
+        </div>
+        
+        <div class="chatbot-body" id="chatbot-body" style="
+            height: 400px !important;
+            display: none !important;
+            flex-direction: column !important;
+            background: #f8f9fa !important;
+        ">
+            <div class="chat-messages" id="chat-messages" style="
+                flex: 1 !important;
+                padding: 15px !important;
+                overflow-y: auto !important;
+                max-height: 300px !important;
+            ">
+                <div class="message bot-message" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 15px !important;
+                ">
+                    <div class="message-avatar" style="
+                        width: 30px !important;
+                        height: 30px !important;
+                        border-radius: 50% !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        font-size: 0.9rem !important;
+                        flex-shrink: 0 !important;
+                        background: #3498db !important;
+                        color: white !important;
+                    ">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content" style="
+                        background: #f8f9fa !important;
+                        padding: 10px 15px !important;
+                        border-radius: 15px !important;
+                        max-width: 80% !important;
+                    ">
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">🔧 Hi! I'm your algorithms assistant. I can help you with:</p>
+                        <ul style="margin: 10px 0 !important; padding-left: 20px !important;">
+                            <li style="margin: 5px 0 !important;">📋 Data Structures (Arrays, Trees, Graphs)</li>
+                            <li style="margin: 5px 0 !important;">🔄 Sorting & Searching Algorithms</li>
+                            <li style="margin: 5px 0 !important;">⚡ Dynamic Programming</li>
+                            <li style="margin: 5px 0 !important;">📊 Time/Space Complexity</li>
+                            <li style="margin: 5px 0 !important;">🎯 Problem-solving strategies</li>
+                        </ul>
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">What would you like to learn about?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container" style="
+                padding: 15px !important;
+                border-top: 1px solid #eee !important;
+            ">
+                <div class="chat-input-wrapper" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 10px !important;
+                ">
+                    <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500" style="
+                        flex: 1 !important;
+                        padding: 10px 15px !important;
+                        border: 1px solid #ddd !important;
+                        border-radius: 20px !important;
+                        outline: none !important;
+                        font-size: 0.9rem !important;
+                    ">
+                    <button id="send-message" onclick="sendMessage()" style="
+                        background: #3498db !important;
+                        color: white !important;
+                        border: none !important;
+                        padding: 10px 15px !important;
+                        border-radius: 50% !important;
+                        cursor: pointer !important;
+                    ">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="quick-actions" style="
+                    display: flex !important;
+                    gap: 8px !important;
+                    flex-wrap: wrap !important;
+                ">
+                    <button class="quick-btn" onclick="askQuestion('Explain quick sort algorithm')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Quick Sort</button>
+                    <button class="quick-btn" onclick="askQuestion('What is dynamic programming?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Dynamic Programming</button>
+                    <button class="quick-btn" onclick="askQuestion('How to analyze time complexity?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Complexity Analysis</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    
+    <!-- Chatbot JavaScript -->
+    <script>
+        // Chatbot functionality
+        let isChatbotOpen = false;
+
+        function toggleChatbot() {
+            const body = document.getElementById('chatbot-body');
+            const icon = document.getElementById('chat-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (isChatbotOpen) {
+                body.style.display = 'none';
+                icon.style.display = 'inline-block';
+                closeIcon.style.display = 'none';
+                isChatbotOpen = false;
+            } else {
+                body.style.display = 'flex';
+                icon.style.display = 'none';
+                closeIcon.style.display = 'inline-block';
+                isChatbotOpen = true;
+                document.getElementById('chat-input').focus();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                
+                // Simulate AI response
+                setTimeout(() => {
+                    const response = generateAIResponse(message);
+                    addMessage(response, 'bot');
+                }, 1000);
+            }
+        }
+
+        function askQuestion(question) {
+            addMessage(question, 'user');
+            
+            setTimeout(() => {
+                const response = generateAIResponse(question);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.style.cssText = `
+                display: flex !important;
+                gap: 10px !important;
+                margin-bottom: 15px !important;
+            `;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.style.cssText = `
+                width: 30px !important;
+                height: 30px !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 0.9rem !important;
+                flex-shrink: 0 !important;
+                background: ${sender === 'user' ? '#e74c3c' : '#3498db'} !important;
+                color: white !important;
+            `;
+            
+            if (sender === 'user') {
+                avatar.innerHTML = '<i class="fas fa-user"></i>';
+            } else {
+                avatar.innerHTML = '<i class="fas fa-robot"></i>';
+            }
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            content.style.cssText = `
+                background: ${sender === 'user' ? '#3498db' : '#f8f9fa'} !important;
+                color: ${sender === 'user' ? 'white' : 'inherit'} !important;
+                padding: 10px 15px !important;
+                border-radius: 15px !important;
+                max-width: 80% !important;
+                margin-left: ${sender === 'user' ? 'auto' : '0'} !important;
+            `;
+            content.innerHTML = `<p style="margin: 0 !important; line-height: 1.4 !important;">${text}</p>`;
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content);
+            messagesContainer.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function generateAIResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            if (message.includes('quick sort') || message.includes('quicksort')) {
+                return `🔄 <strong>Quick Sort Algorithm</strong><br><br>
+                <strong>Overview:</strong> Divide-and-conquer algorithm that picks a pivot element and partitions the array<br><br>
+                <strong>Steps:</strong><br>
+                1. Choose a pivot element (usually last element)<br>
+                2. Partition array around pivot (smaller elements left, larger right)<br>
+                3. Recursively sort left and right subarrays<br><br>
+                <strong>Time Complexity:</strong><br>
+                • Average: O(n log n)<br>
+                • Worst: O(n²) - when array is already sorted<br>
+                • Best: O(n log n)<br><br>
+                <strong>Space Complexity:</strong> O(log n) due to recursion stack<br><br>
+                <strong>Advantages:</strong> In-place sorting, cache-friendly<br>
+                <strong>Disadvantages:</strong> Unstable sort, worst case O(n²)`;
+            }
+            
+            if (message.includes('dynamic programming') || message.includes('dp')) {
+                return `⚡ <strong>Dynamic Programming</strong><br><br>
+                <strong>Definition:</strong> Method for solving complex problems by breaking them into simpler subproblems<br><br>
+                <strong>Key Principles:</strong><br>
+                • <strong>Optimal Substructure:</strong> Optimal solution contains optimal subproblems<br>
+                • <strong>Overlapping Subproblems:</strong> Same subproblems solved multiple times<br><br>
+                <strong>Approaches:</strong><br>
+                1. <strong>Memoization (Top-down):</strong> Recursive with caching<br>
+                2. <strong>Tabulation (Bottom-up):</strong> Iterative with table building<br><br>
+                <strong>Common Problems:</strong><br>
+                • Fibonacci sequence<br>
+                • Longest Common Subsequence<br>
+                • Knapsack problem<br>
+                • Coin change<br>
+                • Edit distance<br><br>
+                <strong>Steps to Solve:</strong><br>
+                1. Identify if it's a DP problem<br>
+                2. Define the state<br>
+                3. Write recurrence relation<br>
+                4. Identify base cases<br>
+                5. Choose implementation approach`;
+            }
+            
+            if (message.includes('complexity') || message.includes('time complexity') || message.includes('big o')) {
+                return `📊 <strong>Time Complexity Analysis</strong><br><br>
+                <strong>What is it?</strong> Measure of how algorithm runtime grows with input size<br><br>
+                <strong>Common Complexities:</strong><br>
+                • <strong>O(1):</strong> Constant time - Hash table lookup<br>
+                • <strong>O(log n):</strong> Logarithmic - Binary search<br>
+                • <strong>O(n):</strong> Linear - Array traversal<br>
+                • <strong>O(n log n):</strong> Linearithmic - Merge sort<br>
+                • <strong>O(n²):</strong> Quadratic - Nested loops<br>
+                • <strong>O(2ⁿ):</strong> Exponential - Recursive Fibonacci<br><br>
+                <strong>How to Analyze:</strong><br>
+                1. Count nested loops<br>
+                2. Consider data structure operations<br>
+                3. Account for recursion depth<br>
+                4. Look for dominant terms<br><br>
+                <strong>Tips:</strong><br>
+                • Focus on worst-case scenario<br>
+                • Ignore constants and lower-order terms<br>
+                • Consider both time and space complexity`;
+            }
+            
+            return `🔧 I'm here to help with algorithms and data structures! I can assist with:<br><br>
+            📋 <strong>Data Structures:</strong> Arrays, Trees, Graphs, Hash Tables<br>
+            🔄 <strong>Algorithms:</strong> Sorting, Searching, Dynamic Programming<br>
+            📊 <strong>Complexity Analysis:</strong> Time and space complexity<br>
+            🎯 <strong>Problem Solving:</strong> Strategies and techniques<br><br>
+            Try asking me about specific topics like "quick sort algorithm", "dynamic programming", or "time complexity analysis"!`;
+        }
+
+        // Enter key to send message
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('chat-input');
+            if (input) {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

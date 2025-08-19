@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Systems - TechGuy's Learning Hub</title>
+    <meta name="description" content="Comprehensive guide to database systems and SQL">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/">TechGuy's Learning Hub</a>
+                </h1>
+                
+                <div class="header-controls">
+                    <button class="dark-mode-toggle" data-tooltip="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" data-tooltip="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/computer-science/">Computer Science</a></li>
+                    <li><a href="/duolingo/">Duolingo</a></li>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a> → 
+                <a href="/computer-science/">Computer Science</a> → 
+                <span>Database Systems</span>
+            </nav>
+            
+            <h1>🗄️ Database Systems</h1>
+
+            <p>Master database design, SQL programming, and data management principles. Learn about relational databases, normalization, and modern database technologies.</p>
+
+            <h2>📚 Core Concepts</h2>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🔗</div>
+                    <h3><a href="sql-fundamentals/">SQL Fundamentals</a></h3>
+                    <p>Learn the basics of SQL programming and database queries</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">SELECT</span>
+                        <span class="topic-tag">INSERT</span>
+                        <span class="topic-tag">UPDATE</span>
+                        <span class="topic-tag">DELETE</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🏗️</div>
+                    <h3><a href="database-design/">Database Design</a></h3>
+                    <p>Design efficient and normalized database schemas</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">ER Diagrams</span>
+                        <span class="topic-tag">Normalization</span>
+                        <span class="topic-tag">Relationships</span>
+                        <span class="topic-tag">Constraints</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🔍</div>
+                    <h3><a href="advanced-sql/">Advanced SQL</a></h3>
+                    <p>Master complex queries and database operations</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">JOINs</span>
+                        <span class="topic-tag">Subqueries</span>
+                        <span class="topic-tag">Aggregation</span>
+                        <span class="topic-tag">Window Functions</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3><a href="performance/">Performance & Optimization</a></h3>
+                    <p>Optimize database performance and query execution</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Indexing</span>
+                        <span class="topic-tag">Query Optimization</span>
+                        <span class="topic-tag">Execution Plans</span>
+                        <span class="topic-tag">Caching</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🛡️</div>
+                    <h3><a href="transactions/">Transactions & ACID</a></h3>
+                    <p>Ensure data consistency and reliability</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">ACID Properties</span>
+                        <span class="topic-tag">Concurrency</span>
+                        <span class="topic-tag">Locking</span>
+                        <span class="topic-tag">Isolation Levels</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🌐</div>
+                    <h3><a href="nosql/">NoSQL Databases</a></h3>
+                    <p>Explore non-relational database technologies</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Document Stores</span>
+                        <span class="topic-tag">Key-Value</span>
+                        <span class="topic-tag">Graph Databases</span>
+                        <span class="topic-tag">Column Stores</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>🔗 SQL Fundamentals</h2>
+
+            <div class="sql-section">
+                <h3>Basic SQL Commands</h3>
+                
+                <div class="sql-examples">
+                    <div class="sql-example">
+                        <h4>SELECT Statement</h4>
+                        <pre><code>SELECT column1, column2, ...
+FROM table_name
+WHERE condition
+ORDER BY column1;</code></pre>
+                        <p><strong>Purpose:</strong> Retrieve data from database tables</p>
+                    </div>
+
+                    <div class="sql-example">
+                        <h4>INSERT Statement</h4>
+                        <pre><code>INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);</code></pre>
+                        <p><strong>Purpose:</strong> Add new records to a table</p>
+                    </div>
+
+                    <div class="sql-example">
+                        <h4>UPDATE Statement</h4>
+                        <pre><code>UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;</code></pre>
+                        <p><strong>Purpose:</strong> Modify existing records</p>
+                    </div>
+
+                    <div class="sql-example">
+                        <h4>DELETE Statement</h4>
+                        <pre><code>DELETE FROM table_name
+WHERE condition;</code></pre>
+                        <p><strong>Purpose:</strong> Remove records from a table</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>🏗️ Database Normalization</h2>
+
+            <div class="normalization-section">
+                <h3>Normal Forms</h3>
+                
+                <div class="normal-forms">
+                    <div class="normal-form">
+                        <h4>First Normal Form (1NF)</h4>
+                        <p><strong>Rule:</strong> Each table cell should contain a single value, and each record needs to be unique.</p>
+                        <ul>
+                            <li>No repeating groups</li>
+                            <li>Atomic values only</li>
+                            <li>Primary key defined</li>
+                        </ul>
+                    </div>
+
+                    <div class="normal-form">
+                        <h4>Second Normal Form (2NF)</h4>
+                        <p><strong>Rule:</strong> Must be in 1NF and all non-key attributes must be fully dependent on the primary key.</p>
+                        <ul>
+                            <li>No partial dependencies</li>
+                            <li>All attributes depend on entire primary key</li>
+                        </ul>
+                    </div>
+
+                    <div class="normal-form">
+                        <h4>Third Normal Form (3NF)</h4>
+                        <p><strong>Rule:</strong> Must be in 2NF and no transitive dependencies exist.</p>
+                        <ul>
+                            <li>No transitive dependencies</li>
+                            <li>Non-key attributes don't depend on other non-key attributes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>🔍 JOIN Operations</h2>
+
+            <div class="join-section">
+                <h3>Types of JOINs</h3>
+                
+                <div class="join-types">
+                    <div class="join-type">
+                        <h4>INNER JOIN</h4>
+                        <pre><code>SELECT A.column1, B.column2
+FROM table1 A
+INNER JOIN table2 B ON A.id = B.id;</code></pre>
+                        <p>Returns only matching records from both tables</p>
+                    </div>
+
+                    <div class="join-type">
+                        <h4>LEFT JOIN</h4>
+                        <pre><code>SELECT A.column1, B.column2
+FROM table1 A
+LEFT JOIN table2 B ON A.id = B.id;</code></pre>
+                        <p>Returns all records from left table and matching from right</p>
+                    </div>
+
+                    <div class="join-type">
+                        <h4>RIGHT JOIN</h4>
+                        <pre><code>SELECT A.column1, B.column2
+FROM table1 A
+RIGHT JOIN table2 B ON A.id = B.id;</code></pre>
+                        <p>Returns all records from right table and matching from left</p>
+                    </div>
+
+                    <div class="join-type">
+                        <h4>FULL OUTER JOIN</h4>
+                        <pre><code>SELECT A.column1, B.column2
+FROM table1 A
+FULL OUTER JOIN table2 B ON A.id = B.id;</code></pre>
+                        <p>Returns all records from both tables</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>📈 Progress Tracking</h2>
+
+            <div class="progress-grid">
+                <div class="progress-item">
+                    <h4>SQL Fundamentals</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="85%"></div>
+                    </div>
+                    <span>85% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Database Design</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="70%"></div>
+                    </div>
+                    <span>70% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Advanced SQL</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="60%"></div>
+                    </div>
+                    <span>60% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Performance Optimization</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="45%"></div>
+                    </div>
+                    <span>45% Complete</span>
+                </div>
+            </div>
+
+            <h2>🎯 Practice Projects</h2>
+
+            <div class="projects-section">
+                <div class="project-card">
+                    <h4>E-commerce Database</h4>
+                    <p>Design a complete e-commerce database with products, customers, orders, and inventory management.</p>
+                    <ul>
+                        <li>Product catalog with categories</li>
+                        <li>Customer management system</li>
+                        <li>Order processing workflow</li>
+                        <li>Inventory tracking</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h4>Library Management System</h4>
+                    <p>Create a database for managing books, members, loans, and library operations.</p>
+                    <ul>
+                        <li>Book catalog and categorization</li>
+                        <li>Member registration and management</li>
+                        <li>Loan tracking and returns</li>
+                        <li>Fine calculation system</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h4>Social Media Database</h4>
+                    <p>Design a database for a social media platform with users, posts, comments, and relationships.</p>
+                    <ul>
+                        <li>User profiles and authentication</li>
+                        <li>Post and comment system</li>
+                        <li>Friend/follower relationships</li>
+                        <li>Activity feed generation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <p><em>"Data is the new oil. It's valuable, but if unrefined it cannot really be used."</em> - Clive Humby</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/computer-science/">CS Notes</a></li>
+                        <li><a href="/duolingo/">Language Learning</a></li>
+                        <li><a href="/about/">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" data-tooltip="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="#" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Progress</h3>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <span>Database Systems</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechGuy. All rights reserved.</p>
+                <p>Built with ❤️ using Jekyll and GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" style="
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 350px !important;
+        background: white !important;
+        border-radius: 15px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+        z-index: 9999 !important;
+        font-family: inherit !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid #e0e0e0 !important;
+        display: block !important;
+    ">
+        <div class="chatbot-header" onclick="toggleChatbot()" style="
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        ">
+            <div class="chatbot-avatar" style="
+                width: 40px !important;
+                height: 40px !important;
+                background: rgba(255,255,255,0.2) !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 1.2rem !important;
+            ">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info" style="flex: 1 !important;">
+                <h4 style="margin: 0 0 2px 0 !important; font-size: 1rem !important; font-weight: 600 !important;">AI Learning Assistant</h4>
+                <p style="margin: 0 !important; font-size: 0.8rem !important; opacity: 0.9 !important;">Ask me about databases and SQL!</p>
+            </div>
+            <div class="chatbot-toggle" style="font-size: 1.2rem !important;">
+                <i class="fas fa-comments" id="chat-icon"></i>
+                <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+            </div>
+        </div>
+        
+        <div class="chatbot-body" id="chatbot-body" style="
+            height: 400px !important;
+            display: none !important;
+            flex-direction: column !important;
+            background: #f8f9fa !important;
+        ">
+            <div class="chat-messages" id="chat-messages" style="
+                flex: 1 !important;
+                padding: 15px !important;
+                overflow-y: auto !important;
+                max-height: 300px !important;
+            ">
+                <div class="message bot-message" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 15px !important;
+                ">
+                    <div class="message-avatar" style="
+                        width: 30px !important;
+                        height: 30px !important;
+                        border-radius: 50% !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        font-size: 0.9rem !important;
+                        flex-shrink: 0 !important;
+                        background: #3498db !important;
+                        color: white !important;
+                    ">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content" style="
+                        background: #f8f9fa !important;
+                        padding: 10px 15px !important;
+                        border-radius: 15px !important;
+                        max-width: 80% !important;
+                    ">
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">🗄️ Hi! I'm your database assistant. I can help you with:</p>
+                        <ul style="margin: 10px 0 !important; padding-left: 20px !important;">
+                            <li style="margin: 5px 0 !important;">🔗 SQL Fundamentals & Queries</li>
+                            <li style="margin: 5px 0 !important;">🏗️ Database Design & Normalization</li>
+                            <li style="margin: 5px 0 !important;">🔍 Advanced SQL & JOINs</li>
+                            <li style="margin: 5px 0 !important;">⚡ Performance Optimization</li>
+                            <li style="margin: 5px 0 !important;">🛡️ Transactions & ACID Properties</li>
+                        </ul>
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">What would you like to learn about?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container" style="
+                padding: 15px !important;
+                border-top: 1px solid #eee !important;
+            ">
+                <div class="chat-input-wrapper" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 10px !important;
+                ">
+                    <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500" style="
+                        flex: 1 !important;
+                        padding: 10px 15px !important;
+                        border: 1px solid #ddd !important;
+                        border-radius: 20px !important;
+                        outline: none !important;
+                        font-size: 0.9rem !important;
+                    ">
+                    <button id="send-message" onclick="sendMessage()" style="
+                        background: #3498db !important;
+                        color: white !important;
+                        border: none !important;
+                        padding: 10px 15px !important;
+                        border-radius: 50% !important;
+                        cursor: pointer !important;
+                    ">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="quick-actions" style="
+                    display: flex !important;
+                    gap: 8px !important;
+                    flex-wrap: wrap !important;
+                ">
+                    <button class="quick-btn" onclick="askQuestion('Explain SQL JOINs')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">SQL JOINs</button>
+                    <button class="quick-btn" onclick="askQuestion('What is database normalization?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Normalization</button>
+                    <button class="quick-btn" onclick="askQuestion('How to optimize SQL queries?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Query Optimization</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    
+    <!-- Chatbot JavaScript -->
+    <script>
+        // Chatbot functionality
+        let isChatbotOpen = false;
+
+        function toggleChatbot() {
+            const body = document.getElementById('chatbot-body');
+            const icon = document.getElementById('chat-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (isChatbotOpen) {
+                body.style.display = 'none';
+                icon.style.display = 'inline-block';
+                closeIcon.style.display = 'none';
+                isChatbotOpen = false;
+            } else {
+                body.style.display = 'flex';
+                icon.style.display = 'none';
+                closeIcon.style.display = 'inline-block';
+                isChatbotOpen = true;
+                document.getElementById('chat-input').focus();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                
+                // Simulate AI response
+                setTimeout(() => {
+                    const response = generateAIResponse(message);
+                    addMessage(response, 'bot');
+                }, 1000);
+            }
+        }
+
+        function askQuestion(question) {
+            addMessage(question, 'user');
+            
+            setTimeout(() => {
+                const response = generateAIResponse(question);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.style.cssText = `
+                display: flex !important;
+                gap: 10px !important;
+                margin-bottom: 15px !important;
+            `;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.style.cssText = `
+                width: 30px !important;
+                height: 30px !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 0.9rem !important;
+                flex-shrink: 0 !important;
+                background: ${sender === 'user' ? '#e74c3c' : '#3498db'} !important;
+                color: white !important;
+            `;
+            
+            if (sender === 'user') {
+                avatar.innerHTML = '<i class="fas fa-user"></i>';
+            } else {
+                avatar.innerHTML = '<i class="fas fa-robot"></i>';
+            }
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            content.style.cssText = `
+                background: ${sender === 'user' ? '#3498db' : '#f8f9fa'} !important;
+                color: ${sender === 'user' ? 'white' : 'inherit'} !important;
+                padding: 10px 15px !important;
+                border-radius: 15px !important;
+                max-width: 80% !important;
+                margin-left: ${sender === 'user' ? 'auto' : '0'} !important;
+            `;
+            content.innerHTML = `<p style="margin: 0 !important; line-height: 1.4 !important;">${text}</p>`;
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content);
+            messagesContainer.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function generateAIResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            if (message.includes('join') || message.includes('joins')) {
+                return `🔍 <strong>SQL JOINs</strong><br><br>
+                <strong>Purpose:</strong> Combine rows from two or more tables based on related columns<br><br>
+                <strong>Types of JOINs:</strong><br><br>
+                <strong>1. INNER JOIN:</strong><br>
+                • Returns only matching records from both tables<br>
+                • Most common type of JOIN<br>
+                • Syntax: <code>SELECT ... FROM table1 INNER JOIN table2 ON condition</code><br><br>
+                <strong>2. LEFT JOIN:</strong><br>
+                • Returns all records from left table and matching from right<br>
+                • NULL values for non-matching right table records<br>
+                • Syntax: <code>SELECT ... FROM table1 LEFT JOIN table2 ON condition</code><br><br>
+                <strong>3. RIGHT JOIN:</strong><br>
+                • Returns all records from right table and matching from left<br>
+                • NULL values for non-matching left table records<br><br>
+                <strong>4. FULL OUTER JOIN:</strong><br>
+                • Returns all records from both tables<br>
+                • NULL values for non-matching records<br><br>
+                <strong>Example:</strong><br>
+                <code>SELECT customers.name, orders.order_date<br>
+                FROM customers<br>
+                INNER JOIN orders ON customers.id = orders.customer_id;</code>`;
+            }
+            
+            if (message.includes('normalization') || message.includes('normal form')) {
+                return `🏗️ <strong>Database Normalization</strong><br><br>
+                <strong>Purpose:</strong> Organize database to reduce redundancy and improve data integrity<br><br>
+                <strong>Normal Forms:</strong><br><br>
+                <strong>1NF (First Normal Form):</strong><br>
+                • Each table cell contains a single value<br>
+                • No repeating groups<br>
+                • Primary key defined<br><br>
+                <strong>2NF (Second Normal Form):</strong><br>
+                • Must be in 1NF<br>
+                • All non-key attributes fully depend on primary key<br>
+                • No partial dependencies<br><br>
+                <strong>3NF (Third Normal Form):</strong><br>
+                • Must be in 2NF<br>
+                • No transitive dependencies<br>
+                • Non-key attributes don't depend on other non-key attributes<br><br>
+                <strong>Benefits:</strong><br>
+                • Eliminates data redundancy<br>
+                • Prevents update anomalies<br>
+                • Ensures data consistency<br>
+                • Improves database performance`;
+            }
+            
+            if (message.includes('optimization') || message.includes('performance') || message.includes('optimize')) {
+                return `⚡ <strong>SQL Query Optimization</strong><br><br>
+                <strong>Key Strategies:</strong><br><br>
+                <strong>1. Indexing:</strong><br>
+                • Create indexes on frequently queried columns<br>
+                • Use composite indexes for multiple column queries<br>
+                • Avoid over-indexing (maintenance overhead)<br><br>
+                <strong>2. Query Structure:</strong><br>
+                • Use specific columns instead of SELECT *<br>
+                • Limit result sets with WHERE clauses<br>
+                • Use appropriate JOIN types<br>
+                • Avoid subqueries when possible<br><br>
+                <strong>3. Execution Plans:</strong><br>
+                • Analyze query execution plans<br>
+                • Look for table scans vs index seeks<br>
+                • Identify bottlenecks<br><br>
+                <strong>4. Database Design:</strong><br>
+                • Proper normalization<br>
+                • Appropriate data types<br>
+                • Efficient table relationships<br><br>
+                <strong>5. Caching:</strong><br>
+                • Use query result caching<br>
+                • Implement application-level caching<br>
+                • Consider read replicas for heavy read workloads`;
+            }
+            
+            return `🗄️ I'm here to help with Database Systems! I can assist with:<br><br>
+            🔗 <strong>SQL Fundamentals:</strong> SELECT, INSERT, UPDATE, DELETE<br>
+            🏗️ <strong>Database Design:</strong> Normalization, ER diagrams, relationships<br>
+            🔍 <strong>Advanced SQL:</strong> JOINs, subqueries, aggregation<br>
+            ⚡ <strong>Performance:</strong> Indexing, query optimization, execution plans<br>
+            🛡️ <strong>Transactions:</strong> ACID properties, concurrency, locking<br><br>
+            Try asking me about specific topics like "SQL JOINs", "database normalization", or "query optimization"!`;
+        }
+
+        // Enter key to send message
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('chat-input');
+            if (input) {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
