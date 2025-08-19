@@ -336,10 +336,372 @@
         </div>
     </footer>
 
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" style="
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 350px !important;
+        background: white !important;
+        border-radius: 15px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+        z-index: 9999 !important;
+        font-family: inherit !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid #e0e0e0 !important;
+        display: block !important;
+    ">
+        <div class="chatbot-header" onclick="toggleChatbot()" style="
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        ">
+            <div class="chatbot-avatar" style="
+                width: 40px !important;
+                height: 40px !important;
+                background: rgba(255,255,255,0.2) !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 1.2rem !important;
+            ">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info" style="flex: 1 !important;">
+                <h4 style="margin: 0 0 2px 0 !important; font-size: 1rem !important; font-weight: 600 !important;">AI Learning Assistant</h4>
+                <p style="margin: 0 !important; font-size: 0.8rem !important; opacity: 0.9 !important;">Ask me about LeetCode problems and algorithms!</p>
+            </div>
+            <div class="chatbot-toggle" style="font-size: 1.2rem !important;">
+                <i class="fas fa-comments" id="chat-icon"></i>
+                <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+            </div>
+        </div>
+        
+        <div class="chatbot-body" id="chatbot-body" style="
+            height: 400px !important;
+            display: none !important;
+            flex-direction: column !important;
+            background: #f8f9fa !important;
+        ">
+            <div class="chat-messages" id="chat-messages" style="
+                flex: 1 !important;
+                padding: 15px !important;
+                overflow-y: auto !important;
+                max-height: 300px !important;
+            ">
+                <div class="message bot-message" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 15px !important;
+                ">
+                    <div class="message-avatar" style="
+                        width: 30px !important;
+                        height: 30px !important;
+                        border-radius: 50% !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        font-size: 0.9rem !important;
+                        flex-shrink: 0 !important;
+                        background: #3498db !important;
+                        color: white !important;
+                    ">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content" style="
+                        background: #f8f9fa !important;
+                        padding: 10px 15px !important;
+                        border-radius: 15px !important;
+                        max-width: 80% !important;
+                    ">
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">⚡ Hi! I'm your LeetCode practice assistant. I can help you with:</p>
+                        <ul style="margin: 10px 0 !important; padding-left: 20px !important;">
+                            <li style="margin: 5px 0 !important;">🔧 Problem-solving strategies</li>
+                            <li style="margin: 5px 0 !important;">📊 Time/space complexity analysis</li>
+                            <li style="margin: 5px 0 !important;">💡 Algorithm optimization tips</li>
+                            <li style="margin: 5px 0 !important;">🎯 Common problem patterns</li>
+                            <li style="margin: 5px 0 !important;">📚 Study resources and tips</li>
+                        </ul>
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">What would you like to know about?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container" style="
+                padding: 15px !important;
+                border-top: 1px solid #eee !important;
+            ">
+                <div class="chat-input-wrapper" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 10px !important;
+                ">
+                    <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500" style="
+                        flex: 1 !important;
+                        padding: 10px 15px !important;
+                        border: 1px solid #ddd !important;
+                        border-radius: 20px !important;
+                        outline: none !important;
+                        font-size: 0.9rem !important;
+                    ">
+                    <button id="send-message" onclick="sendMessage()" style="
+                        background: #3498db !important;
+                        color: white !important;
+                        border: none !important;
+                        padding: 10px 15px !important;
+                        border-radius: 50% !important;
+                        cursor: pointer !important;
+                    ">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="quick-actions" style="
+                    display: flex !important;
+                    gap: 8px !important;
+                    flex-wrap: wrap !important;
+                ">
+                    <button class="quick-btn" onclick="askQuestion('How to approach Two Sum problem?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Two Sum Strategy</button>
+                    <button class="quick-btn" onclick="askQuestion('Best practices for dynamic programming')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">DP Best Practices</button>
+                    <button class="quick-btn" onclick="askQuestion('How to improve problem-solving speed?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Speed Tips</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="/assets/js/main.js"></script>
     
+    <!-- Chatbot JavaScript -->
     <script>
+        // Chatbot functionality
+        let isChatbotOpen = false;
+
+        function toggleChatbot() {
+            const body = document.getElementById('chatbot-body');
+            const icon = document.getElementById('chat-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (isChatbotOpen) {
+                body.style.display = 'none';
+                icon.style.display = 'inline-block';
+                closeIcon.style.display = 'none';
+                isChatbotOpen = false;
+            } else {
+                body.style.display = 'flex';
+                icon.style.display = 'none';
+                closeIcon.style.display = 'inline-block';
+                isChatbotOpen = true;
+                document.getElementById('chat-input').focus();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                
+                // Simulate AI response
+                setTimeout(() => {
+                    const response = generateAIResponse(message);
+                    addMessage(response, 'bot');
+                }, 1000);
+            }
+        }
+
+        function askQuestion(question) {
+            addMessage(question, 'user');
+            
+            setTimeout(() => {
+                const response = generateAIResponse(question);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.style.cssText = `
+                display: flex !important;
+                gap: 10px !important;
+                margin-bottom: 15px !important;
+            `;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.style.cssText = `
+                width: 30px !important;
+                height: 30px !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 0.9rem !important;
+                flex-shrink: 0 !important;
+                background: ${sender === 'user' ? '#e74c3c' : '#3498db'} !important;
+                color: white !important;
+            `;
+            
+            if (sender === 'user') {
+                avatar.innerHTML = '<i class="fas fa-user"></i>';
+            } else {
+                avatar.innerHTML = '<i class="fas fa-robot"></i>';
+            }
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            content.style.cssText = `
+                background: ${sender === 'user' ? '#3498db' : '#f8f9fa'} !important;
+                color: ${sender === 'user' ? 'white' : 'inherit'} !important;
+                padding: 10px 15px !important;
+                border-radius: 15px !important;
+                max-width: 80% !important;
+                margin-left: ${sender === 'user' ? 'auto' : '0'} !important;
+            `;
+            content.innerHTML = `<p style="margin: 0 !important; line-height: 1.4 !important;">${text}</p>`;
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content);
+            messagesContainer.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function generateAIResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            if (message.includes('two sum') || message.includes('sum')) {
+                return `🔧 <strong>Two Sum Problem Strategy</strong><br><br>
+                <strong>Problem:</strong> Find two numbers in an array that add up to a target value<br><br>
+                <strong>Approach 1 - Hash Table (Recommended):</strong><br>
+                • Time Complexity: O(n)<br>
+                • Space Complexity: O(n)<br>
+                • Use a hash table to store complements<br>
+                • For each number, check if (target - num) exists in hash table<br><br>
+                <strong>Approach 2 - Two Pointers:</strong><br>
+                • Time Complexity: O(n log n) due to sorting<br>
+                • Space Complexity: O(1)<br>
+                • Sort the array first<br>
+                • Use two pointers from start and end<br><br>
+                <strong>Key Insight:</strong> Instead of checking all pairs, use hash table to find complements efficiently!`;
+            }
+            
+            if (message.includes('dynamic programming') || message.includes('dp')) {
+                return `⚡ <strong>Dynamic Programming Best Practices</strong><br><br>
+                <strong>1. Identify DP Problems:</strong><br>
+                • Problems with overlapping subproblems<br>
+                • Problems with optimal substructure<br>
+                • Optimization problems<br><br>
+                <strong>2. Steps to Solve:</strong><br>
+                • Define the state (what information do we need?)<br>
+                • Write the recurrence relation<br>
+                • Identify base cases<br>
+                • Choose implementation (memoization vs tabulation)<br><br>
+                <strong>3. Common Patterns:</strong><br>
+                • 1D DP: Fibonacci, climbing stairs<br>
+                • 2D DP: LCS, edit distance<br>
+                • Knapsack variations<br><br>
+                <strong>4. Optimization Tips:</strong><br>
+                • Start with recursive solution<br>
+                • Add memoization to avoid recomputation<br>
+                • Convert to bottom-up if needed<br>
+                • Consider space optimization`;
+            }
+            
+            if (message.includes('speed') || message.includes('fast') || message.includes('improve')) {
+                return `🚀 <strong>Improving Problem-Solving Speed</strong><br><br>
+                <strong>1. Practice Regularly:</strong><br>
+                • Solve 1-2 problems daily<br>
+                • Focus on quality over quantity<br>
+                • Review and understand solutions<br><br>
+                <strong>2. Learn Patterns:</strong><br>
+                • Two pointers technique<br>
+                • Sliding window<br>
+                • Binary search variations<br>
+                • DFS/BFS patterns<br><br>
+                <strong>3. Time Management:</strong><br>
+                • Read problem carefully (2-3 minutes)<br>
+                • Plan approach (5-10 minutes)<br>
+                • Implement solution (15-20 minutes)<br>
+                • Test and debug (5-10 minutes)<br><br>
+                <strong>4. Common Mistakes to Avoid:</strong><br>
+                • Not considering edge cases<br>
+                • Overcomplicating simple problems<br>
+                • Not testing with examples<br>
+                • Ignoring time/space constraints`;
+            }
+            
+            if (message.includes('complexity') || message.includes('big o')) {
+                return `📊 <strong>Time/Space Complexity Analysis</strong><br><br>
+                <strong>Common Time Complexities:</strong><br>
+                • O(1): Constant time (hash table lookup)<br>
+                • O(log n): Logarithmic (binary search)<br>
+                • O(n): Linear (single loop)<br>
+                • O(n log n): Linearithmic (sorting)<br>
+                • O(n²): Quadratic (nested loops)<br>
+                • O(2ⁿ): Exponential (recursive Fibonacci)<br><br>
+                <strong>Space Complexity Tips:</strong><br>
+                • Consider recursion stack space<br>
+                • Account for auxiliary data structures<br>
+                • Look for in-place algorithms<br><br>
+                <strong>Quick Analysis:</strong><br>
+                • Count nested loops<br>
+                • Consider data structure operations<br>
+                • Account for recursion depth`;
+            }
+            
+            return `⚡ I'm here to help with your LeetCode practice! I can assist with:<br><br>
+            🔧 <strong>Problem Strategies:</strong> Two Sum, Dynamic Programming, etc.<br>
+            📊 <strong>Complexity Analysis:</strong> Time and space complexity<br>
+            💡 <strong>Optimization Tips:</strong> How to improve your solutions<br>
+            🎯 <strong>Common Patterns:</strong> Two pointers, sliding window, etc.<br>
+            📚 <strong>Study Tips:</strong> How to practice effectively<br><br>
+            Try asking me about specific problems like "Two Sum strategy" or "dynamic programming best practices"!`;
+        }
+
+        // Enter key to send message
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('chat-input');
+            if (input) {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
+
         function showCategory(category) {
             // Hide all categories
             const categories = document.querySelectorAll('.problem-category');

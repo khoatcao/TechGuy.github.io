@@ -325,7 +325,376 @@
         </div>
     </footer>
 
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" style="
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 350px !important;
+        background: white !important;
+        border-radius: 15px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+        z-index: 9999 !important;
+        font-family: inherit !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid #e0e0e0 !important;
+        display: block !important;
+    ">
+        <div class="chatbot-header" onclick="toggleChatbot()" style="
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        ">
+            <div class="chatbot-avatar" style="
+                width: 40px !important;
+                height: 40px !important;
+                background: rgba(255,255,255,0.2) !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 1.2rem !important;
+            ">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info" style="flex: 1 !important;">
+                <h4 style="margin: 0 0 2px 0 !important; font-size: 1rem !important; font-weight: 600 !important;">AI Learning Assistant</h4>
+                <p style="margin: 0 !important; font-size: 0.8rem !important; opacity: 0.9 !important;">Ask me about algorithms, CS concepts, or anything!</p>
+            </div>
+            <div class="chatbot-toggle" style="font-size: 1.2rem !important;">
+                <i class="fas fa-comments" id="chat-icon"></i>
+                <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+            </div>
+        </div>
+        
+        <div class="chatbot-body" id="chatbot-body" style="
+            height: 400px !important;
+            display: none !important;
+            flex-direction: column !important;
+            background: #f8f9fa !important;
+        ">
+            <div class="chat-messages" id="chat-messages" style="
+                flex: 1 !important;
+                padding: 15px !important;
+                overflow-y: auto !important;
+                max-height: 300px !important;
+            ">
+                <div class="message bot-message" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 15px !important;
+                ">
+                    <div class="message-avatar" style="
+                        width: 30px !important;
+                        height: 30px !important;
+                        border-radius: 50% !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        font-size: 0.9rem !important;
+                        flex-shrink: 0 !important;
+                        background: #3498db !important;
+                        color: white !important;
+                    ">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content" style="
+                        background: #f8f9fa !important;
+                        padding: 10px 15px !important;
+                        border-radius: 15px !important;
+                        max-width: 80% !important;
+                    ">
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">👋 Hi! I'm your AI learning assistant. I can help you with:</p>
+                        <ul style="margin: 10px 0 !important; padding-left: 20px !important;">
+                            <li style="margin: 5px 0 !important;">🔧 Data Structures & Algorithms</li>
+                            <li style="margin: 5px 0 !important;">💻 Operating Systems concepts</li>
+                            <li style="margin: 5px 0 !important;">🗄️ Database Systems</li>
+                            <li style="margin: 5px 0 !important;">🌐 Computer Networks</li>
+                            <li style="margin: 5px 0 !important;">🏗️ Computer Architecture</li>
+                            <li style="margin: 5px 0 !important;">📊 Probability & Statistics</li>
+                            <li style="margin: 5px 0 !important;">⚡ LeetCode problem solving</li>
+                        </ul>
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">What would you like to learn about today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container" style="
+                padding: 15px !important;
+                border-top: 1px solid #eee !important;
+            ">
+                <div class="chat-input-wrapper" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 10px !important;
+                ">
+                    <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500" style="
+                        flex: 1 !important;
+                        padding: 10px 15px !important;
+                        border: 1px solid #ddd !important;
+                        border-radius: 20px !important;
+                        outline: none !important;
+                        font-size: 0.9rem !important;
+                    ">
+                    <button id="send-message" onclick="sendMessage()" style="
+                        background: #3498db !important;
+                        color: white !important;
+                        border: none !important;
+                        padding: 10px 15px !important;
+                        border-radius: 50% !important;
+                        cursor: pointer !important;
+                    ">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="quick-actions" style="
+                    display: flex !important;
+                    gap: 8px !important;
+                    flex-wrap: wrap !important;
+                ">
+                    <button class="quick-btn" onclick="askQuestion('Tell me about sorting algorithms')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Sorting Algorithms</button>
+                    <button class="quick-btn" onclick="askQuestion('Explain dynamic programming')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Dynamic Programming</button>
+                    <button class="quick-btn" onclick="askQuestion('What are the best study strategies for CS?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Study Tips</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="../assets/js/main.js"></script>
+    
+    <!-- Chatbot JavaScript -->
+    <script>
+        // Chatbot functionality
+        let isChatbotOpen = false;
+
+        function toggleChatbot() {
+            const body = document.getElementById('chatbot-body');
+            const icon = document.getElementById('chat-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (isChatbotOpen) {
+                body.style.display = 'none';
+                icon.style.display = 'inline-block';
+                closeIcon.style.display = 'none';
+                isChatbotOpen = false;
+            } else {
+                body.style.display = 'flex';
+                icon.style.display = 'none';
+                closeIcon.style.display = 'inline-block';
+                isChatbotOpen = true;
+                document.getElementById('chat-input').focus();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                
+                // Simulate AI response
+                setTimeout(() => {
+                    const response = generateAIResponse(message);
+                    addMessage(response, 'bot');
+                }, 1000);
+            }
+        }
+
+        function askQuestion(question) {
+            addMessage(question, 'user');
+            
+            setTimeout(() => {
+                const response = generateAIResponse(question);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.style.cssText = `
+                display: flex !important;
+                gap: 10px !important;
+                margin-bottom: 15px !important;
+            `;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.style.cssText = `
+                width: 30px !important;
+                height: 30px !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 0.9rem !important;
+                flex-shrink: 0 !important;
+                background: ${sender === 'user' ? '#e74c3c' : '#3498db'} !important;
+                color: white !important;
+            `;
+            
+            if (sender === 'user') {
+                avatar.innerHTML = '<i class="fas fa-user"></i>';
+            } else {
+                avatar.innerHTML = '<i class="fas fa-robot"></i>';
+            }
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            content.style.cssText = `
+                background: ${sender === 'user' ? '#3498db' : '#f8f9fa'} !important;
+                color: ${sender === 'user' ? 'white' : 'inherit'} !important;
+                padding: 10px 15px !important;
+                border-radius: 15px !important;
+                max-width: 80% !important;
+                margin-left: ${sender === 'user' ? 'auto' : '0'} !important;
+            `;
+            content.innerHTML = `<p style="margin: 0 !important; line-height: 1.4 !important;">${text}</p>`;
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content);
+            messagesContainer.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function generateAIResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            if (message.includes('sorting') || message.includes('algorithm')) {
+                return `🔄 <strong>Sorting Algorithms</strong><br><br>
+                Here are the main sorting algorithms you should know:<br>
+                • <strong>Bubble Sort</strong> - O(n²) time complexity, simple but inefficient<br>
+                • <strong>Quick Sort</strong> - O(n log n) average case, very efficient<br>
+                • <strong>Merge Sort</strong> - O(n log n) guaranteed, stable sort<br>
+                • <strong>Heap Sort</strong> - O(n log n), in-place sorting<br><br>
+                Check out our <a href="/computer-science/algorithms/sorting/" style="color: #3498db;">detailed sorting guide</a> for implementations and examples!`;
+            }
+            
+            if (message.includes('dynamic programming') || message.includes('dp')) {
+                return `⚡ <strong>Dynamic Programming</strong><br><br>
+                Dynamic Programming is a method for solving complex problems by breaking them down into simpler subproblems:<br><br>
+                <strong>Key Concepts:</strong><br>
+                • <strong>Memoization:</strong> Top-down approach with caching<br>
+                • <strong>Tabulation:</strong> Bottom-up approach with table building<br>
+                • <strong>Optimal Substructure:</strong> Optimal solution contains optimal subproblems<br><br>
+                <strong>Common Problems:</strong><br>
+                • Fibonacci sequence<br>
+                • Longest Common Subsequence<br>
+                • Knapsack problem<br>
+                • Coin change<br><br>
+                Check out our <a href="/computer-science/algorithms/dynamic-programming/" style="color: #3498db;">DP section</a> for detailed examples!`;
+            }
+            
+            if (message.includes('study') || message.includes('learning') || message.includes('strategy')) {
+                return `🎯 <strong>Study Strategies for Computer Science</strong><br><br>
+                Effective learning techniques:<br><br>
+                <strong>For Algorithms:</strong><br>
+                • Practice coding daily<br>
+                • Solve problems on LeetCode/HackerRank<br>
+                • Implement algorithms from scratch<br>
+                • Understand time/space complexity<br><br>
+                <strong>For Theory:</strong><br>
+                • Read textbooks and take notes<br>
+                • Create mind maps for concepts<br>
+                • Teach others to reinforce learning<br>
+                • Apply concepts to real-world problems<br><br>
+                <strong>General Tips:</strong><br>
+                • Set specific goals<br>
+                • Track your progress<br>
+                • Stay consistent<br>
+                • Join study groups or forums`;
+            }
+            
+            if (message.includes('operating system') || message.includes('os')) {
+                return `💻 <strong>Operating Systems</strong><br><br>
+                Key concepts in Operating Systems:<br><br>
+                <strong>Process Management:</strong><br>
+                • Process scheduling algorithms<br>
+                • Inter-process communication<br>
+                • Process synchronization<br><br>
+                <strong>Memory Management:</strong><br>
+                • Virtual memory<br>
+                • Page replacement algorithms<br>
+                • Memory allocation strategies<br><br>
+                <strong>File Systems:</strong><br>
+                • File organization<br>
+                • Directory structures<br>
+                • File access methods<br><br>
+                Check out our <a href="/computer-science/operating-systems/" style="color: #3498db;">OS section</a> for detailed notes!`;
+            }
+            
+            if (message.includes('database') || message.includes('sql')) {
+                return `🗄️ <strong>Database Systems</strong><br><br>
+                Essential database concepts:<br><br>
+                <strong>SQL Fundamentals:</strong><br>
+                • SELECT, INSERT, UPDATE, DELETE<br>
+                • JOIN operations<br>
+                • Aggregation functions<br><br>
+                <strong>Database Design:</strong><br>
+                • Normalization (1NF, 2NF, 3NF)<br>
+                • Entity-Relationship diagrams<br>
+                • ACID properties<br><br>
+                <strong>Advanced Topics:</strong><br>
+                • Indexing strategies<br>
+                • Query optimization<br>
+                • Transaction management<br><br>
+                Check out our <a href="/computer-science/databases/" style="color: #3498db;">Database section</a> for examples!`;
+            }
+            
+            return `🤖 I'm here to help you learn Computer Science! I can assist with:<br><br>
+            🔧 <strong>Data Structures & Algorithms:</strong> sorting, searching, dynamic programming<br>
+            💻 <strong>Operating Systems:</strong> process management, memory management<br>
+            🗄️ <strong>Database Systems:</strong> SQL, database design, normalization<br>
+            🌐 <strong>Computer Networks:</strong> protocols, architecture, security<br>
+            🏗️ <strong>Computer Architecture:</strong> CPU design, memory hierarchy<br>
+            📊 <strong>Probability & Statistics:</strong> mathematical foundations<br>
+            ⚡ <strong>LeetCode Practice:</strong> problem-solving strategies<br><br>
+            Try asking me about specific topics like "sorting algorithms", "dynamic programming", or "study strategies"!`;
+        }
+
+        // Enter key to send message
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('chat-input');
+            if (input) {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
