@@ -67,6 +67,76 @@
         .chatbot-toggle {
             font-size: 1.2rem !important;
         }
+        
+        /* PDF Export Styles */
+        .export-controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        
+        .export-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .export-btn:active {
+            transform: translateY(0);
+        }
+        
+        .export-btn i {
+            font-size: 16px;
+        }
+        
+        /* Print styles for PDF export */
+        @media print {
+            .site-header,
+            .site-nav,
+            .search-container,
+            .export-controls,
+            #chatbot-widget {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12px;
+                line-height: 1.4;
+                color: #000;
+                background: white;
+            }
+            
+            .container {
+                max-width: none;
+                margin: 0;
+                padding: 20px;
+            }
+            
+            .resume-header {
+                page-break-inside: avoid;
+            }
+            
+            .skill-category,
+            .certification-card,
+            .experience-card {
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body>
@@ -119,11 +189,18 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="export-controls">
+                    <button id="export-pdf" class="export-btn" onclick="exportToPDF()">
+                        <i class="fas fa-file-pdf"></i>
+                        Export to PDF
+                    </button>
+                </div>
 
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>(+84) 868 269 009</span>
+                        <span>(+84) 868267023</span>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
@@ -131,11 +208,11 @@
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-github"></i>
-                        <a href="https://github.com/techguy" target="_blank">github.com/techguy</a>
+                        <a href="https://github.com/khoatcao" target="_blank">github.com/khoatcao</a>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>khoa.cao@example.com</span>
+                        <span>caotoankhoa5@gmail.com</span> 
                     </div>
                 </div>
             </div>
@@ -1077,6 +1154,120 @@
             border-color: #555;
         }
     </style>
+    
+    <!-- PDF Export JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function exportToPDF() {
+            // Show loading state
+            const exportBtn = document.getElementById('export-pdf');
+            const originalText = exportBtn.innerHTML;
+            exportBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            exportBtn.disabled = true;
+            
+            // Get the main content to export
+            const element = document.querySelector('.container');
+            
+            // Configure PDF options
+            const opt = {
+                margin: [10, 10, 10, 10],
+                filename: 'Khoa_Cao_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+            
+            // Generate PDF
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Restore button state
+                exportBtn.innerHTML = originalText;
+                exportBtn.disabled = false;
+                
+                // Show success message
+                showNotification('PDF exported successfully!', 'success');
+            }).catch((error) => {
+                console.error('PDF generation failed:', error);
+                
+                // Restore button state
+                exportBtn.innerHTML = originalText;
+                exportBtn.disabled = false;
+                
+                // Show error message
+                showNotification('PDF generation failed. Please try again.', 'error');
+            });
+        }
+        
+        function showNotification(message, type) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            // Add styles
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: 500;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            // Add animation styles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+        
+        // Add keyboard shortcut (Ctrl+P for PDF export)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                exportToPDF();
+            }
+        });
+    </script>
 </body>
 </html>
 
