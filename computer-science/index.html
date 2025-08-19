@@ -5,76 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Science - TechGuy's Learning Hub</title>
     <meta name="description" content="Personal notes on Computer Science algorithms and Duolingo language learning">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Emergency chatbot visibility styles */
-        #chatbot-widget {
-            position: fixed !important;
-            bottom: 20px !important;
-            right: 20px !important;
-            width: 350px !important;
-            background: white !important;
-            border-radius: 15px !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
-            z-index: 99999 !important;
-            font-family: inherit !important;
-            overflow: hidden !important;
-            transition: all 0.3s ease !important;
-            border: 1px solid #e0e0e0 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-        
-        .chatbot-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-            color: white !important;
-            padding: 15px !important;
-            cursor: pointer !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 12px !important;
-        }
-        
-        .chatbot-avatar {
-            width: 40px !important;
-            height: 40px !important;
-            background: rgba(255,255,255,0.2) !important;
-            border-radius: 50% !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            font-size: 1.2rem !important;
-        }
-        
-        .chatbot-info {
-            flex: 1 !important;
-        }
-        
-        .chatbot-info h4 {
-            margin: 0 0 2px 0 !important;
-            font-size: 1rem !important;
-            font-weight: 600 !important;
-        }
-        
-        .chatbot-info p {
-            margin: 0 !important;
-            font-size: 0.8rem !important;
-            opacity: 0.9 !important;
-        }
-        
-        .chatbot-toggle {
-            font-size: 1.2rem !important;
-        }
-    </style>
 </head>
 <body>
     <header class="site-header">
         <div class="container">
             <div class="header-content">
                 <h1 class="site-title">
-                    <a href="/">TechGuy's Learning Hub</a>
+                    <a href="../index.html">TechGuy's Learning Hub</a>
                 </h1>
                 
                 <div class="header-controls">
@@ -89,10 +28,10 @@
             
             <nav class="site-nav">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/computer-science/">Computer Science</a></li>
-                    <li><a href="/duolingo/">Duolingo</a></li>
-                    <li><a href="/about/">About</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Computer Science</a></li>
+                    <li><a href="../duolingo/">Duolingo</a></li>
+                    <li><a href="../about/">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -107,81 +46,231 @@
             
             <h1>🖥️ Computer Science</h1>
 
-            <p>Welcome to my Computer Science learning journey! Here you'll find my notes, implementations, and study materials for various CS concepts.</p>
+            <p>Welcome to my Computer Science learning journey! Here you'll find my notes, implementations, and study materials for various CS concepts organized by subject areas.</p>
 
-            <h2>📚 Topics Covered</h2>
+            <h2>📚 Computer Science Categories</h2>
 
-            <h3>Algorithms & Data Structures</h3>
-            <ul>
-                <li><strong>Sorting Algorithms</strong> - Bubble sort, merge sort, quick sort, etc.</li>
-                <li><strong>Searching Algorithms</strong> - Binary search, linear search, depth-first search</li>
-                <li><strong>Data Structures</strong> - Arrays, linked lists, trees, graphs, heaps</li>
-            </ul>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🔧</div>
+                    <h3><a href="algorithms/">Data Structures & Algorithms</a></h3>
+                    <p>Master fundamental algorithms, data structures, and problem-solving techniques</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Sorting Algorithms</span>
+                        <span class="topic-tag">Searching</span>
+                        <span class="topic-tag">Dynamic Programming</span>
+                        <span class="topic-tag">Graph Theory</span>
+                        <span class="topic-tag">Trees & Graphs</span>
+                    </div>
+                </div>
 
-            <h3>Dynamic Programming</h3>
-            <ul>
-                <li><strong>Classic Problems</strong> - Fibonacci, longest common subsequence, knapsack</li>
-                <li><strong>Optimization Techniques</strong> - Memoization, tabulation</li>
-                <li><strong>Real-world Applications</strong> - Pathfinding, resource allocation</li>
-            </ul>
+                <div class="category-card">
+                    <div class="category-icon">💻</div>
+                    <h3><a href="operating-systems/">Operating Systems</a></h3>
+                    <p>Learn about process management, memory management, and system architecture</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Process Management</span>
+                        <span class="topic-tag">Memory Management</span>
+                        <span class="topic-tag">File Systems</span>
+                        <span class="topic-tag">Scheduling</span>
+                        <span class="topic-tag">Concurrency</span>
+                    </div>
+                </div>
 
-            <h3>Graph Theory</h3>
-            <ul>
-                <li><strong>Graph Representations</strong> - Adjacency matrix, adjacency list</li>
-                <li><strong>Traversal Algorithms</strong> - BFS, DFS, Dijkstra's algorithm</li>
-                <li><strong>Graph Problems</strong> - Shortest path, minimum spanning tree, connectivity</li>
-            </ul>
+                <div class="category-card">
+                    <div class="category-icon">🗄️</div>
+                    <h3><a href="databases/">Database Systems</a></h3>
+                    <p>Study database design, SQL, and data management principles</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">SQL</span>
+                        <span class="topic-tag">Database Design</span>
+                        <span class="topic-tag">Normalization</span>
+                        <span class="topic-tag">ACID Properties</span>
+                        <span class="topic-tag">Indexing</span>
+                    </div>
+                </div>
 
-            <h3>Problem Solving</h3>
-            <ul>
-                <li><strong>Coding Challenges</strong> - Solutions to competitive programming problems</li>
-                <li><strong>Interview Questions</strong> - Common algorithm interview problems</li>
-                <li><strong>Practice Problems</strong> - HackerRank, LeetCode, CodeForces solutions</li>
-            </ul>
+                <div class="category-card">
+                    <div class="category-icon">🌐</div>
+                    <h3><a href="networks/">Computer Networks</a></h3>
+                    <p>Understand network protocols, architecture, and communication systems</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">TCP/IP</span>
+                        <span class="topic-tag">HTTP/HTTPS</span>
+                        <span class="topic-tag">DNS</span>
+                        <span class="topic-tag">Routing</span>
+                        <span class="topic-tag">Network Security</span>
+                    </div>
+                </div>
 
-            <h2>🔍 Browse by Category</h2>
+                <div class="category-card">
+                    <div class="category-icon">🏗️</div>
+                    <h3><a href="architecture/">Computer Architecture</a></h3>
+                    <p>Explore CPU design, memory hierarchy, and hardware organization</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">CPU Design</span>
+                        <span class="topic-tag">Memory Hierarchy</span>
+                        <span class="topic-tag">Cache Systems</span>
+                        <span class="topic-tag">Pipelining</span>
+                        <span class="topic-tag">Assembly Language</span>
+                    </div>
+                </div>
 
-            <h3><a href="sorting/">Sorting Algorithms</a></h3>
-            <ul>
-                <li>Bubble Sort</li>
-                <li>Selection Sort</li>
-                <li>Insertion Sort</li>
-                <li>Merge Sort</li>
-                <li>Quick Sort</li>
-                <li>Heap Sort</li>
-            </ul>
+                <div class="category-card">
+                    <div class="category-icon">📊</div>
+                    <h3><a href="probability-statistics/">Probability & Statistics</a></h3>
+                    <p>Learn mathematical foundations for computer science and data analysis</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Probability Theory</span>
+                        <span class="topic-tag">Statistical Analysis</span>
+                        <span class="topic-tag">Machine Learning</span>
+                        <span class="topic-tag">Data Science</span>
+                        <span class="topic-tag">Random Algorithms</span>
+                    </div>
+                </div>
 
-            <h3><a href="searching/">Searching Algorithms</a></h3>
-            <ul>
-                <li>Linear Search</li>
-                <li>Binary Search</li>
-                <li>Depth-First Search</li>
-                <li>Breadth-First Search</li>
-            </ul>
+                <div class="category-card leetcode-card">
+                    <div class="category-icon">⚡</div>
+                    <h3><a href="leetcode/">LeetCode Practice</a></h3>
+                    <p>My solutions and practice problems from LeetCode and other coding platforms</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Easy Problems</span>
+                        <span class="topic-tag">Medium Problems</span>
+                        <span class="topic-tag">Hard Problems</span>
+                        <span class="topic-tag">Solutions</span>
+                        <span class="topic-tag">Problem Analysis</span>
+                    </div>
+                </div>
+            </div>
 
-            <h3><a href="dynamic-programming/">Dynamic Programming</a></h3>
-            <ul>
-                <li>Memoization</li>
-                <li>Tabulation</li>
-                <li>Classic Problems</li>
-                <li>Optimization Techniques</li>
-            </ul>
+            <h2>🔍 Quick Navigation</h2>
 
-            <h3><a href="graphs/">Graph Algorithms</a></h3>
-            <ul>
-                <li>Graph Representations</li>
-                <li>Traversal Algorithms</li>
-                <li>Shortest Path Problems</li>
-                <li>Minimum Spanning Trees</li>
-            </ul>
+            <div class="quick-nav-grid">
+                <div class="quick-nav-section">
+                    <h3>📖 Study Materials</h3>
+                    <ul>
+                        <li><a href="algorithms/sorting/">Sorting Algorithms</a></li>
+                        <li><a href="algorithms/searching/">Searching Algorithms</a></li>
+                        <li><a href="algorithms/dynamic-programming/">Dynamic Programming</a></li>
+                        <li><a href="algorithms/graphs/">Graph Algorithms</a></li>
+                    </ul>
+                </div>
 
-            <h2>📝 Study Notes</h2>
+                <div class="quick-nav-section">
+                    <h3>💻 Practice Problems</h3>
+                    <ul>
+                        <li><a href="leetcode/easy/">Easy Problems</a></li>
+                        <li><a href="leetcode/medium/">Medium Problems</a></li>
+                        <li><a href="leetcode/hard/">Hard Problems</a></li>
+                        <li><a href="leetcode/solutions/">All Solutions</a></li>
+                    </ul>
+                </div>
 
-            <ul>
-                <li><a href="complexity-analysis/">Algorithm Complexity Analysis</a></li>
-                <li><a href="data-structures/">Data Structure Implementations</a></li>
-                <li><a href="problem-solving/">Problem Solving Strategies</a></li>
-            </ul>
+                <div class="quick-nav-section">
+                    <h3>📚 Core Concepts</h3>
+                    <ul>
+                        <li><a href="complexity-analysis/">Algorithm Complexity</a></li>
+                        <li><a href="data-structures/">Data Structures</a></li>
+                        <li><a href="problem-solving/">Problem Solving Strategies</a></li>
+                        <li><a href="interview-prep/">Interview Preparation</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>📊 Learning Progress</h2>
+
+            <div class="progress-grid">
+                <div class="progress-item">
+                    <h4>Data Structures & Algorithms</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="75%"></div>
+                    </div>
+                    <span>75% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Operating Systems</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="45%"></div>
+                    </div>
+                    <span>45% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Database Systems</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="60%"></div>
+                    </div>
+                    <span>60% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Computer Networks</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="40%"></div>
+                    </div>
+                    <span>40% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Computer Architecture</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="35%"></div>
+                    </div>
+                    <span>35% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Probability & Statistics</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="50%"></div>
+                    </div>
+                    <span>50% Complete</span>
+                </div>
+
+                <div class="progress-item leetcode-progress">
+                    <h4>LeetCode Problems Solved</h4>
+                    <div class="leetcode-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">25</span>
+                            <span class="stat-label">Easy</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Medium</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Hard</span>
+                        </div>
+                    </div>
+                    <span>Total: 45 Problems</span>
+                </div>
+            </div>
+
+            <h2>🎯 Current Focus Areas</h2>
+
+            <div class="focus-areas">
+                <div class="focus-item">
+                    <h4>This Week's Goals</h4>
+                    <ul>
+                        <li>✅ Complete Dynamic Programming section</li>
+                        <li>🔄 Solve 5 new LeetCode problems</li>
+                        <li>📚 Study Operating Systems concepts</li>
+                        <li>💾 Practice SQL queries</li>
+                    </ul>
+                </div>
+
+                <div class="focus-item">
+                    <h4>Upcoming Topics</h4>
+                    <ul>
+                        <li>🔧 Advanced Graph Algorithms</li>
+                        <li>💻 Process Scheduling</li>
+                        <li>🗄️ Database Normalization</li>
+                        <li>🌐 Network Protocols</li>
+                    </ul>
+                </div>
+            </div>
 
             <hr>
 
@@ -195,9 +284,9 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="/computer-science/">CS Notes</a></li>
-                        <li><a href="/duolingo/">Language Learning</a></li>
-                        <li><a href="/about/">About</a></li>
+                        <li><a href="index.html">CS Notes</a></li>
+                        <li><a href="../duolingo/">Language Learning</a></li>
+                        <li><a href="../about/">About</a></li>
                     </ul>
                 </div>
                 
@@ -236,332 +325,7 @@
         </div>
     </footer>
 
-    <!-- AI Chatbot Widget -->
-    <div id="chatbot-widget" style="
-        position: fixed !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        width: 350px !important;
-        background: white !important;
-        border-radius: 15px !important;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
-        z-index: 9999 !important;
-        font-family: inherit !important;
-        overflow: hidden !important;
-        transition: all 0.3s ease !important;
-        border: 1px solid #e0e0e0 !important;
-        display: block !important;
-    ">
-        <div class="chatbot-header" onclick="toggleChatbot()" style="
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-            color: white !important;
-            padding: 15px !important;
-            cursor: pointer !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 12px !important;
-        ">
-            <div class="chatbot-avatar" style="
-                width: 40px !important;
-                height: 40px !important;
-                background: rgba(255,255,255,0.2) !important;
-                border-radius: 50% !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                font-size: 1.2rem !important;
-            ">
-                <i class="fas fa-robot"></i>
-            </div>
-            <div class="chatbot-info" style="flex: 1 !important;">
-                <h4 style="margin: 0 0 2px 0 !important; font-size: 1rem !important; font-weight: 600 !important;">AI Learning Assistant</h4>
-                <p style="margin: 0 !important; font-size: 0.8rem !important; opacity: 0.9 !important;">Ask me about algorithms, languages, or anything!</p>
-            </div>
-            <div class="chatbot-toggle" style="font-size: 1.2rem !important;">
-                <i class="fas fa-comments" id="chat-icon"></i>
-                <i class="fas fa-times" id="close-icon" style="display: none;"></i>
-            </div>
-        </div>
-        
-        <div class="chatbot-body" id="chatbot-body" style="
-            height: 400px !important;
-            display: none !important;
-            flex-direction: column !important;
-            background: #f8f9fa !important;
-        ">
-            <div class="chat-messages" id="chat-messages" style="
-                flex: 1 !important;
-                padding: 15px !important;
-                overflow-y: auto !important;
-                max-height: 300px !important;
-            ">
-                <div class="message bot-message" style="
-                    display: flex !important;
-                    gap: 10px !important;
-                    margin-bottom: 15px !important;
-                ">
-                    <div class="message-avatar" style="
-                        width: 30px !important;
-                        height: 30px !important;
-                        border-radius: 50% !important;
-                        display: flex !important;
-                        align-items: center !important;
-                        justify-content: center !important;
-                        font-size: 0.9rem !important;
-                        flex-shrink: 0 !important;
-                        background: #3498db !important;
-                        color: white !important;
-                    ">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="message-content" style="
-                        background: #f8f9fa !important;
-                        padding: 10px 15px !important;
-                        border-radius: 15px !important;
-                        max-width: 80% !important;
-                    ">
-                        <p style="margin: 0 !important; line-height: 1.4 !important;">👋 Hi! I'm your AI learning assistant. I can help you with:</p>
-                        <ul style="margin: 10px 0 !important; padding-left: 20px !important;">
-                            <li style="margin: 5px 0 !important;">📚 Computer Science concepts and algorithms</li>
-                            <li style="margin: 5px 0 !important;">🌍 Language learning tips and grammar</li>
-                            <li style="margin: 5px 0 !important;">💡 Study strategies and resources</li>
-                            <li style="margin: 5px 0 !important;">🎯 Learning path recommendations</li>
-                        </ul>
-                        <p style="margin: 0 !important; line-height: 1.4 !important;">What would you like to learn about today?</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="chat-input-container" style="
-                padding: 15px !important;
-                border-top: 1px solid #eee !important;
-            ">
-                <div class="chat-input-wrapper" style="
-                    display: flex !important;
-                    gap: 10px !important;
-                    margin-bottom: 10px !important;
-                ">
-                    <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500" style="
-                        flex: 1 !important;
-                        padding: 10px 15px !important;
-                        border: 1px solid #ddd !important;
-                        border-radius: 20px !important;
-                        outline: none !important;
-                        font-size: 0.9rem !important;
-                    ">
-                    <button id="send-message" onclick="sendMessage()" style="
-                        background: #3498db !important;
-                        color: white !important;
-                        border: none !important;
-                        padding: 10px 15px !important;
-                        border-radius: 50% !important;
-                        cursor: pointer !important;
-                    ">
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </div>
-                <div class="quick-actions" style="
-                    display: flex !important;
-                    gap: 8px !important;
-                    flex-wrap: wrap !important;
-                ">
-                    <button class="quick-btn" onclick="askQuestion('Tell me about sorting algorithms')" style="
-                        background: #f8f9fa !important;
-                        border: 1px solid #ddd !important;
-                        padding: 6px 12px !important;
-                        border-radius: 15px !important;
-                        font-size: 0.8rem !important;
-                        cursor: pointer !important;
-                    ">Sorting Algorithms</button>
-                    <button class="quick-btn" onclick="askQuestion('How to improve English vocabulary?')" style="
-                        background: #f8f9fa !important;
-                        border: 1px solid #ddd !important;
-                        padding: 6px 12px !important;
-                        border-radius: 15px !important;
-                        font-size: 0.8rem !important;
-                        cursor: pointer !important;
-                    ">English Tips</button>
-                    <button class="quick-btn" onclick="askQuestion('Best study strategies for algorithms')" style="
-                        background: #f8f9fa !important;
-                        border: 1px solid #ddd !important;
-                        padding: 6px 12px !important;
-                        border-radius: 15px !important;
-                        font-size: 0.8rem !important;
-                        cursor: pointer !important;
-                    ">Study Tips</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- JavaScript -->
-    <script src="/assets/js/main.js"></script>
-    
-    <!-- Chatbot JavaScript -->
-    <script>
-        // Chatbot functionality
-        let isChatbotOpen = false;
-
-        function toggleChatbot() {
-            const body = document.getElementById('chatbot-body');
-            const icon = document.getElementById('chat-icon');
-            const closeIcon = document.getElementById('close-icon');
-            
-            if (isChatbotOpen) {
-                body.style.display = 'none';
-                icon.style.display = 'inline-block';
-                closeIcon.style.display = 'none';
-                isChatbotOpen = false;
-            } else {
-                body.style.display = 'flex';
-                icon.style.display = 'none';
-                closeIcon.style.display = 'inline-block';
-                isChatbotOpen = true;
-                document.getElementById('chat-input').focus();
-            }
-        }
-
-        function sendMessage() {
-            const input = document.getElementById('chat-input');
-            const message = input.value.trim();
-            
-            if (message) {
-                addMessage(message, 'user');
-                input.value = '';
-                
-                // Simulate AI response
-                setTimeout(() => {
-                    const response = generateAIResponse(message);
-                    addMessage(response, 'bot');
-                }, 1000);
-            }
-        }
-
-        function askQuestion(question) {
-            addMessage(question, 'user');
-            
-            setTimeout(() => {
-                const response = generateAIResponse(question);
-                addMessage(response, 'bot');
-            }, 1000);
-        }
-
-        function addMessage(text, sender) {
-            const messagesContainer = document.getElementById('chat-messages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${sender}-message`;
-            messageDiv.style.cssText = `
-                display: flex !important;
-                gap: 10px !important;
-                margin-bottom: 15px !important;
-            `;
-            
-            const avatar = document.createElement('div');
-            avatar.className = 'message-avatar';
-            avatar.style.cssText = `
-                width: 30px !important;
-                height: 30px !important;
-                border-radius: 50% !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                font-size: 0.9rem !important;
-                flex-shrink: 0 !important;
-                background: ${sender === 'user' ? '#e74c3c' : '#3498db'} !important;
-                color: white !important;
-            `;
-            
-            if (sender === 'user') {
-                avatar.innerHTML = '<i class="fas fa-user"></i>';
-            } else {
-                avatar.innerHTML = '<i class="fas fa-robot"></i>';
-            }
-            
-            const content = document.createElement('div');
-            content.className = 'message-content';
-            content.style.cssText = `
-                background: ${sender === 'user' ? '#3498db' : '#f8f9fa'} !important;
-                color: ${sender === 'user' ? 'white' : 'inherit'} !important;
-                padding: 10px 15px !important;
-                border-radius: 15px !important;
-                max-width: 80% !important;
-                margin-left: ${sender === 'user' ? 'auto' : '0'} !important;
-            `;
-            content.innerHTML = `<p style="margin: 0 !important; line-height: 1.4 !important;">${text}</p>`;
-            
-            messageDiv.appendChild(avatar);
-            messageDiv.appendChild(content);
-            messagesContainer.appendChild(messageDiv);
-            
-            // Scroll to bottom
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-
-        function generateAIResponse(userMessage) {
-            const message = userMessage.toLowerCase();
-            
-            if (message.includes('sorting') || message.includes('algorithm')) {
-                return `🔄 <strong>Sorting Algorithms</strong><br><br>
-                Here are the main sorting algorithms you should know:<br>
-                • <strong>Bubble Sort</strong> - O(n²) time complexity, simple but inefficient<br>
-                • <strong>Quick Sort</strong> - O(n log n) average case, very efficient<br>
-                • <strong>Merge Sort</strong> - O(n log n) guaranteed, stable sort<br>
-                • <strong>Heap Sort</strong> - O(n log n), in-place sorting<br><br>
-                Check out our <a href="/computer-science/sorting/" style="color: #3498db;">detailed sorting guide</a> for implementations and examples!`;
-            }
-            
-            if (message.includes('english') || message.includes('vocabulary')) {
-                return `📚 <strong>English Vocabulary Tips</strong><br><br>
-                Here are effective strategies to improve your English vocabulary:<br><br>
-                <strong>1. Context Learning</strong><br>
-                Learn words in sentences, not in isolation<br><br>
-                <strong>2. Spaced Repetition</strong><br>
-                Use apps like Anki to review words at optimal intervals<br><br>
-                <strong>3. Active Usage</strong><br>
-                Try to use new words in your own sentences<br><br>
-                <strong>4. Reading</strong><br>
-                Read books, articles, and news in English<br><br>
-                Check out our <a href="/duolingo/vocabulary/" style="color: #3498db;">vocabulary section</a> for more resources!`;
-            }
-            
-            if (message.includes('study') || message.includes('learning')) {
-                return `🎯 <strong>Study Strategies</strong><br><br>
-                Effective learning techniques:<br><br>
-                <strong>For Algorithms:</strong><br>
-                • Practice coding daily<br>
-                • Solve problems on LeetCode/HackerRank<br>
-                • Implement algorithms from scratch<br>
-                • Understand time/space complexity<br><br>
-                <strong>For Languages:</strong><br>
-                • Immerse yourself in the language<br>
-                • Practice speaking regularly<br>
-                • Use spaced repetition<br>
-                • Learn in context<br><br>
-                <strong>General Tips:</strong><br>
-                • Set specific goals<br>
-                • Track your progress<br>
-                • Stay consistent<br>
-                • Teach others to reinforce learning`;
-            }
-            
-            return `🤖 I'm here to help you learn! I can assist with:<br><br>
-            📚 <strong>Computer Science:</strong> algorithms, data structures, problem-solving<br>
-            🌍 <strong>Language Learning:</strong> grammar, vocabulary, study tips<br>
-            💡 <strong>Learning Strategies:</strong> effective study methods and resources<br><br>
-            Try asking me about specific topics like "sorting algorithms", "English grammar", or "study strategies"!`;
-        }
-
-        // Enter key to send message
-        document.addEventListener('DOMContentLoaded', function() {
-            const input = document.getElementById('chat-input');
-            if (input) {
-                input.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        sendMessage();
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Practice - TechGuy's Learning Hub</title>
+    <meta name="description" content="My LeetCode practice problems and solutions">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/">TechGuy's Learning Hub</a>
+                </h1>
+                
+                <div class="header-controls">
+                    <button class="dark-mode-toggle" data-tooltip="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" data-tooltip="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/computer-science/">Computer Science</a></li>
+                    <li><a href="/duolingo/">Duolingo</a></li>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a> → 
+                <a href="/computer-science/">Computer Science</a> → 
+                <span>LeetCode Practice</span>
+            </nav>
+            
+            <h1>⚡ LeetCode Practice</h1>
+
+            <p>Welcome to my LeetCode practice section! Here you'll find my solutions to coding problems, analysis of different approaches, and my learning progress.</p>
+
+            <h2>📊 Practice Statistics</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Total Problems Solved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">Easy Problems</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Medium Problems</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Hard Problems</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30</div>
+                    <div class="stat-label">Day Streak</div>
+                </div>
+            </div>
+
+            <h2>🎯 Problem Categories</h2>
+
+            <div class="category-tabs">
+                <button class="tab-btn active" onclick="showCategory('easy')">Easy (25)</button>
+                <button class="tab-btn" onclick="showCategory('medium')">Medium (15)</button>
+                <button class="tab-btn" onclick="showCategory('hard')">Hard (5)</button>
+                <button class="tab-btn" onclick="showCategory('all')">All Problems</button>
+            </div>
+
+            <div id="easy-problems" class="problem-category active">
+                <h3>Easy Problems (25 Solved)</h3>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">#1</span>
+                            <span class="problem-title">Two Sum</span>
+                            <span class="difficulty easy">Easy</span>
+                        </div>
+                        <div class="problem-tags">
+                            <span class="tag">Array</span>
+                            <span class="tag">Hash Table</span>
+                        </div>
+                        <div class="problem-stats">
+                            <span>Time: O(n)</span>
+                            <span>Space: O(n)</span>
+                        </div>
+                        <a href="problems/two-sum/" class="solution-link">View Solution →</a>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">#20</span>
+                            <span class="problem-title">Valid Parentheses</span>
+                            <span class="difficulty easy">Easy</span>
+                        </div>
+                        <div class="problem-tags">
+                            <span class="tag">Stack</span>
+                            <span class="tag">String</span>
+                        </div>
+                        <div class="problem-stats">
+                            <span>Time: O(n)</span>
+                            <span>Space: O(n)</span>
+                        </div>
+                        <a href="problems/valid-parentheses/" class="solution-link">View Solution →</a>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">#21</span>
+                            <span class="problem-title">Merge Two Sorted Lists</span>
+                            <span class="difficulty easy">Easy</span>
+                        </div>
+                        <div class="problem-tags">
+                            <span class="tag">Linked List</span>
+                            <span class="tag">Recursion</span>
+                        </div>
+                        <div class="problem-stats">
+                            <span>Time: O(n+m)</span>
+                            <span>Space: O(1)</span>
+                        </div>
+                        <a href="problems/merge-two-sorted-lists/" class="solution-link">View Solution →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="medium-problems" class="problem-category">
+                <h3>Medium Problems (15 Solved)</h3>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">#2</span>
+                            <span class="problem-title">Add Two Numbers</span>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="problem-tags">
+                            <span class="tag">Linked List</span>
+                            <span class="tag">Math</span>
+                        </div>
+                        <div class="problem-stats">
+                            <span>Time: O(max(n,m))</span>
+                            <span>Space: O(max(n,m))</span>
+                        </div>
+                        <a href="problems/add-two-numbers/" class="solution-link">View Solution →</a>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">#3</span>
+                            <span class="problem-title">Longest Substring Without Repeating Characters</span>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="problem-tags">
+                            <span class="tag">Sliding Window</span>
+                            <span class="tag">Hash Table</span>
+                        </div>
+                        <div class="problem-stats">
+                            <span>Time: O(n)</span>
+                            <span>Space: O(min(m,n))</span>
+                        </div>
+                        <a href="problems/longest-substring/" class="solution-link">View Solution →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="hard-problems" class="problem-category">
+                <h3>Hard Problems (5 Solved)</h3>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">#4</span>
+                            <span class="problem-title">Median of Two Sorted Arrays</span>
+                            <span class="difficulty hard">Hard</span>
+                        </div>
+                        <div class="problem-tags">
+                            <span class="tag">Binary Search</span>
+                            <span class="tag">Divide and Conquer</span>
+                        </div>
+                        <div class="problem-stats">
+                            <span>Time: O(log(min(n,m)))</span>
+                            <span>Space: O(1)</span>
+                        </div>
+                        <a href="problems/median-of-two-arrays/" class="solution-link">View Solution →</a>
+                    </div>
+                </div>
+            </div>
+
+            <h2>📈 Learning Progress</h2>
+
+            <div class="progress-chart">
+                <h3>Problems Solved Over Time</h3>
+                <div class="chart-container">
+                    <div class="chart-bar" style="height: 60%;" data-month="Jan" data-count="12"></div>
+                    <div class="chart-bar" style="height: 80%;" data-month="Feb" data-count="16"></div>
+                    <div class="chart-bar" style="height: 100%;" data-month="Mar" data-count="20"></div>
+                    <div class="chart-bar" style="height: 90%;" data-month="Apr" data-count="18"></div>
+                    <div class="chart-bar" style="height: 75%;" data-month="May" data-count="15"></div>
+                    <div class="chart-bar" style="height: 85%;" data-month="Jun" data-count="17"></div>
+                </div>
+            </div>
+
+            <h2>🎯 Current Goals</h2>
+
+            <div class="goals-section">
+                <div class="goal-item">
+                    <h4>Weekly Goal</h4>
+                    <p>Solve 5 new problems this week</p>
+                    <div class="goal-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="60%"></div>
+                        </div>
+                        <span>3/5 completed</span>
+                    </div>
+                </div>
+
+                <div class="goal-item">
+                    <h4>Monthly Goal</h4>
+                    <p>Reach 50 total problems solved</p>
+                    <div class="goal-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="90%"></div>
+                        </div>
+                        <span>45/50 completed</span>
+                    </div>
+                </div>
+
+                <div class="goal-item">
+                    <h4>Long-term Goal</h4>
+                    <p>Solve 100 problems by end of year</p>
+                    <div class="goal-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="45%"></div>
+                        </div>
+                        <span>45/100 completed</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>💡 Study Tips</h2>
+
+            <div class="tips-section">
+                <div class="tip-card">
+                    <h4>📚 Problem-Solving Strategy</h4>
+                    <ul>
+                        <li>Read the problem carefully and identify the input/output</li>
+                        <li>Think about edge cases and constraints</li>
+                        <li>Start with a brute force approach, then optimize</li>
+                        <li>Consider time and space complexity</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>🔧 Common Patterns</h4>
+                    <ul>
+                        <li><strong>Two Pointers:</strong> Array problems, palindrome checks</li>
+                        <li><strong>Sliding Window:</strong> Subarray problems, string manipulation</li>
+                        <li><strong>Binary Search:</strong> Sorted array problems</li>
+                        <li><strong>Dynamic Programming:</strong> Optimization problems</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>📝 Practice Routine</h4>
+                    <ul>
+                        <li>Solve 1-2 problems daily</li>
+                        <li>Review solutions and understand different approaches</li>
+                        <li>Implement solutions in multiple programming languages</li>
+                        <li>Discuss problems with peers or mentors</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <p><em>"The best way to learn algorithms is to implement them yourself. Don't just read about them - code them!"</em></p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/computer-science/">CS Notes</a></li>
+                        <li><a href="/duolingo/">Language Learning</a></li>
+                        <li><a href="/about/">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" data-tooltip="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="#" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Progress</h3>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <span>LeetCode Problems</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechGuy. All rights reserved.</p>
+                <p>Built with ❤️ using Jekyll and GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+        function showCategory(category) {
+            // Hide all categories
+            const categories = document.querySelectorAll('.problem-category');
+            categories.forEach(cat => cat.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected category
+            document.getElementById(category + '-problems').classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Initialize with easy problems shown
+        document.addEventListener('DOMContentLoaded', function() {
+            showCategory('easy');
+        });
+    </script>
+</body>
+</html>
