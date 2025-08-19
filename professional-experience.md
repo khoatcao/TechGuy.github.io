@@ -4,20 +4,21 @@
 *Duration: [Add your duration here]*
 
 ### Project: GenWizard - Enterprise Serverless Platform
-**Role:** Senior Cloud Engineer & DevOps Specialist | **Technologies:** AWS Lambda, API Gateway, DynamoDB, CloudFormation, CI/CD, Serverless Architecture
+**Role:** Senior Cloud Engineer & DevOps Specialist | **Technologies:** AWS Lambda, API Gateway, DynamoDB, S3, Serverless Framework, GitLab CI/CD, CloudWatch, X-Ray
 
 **Key Contributions:**
-- **Architected and implemented** a fully serverless enterprise platform for application transformation services using comprehensive AWS serverless stack
-- **Designed serverless infrastructure** utilizing:
-  - **AWS Lambda:** Serverless compute for scalable application processing
-  - **API Gateway:** RESTful and GraphQL API management with authentication and rate limiting
-  - **DynamoDB:** NoSQL database for high-performance data storage and retrieval
-  - **CloudFormation:** Infrastructure as code for consistent and repeatable deployments
-  - **CloudWatch:** Comprehensive monitoring and observability for serverless applications
-- **Implemented end-to-end CI/CD pipelines** using GitLab CI/CD and GitHub Actions with automated testing, security scanning, and deployment processes
-- **Optimized serverless architecture** for scalability and cost-efficiency, achieving [X]% reduction in operational costs
-- **Collaborated with cross-functional teams** including architects, developers, and business stakeholders to deliver cloud-native solutions
-- **Enhanced security posture** by implementing AWS IAM policies, VPC configurations, and security groups for serverless applications
+- **Built and deployed comprehensive serverless architectures** using AWS Lambda, API Gateway, DynamoDB, and S3 with the Serverless Framework for rapid development and deployment
+- **Designed and implemented serverless infrastructure** utilizing:
+  - **AWS Lambda:** Serverless compute functions for scalable application processing and event-driven architecture
+  - **API Gateway:** RESTful and GraphQL API management with authentication, rate limiting, and request/response transformation
+  - **DynamoDB:** NoSQL database for high-performance data storage, retrieval, and real-time analytics
+  - **S3:** Object storage for static assets, data lakes, and backup solutions
+  - **Serverless Framework:** Infrastructure as code for consistent and repeatable serverless deployments
+- **Developed and maintained robust CI/CD pipelines** in GitLab with GitLab Runners and Templates, enabling automated deployments, testing, and quality assurance processes
+- **Implemented comprehensive monitoring and logging** with CloudWatch and X-Ray to improve observability, performance tracking, and distributed tracing across serverless functions
+- **Optimized infrastructure for scalability, performance, and cost-efficiency** across multiple environments (dev, staging, production) using auto-scaling and resource optimization strategies
+- **Collaborated with global teams** to deliver secure and production-ready serverless solutions, ensuring compliance with enterprise security standards
+- **Enhanced security posture** by implementing AWS IAM policies, VPC configurations, security groups, and encryption for serverless applications
 
 ---
 
@@ -25,16 +26,14 @@
 *Duration: [Add your duration here]*
 
 ### Project 1: Autograde - Cloud-Native Microservices Platform
-**Role:** Senior Backend Developer & DevOps Engineer | **Technologies:** Python, TypeScript, AWS CDK, Docker, ECS, CI/CD
+**Role:** DevOps Engineer | **Technologies:** TypeScript, AWS CDK, Docker, ECS, GitLab CI/CD, VPC, IAM, ALB, NAT Gateway
 
 **Key Contributions:**
-- **Architected and implemented** a fully automated cloud-native microservices platform using AWS CDK with TypeScript, demonstrating strong infrastructure-as-code expertise
-- **Designed comprehensive AWS infrastructure** including:
-  - **Networking:** VPC configuration, Security Groups, Subnets, Route Tables, and Network ACLs for secure microservices communication
-  - **Container Orchestration:** AWS ECS with Docker containers, implementing auto-scaling and load balancing
-  - **Security:** AWS IAM policies, role-based access control (RBAC), and security group configurations
-  - **Monitoring:** CloudWatch integration for comprehensive observability
-- **Implemented end-to-end CI/CD pipeline** using GitLab CI/CD with GitLab Runner and GitHub Actions, automating the complete deployment process from code commit to production
+- **Designed and deployed cloud infrastructure** using AWS CDK with TypeScript to manage VPC, IAM, ECS, and networking resources with infrastructure-as-code best practices
+- **Automated end-to-end CI/CD pipelines** with GitLab (Runners, Templates) for microservices deployments, enabling rapid and reliable software delivery
+- **Implemented containerized workloads** using Docker and AWS ECS, integrated with Application Load Balancer (ALB), NAT Gateway, and Security Groups for scalable microservices architecture
+- **Strengthened security posture** by managing IAM policies, role-based access control (RBAC), and network ACLs to ensure enterprise-grade security compliance
+- **Collaborated with software engineers** to accelerate release cycles and enforce infrastructure-as-code best practices across development teams
 - **Developed microservices architecture** using Python with FastAPI and Strawberry GraphQL, ensuring scalable and maintainable codebase
 - **Enhanced cross-language development** by regularly reviewing and understanding Java codebase components, demonstrating proficiency in multiple programming languages
 - **Delivered measurable results:** [Add specific metrics like deployment frequency, API response times, or infrastructure cost optimization]
@@ -57,14 +56,16 @@
 ## Technical Skills Demonstrated
 
 ### **AWS Cloud & Networking Expertise**
-- **AWS Networking Services:** VPC, Route 53, Security Groups, Subnets, Route Tables, Network ACLs, NAT Gateway, Elastic Load Balancing
+- **AWS Networking Services:** VPC, Route 53, Security Groups, Subnets, Route Tables, Network ACLs, NAT Gateway, Application Load Balancer (ALB)
 - **AWS Security:** IAM policy management, SCPs, user/group management, role-based access control (RBAC)
-- **AWS Compute & Storage:** ECS, Lambda, DynamoDB, CloudWatch, CloudFormation
-- **AWS Serverless:** Lambda, API Gateway, Step Functions, EventBridge, S3
+- **AWS Compute & Storage:** ECS, Lambda, DynamoDB, S3, CloudWatch, CloudFormation
+- **AWS Serverless:** Lambda, API Gateway, Step Functions, EventBridge, S3, Serverless Framework
+- **AWS Monitoring:** CloudWatch, X-Ray for distributed tracing and observability
 - **Cloud Security Architecture:** Security best practices, compliance frameworks, threat modeling
 
 ### **Infrastructure as Code & Automation**
 - **AWS CDK:** Strong experience with TypeScript AWS CDK for infrastructure provisioning
+- **Serverless Framework:** Rapid serverless application development and deployment
 - **CloudFormation:** Serverless infrastructure automation and template management
 - **Terraform:** Infrastructure automation, state management, module development
 - **CI/CD Pipelines:** End-to-end automation from code commits to production
@@ -120,17 +121,19 @@
 
 ### **GenWizard Serverless Platform**
 - [ ] **Cost Optimization:** Achieved [X]% reduction in operational costs through serverless architecture optimization
-- [ ] **Scalability Enhancement:** Improved application scalability by [X]% with auto-scaling serverless functions
-- [ ] **Deployment Efficiency:** Reduced deployment time by [X]% through automated CI/CD pipelines
-- [ ] **Performance Improvement:** Achieved [X]% faster response times using optimized Lambda functions
-- [ ] **Infrastructure Management:** Reduced manual infrastructure management by [X]% through CloudFormation automation
+- [ ] **Scalability Enhancement:** Improved application scalability by [X]% with auto-scaling serverless functions across multiple environments
+- [ ] **Deployment Efficiency:** Reduced deployment time by [X]% through GitLab CI/CD automation with Runners and Templates
+- [ ] **Performance Improvement:** Achieved [X]% faster response times using optimized Lambda functions and API Gateway
+- [ ] **Observability Enhancement:** Improved monitoring and tracing by [X]% using CloudWatch and X-Ray integration
+- [ ] **Global Collaboration:** Successfully delivered secure serverless solutions collaborating with global teams
 
 ### **Autograde Cloud-Native Platform**
-- [ ] **Infrastructure Automation:** Reduced deployment time by [X]% through AWS CDK, GitLab CI/CD, and GitHub Actions automation
-- [ ] **Security Enhancement:** Implemented comprehensive IAM policies and security groups, achieving [X]% reduction in security incidents
-- [ ] **Performance Optimization:** Achieved [X]% improvement in API response times through optimized ECS configuration
-- [ ] **Cost Optimization:** Reduced AWS infrastructure costs by [X]% through efficient resource utilization
-- [ ] **Deployment Frequency:** Increased deployment frequency to [X] times per day through automated CI/CD pipeline
+- [ ] **Infrastructure Automation:** Reduced deployment time by [X]% through AWS CDK with TypeScript and GitLab CI/CD automation
+- [ ] **Security Enhancement:** Implemented comprehensive IAM policies, RBAC, and network ACLs, achieving [X]% reduction in security incidents
+- [ ] **Performance Optimization:** Achieved [X]% improvement in API response times through optimized ECS and ALB configuration
+- [ ] **Cost Optimization:** Reduced AWS infrastructure costs by [X]% through efficient resource utilization and auto-scaling
+- [ ] **Deployment Frequency:** Increased deployment frequency to [X] times per day through automated CI/CD pipeline with GitLab Runners
+- [ ] **Release Cycle Acceleration:** Improved release cycles by [X]% through infrastructure-as-code best practices
 
 ### **Enterprise API Gateway & Security**
 - [ ] **Security Implementation:** Configured secure authorization for [X] APIs with comprehensive IAM management
