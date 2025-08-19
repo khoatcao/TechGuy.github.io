@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Design - TechGuy's Learning Hub</title>
+    <meta name="description" content="Comprehensive guide to system design and scalable architecture">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/">TechGuy's Learning Hub</a>
+                </h1>
+                
+                <div class="header-controls">
+                    <button class="dark-mode-toggle" data-tooltip="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" data-tooltip="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/computer-science/">Computer Science</a></li>
+                    <li><a href="/duolingo/">Duolingo</a></li>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a> → 
+                <a href="/computer-science/">Computer Science</a> → 
+                <span>System Design</span>
+            </nav>
+            
+            <h1>🏗️ System Design</h1>
+
+            <p>Master the art of designing scalable, reliable, and efficient systems. Learn system architecture principles, design patterns, and how to tackle real-world system design problems.</p>
+
+            <h2>📚 Core Concepts</h2>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">📊</div>
+                    <h3><a href="fundamentals/">System Design Fundamentals</a></h3>
+                    <p>Learn the basics of system design and architecture principles</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Scalability</span>
+                        <span class="topic-tag">Reliability</span>
+                        <span class="topic-tag">Availability</span>
+                        <span class="topic-tag">Performance</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🔧</div>
+                    <h3><a href="architecture-patterns/">Architecture Patterns</a></h3>
+                    <p>Common architectural patterns for building scalable systems</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Microservices</span>
+                        <span class="topic-tag">Event-Driven</span>
+                        <span class="topic-tag">CQRS</span>
+                        <span class="topic-tag">Layered Architecture</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🗄️</div>
+                    <h3><a href="databases/">Database Design</a></h3>
+                    <p>Database selection and design for different use cases</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">SQL vs NoSQL</span>
+                        <span class="topic-tag">Sharding</span>
+                        <span class="topic-tag">Replication</span>
+                        <span class="topic-tag">Consistency Models</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3><a href="caching/">Caching Strategies</a></h3>
+                    <p>Implement effective caching to improve system performance</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Cache Layers</span>
+                        <span class="topic-tag">Cache Invalidation</span>
+                        <span class="topic-tag">CDN</span>
+                        <span class="topic-tag">Distributed Caching</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🌐</div>
+                    <h3><a href="load-balancing/">Load Balancing</a></h3>
+                    <p>Distribute traffic across multiple servers efficiently</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">Load Balancers</span>
+                        <span class="topic-tag">Health Checks</span>
+                        <span class="topic-tag">Session Management</span>
+                        <span class="topic-tag">Auto Scaling</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🔒</div>
+                    <h3><a href="security/">Security & Authentication</a></h3>
+                    <p>Implement security measures and authentication systems</p>
+                    <div class="category-topics">
+                        <span class="topic-tag">OAuth 2.0</span>
+                        <span class="topic-tag">JWT</span>
+                        <span class="topic-tag">HTTPS</span>
+                        <span class="topic-tag">Rate Limiting</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>🎯 System Design Framework</h2>
+
+            <div class="framework-section">
+                <h3>Step-by-Step Approach</h3>
+                
+                <div class="framework-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Clarify Requirements</h4>
+                            <ul>
+                                <li>Functional requirements</li>
+                                <li>Non-functional requirements</li>
+                                <li>Scale and constraints</li>
+                                <li>Assumptions and scope</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>High-Level Design</h4>
+                            <ul>
+                                <li>System architecture overview</li>
+                                <li>Core components</li>
+                                <li>Data flow</li>
+                                <li>Technology stack</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Detailed Design</h4>
+                            <ul>
+                                <li>Database schema</li>
+                                <li>API design</li>
+                                <li>Component interactions</li>
+                                <li>Error handling</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Identify Bottlenecks</h4>
+                            <ul>
+                                <li>Performance analysis</li>
+                                <li>Scalability concerns</li>
+                                <li>Single points of failure</li>
+                                <li>Optimization opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Scale the Design</h4>
+                            <ul>
+                                <li>Horizontal scaling</li>
+                                <li>Vertical scaling</li>
+                                <li>Caching strategies</li>
+                                <li>Load balancing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>🏢 Common System Design Problems</h2>
+
+            <div class="problems-section">
+                <div class="problem-card">
+                    <h4>URL Shortener (TinyURL)</h4>
+                    <p><strong>Scale:</strong> 100M URLs, 100M reads/day</p>
+                    <ul>
+                        <li>URL shortening algorithm</li>
+                        <li>Database design</li>
+                        <li>Cache strategy</li>
+                        <li>Analytics tracking</li>
+                    </ul>
+                    <a href="problems/url-shortener/" class="solution-link">View Solution →</a>
+                </div>
+
+                <div class="problem-card">
+                    <h4>Chat Application (WhatsApp)</h4>
+                    <p><strong>Scale:</strong> 1B users, real-time messaging</p>
+                    <ul>
+                        <li>Real-time communication</li>
+                        <li>Message persistence</li>
+                        <li>Online/offline status</li>
+                        <li>Media sharing</li>
+                    </ul>
+                    <a href="problems/chat-application/" class="solution-link">View Solution →</a>
+                </div>
+
+                <div class="problem-card">
+                    <h4>Social Media Feed (Instagram)</h4>
+                    <p><strong>Scale:</strong> 500M users, 1B posts/day</p>
+                    <ul>
+                        <li>Feed generation</li>
+                        <li>Content recommendation</li>
+                        <li>Media storage</li>
+                        <li>Real-time updates</li>
+                    </ul>
+                    <a href="problems/social-feed/" class="solution-link">View Solution →</a>
+                </div>
+
+                <div class="problem-card">
+                    <h4>E-commerce Platform (Amazon)</h4>
+                    <p><strong>Scale:</strong> 300M users, 1M orders/day</p>
+                    <ul>
+                        <li>Product catalog</li>
+                        <li>Order processing</li>
+                        <li>Payment systems</li>
+                        <li>Inventory management</li>
+                    </ul>
+                    <a href="problems/ecommerce/" class="solution-link">View Solution →</a>
+                </div>
+
+                <div class="problem-card">
+                    <h4>Video Streaming (Netflix)</h4>
+                    <p><strong>Scale:</strong> 200M users, 4K streaming</p>
+                    <ul>
+                        <li>Video encoding</li>
+                        <li>Content delivery</li>
+                        <li>Recommendation engine</li>
+                        <li>Bandwidth optimization</li>
+                    </ul>
+                    <a href="problems/video-streaming/" class="solution-link">View Solution →</a>
+                </div>
+
+                <div class="problem-card">
+                    <h4>Search Engine (Google)</h4>
+                    <p><strong>Scale:</strong> 5B searches/day, 130T pages</p>
+                    <ul>
+                        <li>Web crawling</li>
+                        <li>Indexing</li>
+                        <li>Ranking algorithms</li>
+                        <li>Query processing</li>
+                    </ul>
+                    <a href="problems/search-engine/" class="solution-link">View Solution →</a>
+                </div>
+            </div>
+
+            <h2>🔧 Design Patterns & Components</h2>
+
+            <div class="patterns-section">
+                <div class="pattern-grid">
+                    <div class="pattern-card">
+                        <h4>Load Balancer</h4>
+                        <p>Distributes incoming requests across multiple servers</p>
+                        <ul>
+                            <li>Round Robin</li>
+                            <li>Least Connections</li>
+                            <li>IP Hash</li>
+                            <li>Health Checks</li>
+                        </ul>
+                    </div>
+
+                    <div class="pattern-card">
+                        <h4>Database Sharding</h4>
+                        <p>Partitions data across multiple databases</p>
+                        <ul>
+                            <li>Horizontal partitioning</li>
+                            <li>Shard key selection</li>
+                            <li>Consistent hashing</li>
+                            <li>Shard rebalancing</li>
+                        </ul>
+                    </div>
+
+                    <div class="pattern-card">
+                        <h4>Message Queue</h4>
+                        <p>Asynchronous communication between services</p>
+                        <ul>
+                            <li>Producer-Consumer</li>
+                            <li>Message persistence</li>
+                            <li>Dead letter queues</li>
+                            <li>Message ordering</li>
+                        </ul>
+                    </div>
+
+                    <div class="pattern-card">
+                        <h4>Circuit Breaker</h4>
+                        <p>Prevents cascading failures in distributed systems</p>
+                        <ul>
+                            <li>Open state</li>
+                            <li>Half-open state</li>
+                            <li>Closed state</li>
+                            <li>Failure thresholds</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>📈 Progress Tracking</h2>
+
+            <div class="progress-grid">
+                <div class="progress-item">
+                    <h4>System Design Fundamentals</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="75%"></div>
+                    </div>
+                    <span>75% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Architecture Patterns</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="60%"></div>
+                    </div>
+                    <span>60% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Database Design</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="70%"></div>
+                    </div>
+                    <span>70% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Caching Strategies</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="50%"></div>
+                    </div>
+                    <span>50% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Load Balancing</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="65%"></div>
+                    </div>
+                    <span>65% Complete</span>
+                </div>
+
+                <div class="progress-item">
+                    <h4>Security & Authentication</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="45%"></div>
+                    </div>
+                    <span>45% Complete</span>
+                </div>
+            </div>
+
+            <h2>🎯 Interview Preparation</h2>
+
+            <div class="interview-section">
+                <div class="interview-tips">
+                    <h4>Interview Tips</h4>
+                    <ul>
+                        <li>Always start by clarifying requirements</li>
+                        <li>Think out loud and explain your reasoning</li>
+                        <li>Consider trade-offs and alternatives</li>
+                        <li>Discuss scalability and bottlenecks</li>
+                        <li>Be prepared to estimate capacity</li>
+                        <li>Know common system design patterns</li>
+                    </ul>
+                </div>
+
+                <div class="interview-resources">
+                    <h4>Recommended Resources</h4>
+                    <ul>
+                        <li><strong>Books:</strong> "System Design Interview" by Alex Xu</li>
+                        <li><strong>Courses:</strong> Grokking the System Design Interview</li>
+                        <li><strong>Practice:</strong> LeetCode System Design problems</li>
+                        <li><strong>Real Systems:</strong> Study how companies build their systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <p><em>"The best system design is the one that meets the requirements with the simplest possible architecture."</em></p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/computer-science/">CS Notes</a></li>
+                        <li><a href="/duolingo/">Language Learning</a></li>
+                        <li><a href="/about/">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" data-tooltip="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="#" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Progress</h3>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <span>System Design</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechGuy. All rights reserved.</p>
+                <p>Built with ❤️ using Jekyll and GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" style="
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 350px !important;
+        background: white !important;
+        border-radius: 15px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+        z-index: 9999 !important;
+        font-family: inherit !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid #e0e0e0 !important;
+        display: block !important;
+    ">
+        <div class="chatbot-header" onclick="toggleChatbot()" style="
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        ">
+            <div class="chatbot-avatar" style="
+                width: 40px !important;
+                height: 40px !important;
+                background: rgba(255,255,255,0.2) !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 1.2rem !important;
+            ">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info" style="flex: 1 !important;">
+                <h4 style="margin: 0 0 2px 0 !important; font-size: 1rem !important; font-weight: 600 !important;">AI Learning Assistant</h4>
+                <p style="margin: 0 !important; font-size: 0.8rem !important; opacity: 0.9 !important;">Ask me about system design!</p>
+            </div>
+            <div class="chatbot-toggle" style="font-size: 1.2rem !important;">
+                <i class="fas fa-comments" id="chat-icon"></i>
+                <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+            </div>
+        </div>
+        
+        <div class="chatbot-body" id="chatbot-body" style="
+            height: 400px !important;
+            display: none !important;
+            flex-direction: column !important;
+            background: #f8f9fa !important;
+        ">
+            <div class="chat-messages" id="chat-messages" style="
+                flex: 1 !important;
+                padding: 15px !important;
+                overflow-y: auto !important;
+                max-height: 300px !important;
+            ">
+                <div class="message bot-message" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 15px !important;
+                ">
+                    <div class="message-avatar" style="
+                        width: 30px !important;
+                        height: 30px !important;
+                        border-radius: 50% !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        font-size: 0.9rem !important;
+                        flex-shrink: 0 !important;
+                        background: #3498db !important;
+                        color: white !important;
+                    ">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content" style="
+                        background: #f8f9fa !important;
+                        padding: 10px 15px !important;
+                        border-radius: 15px !important;
+                        max-width: 80% !important;
+                    ">
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">🏗️ Hi! I'm your system design assistant. I can help you with:</p>
+                        <ul style="margin: 10px 0 !important; padding-left: 20px !important;">
+                            <li style="margin: 5px 0 !important;">📊 System Design Fundamentals</li>
+                            <li style="margin: 5px 0 !important;">🔧 Architecture Patterns</li>
+                            <li style="margin: 5px 0 !important;">🗄️ Database Design</li>
+                            <li style="margin: 5px 0 !important;">⚡ Caching Strategies</li>
+                            <li style="margin: 5px 0 !important;">🌐 Load Balancing</li>
+                            <li style="margin: 5px 0 !important;">🔒 Security & Authentication</li>
+                        </ul>
+                        <p style="margin: 0 !important; line-height: 1.4 !important;">What would you like to learn about?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container" style="
+                padding: 15px !important;
+                border-top: 1px solid #eee !important;
+            ">
+                <div class="chat-input-wrapper" style="
+                    display: flex !important;
+                    gap: 10px !important;
+                    margin-bottom: 10px !important;
+                ">
+                    <input type="text" id="chat-input" placeholder="Type your message..." maxlength="500" style="
+                        flex: 1 !important;
+                        padding: 10px 15px !important;
+                        border: 1px solid #ddd !important;
+                        border-radius: 20px !important;
+                        outline: none !important;
+                        font-size: 0.9rem !important;
+                    ">
+                    <button id="send-message" onclick="sendMessage()" style="
+                        background: #3498db !important;
+                        color: white !important;
+                        border: none !important;
+                        padding: 10px 15px !important;
+                        border-radius: 50% !important;
+                        cursor: pointer !important;
+                    ">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="quick-actions" style="
+                    display: flex !important;
+                    gap: 8px !important;
+                    flex-wrap: wrap !important;
+                ">
+                    <button class="quick-btn" onclick="askQuestion('How to design a URL shortener?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">URL Shortener</button>
+                    <button class="quick-btn" onclick="askQuestion('Explain microservices architecture')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Microservices</button>
+                    <button class="quick-btn" onclick="askQuestion('What is database sharding?')" style="
+                        background: #f8f9fa !important;
+                        border: 1px solid #ddd !important;
+                        padding: 6px 12px !important;
+                        border-radius: 15px !important;
+                        font-size: 0.8rem !important;
+                        cursor: pointer !important;
+                    ">Database Sharding</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    
+    <!-- Chatbot JavaScript -->
+    <script>
+        // Chatbot functionality
+        let isChatbotOpen = false;
+
+        function toggleChatbot() {
+            const body = document.getElementById('chatbot-body');
+            const icon = document.getElementById('chat-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (isChatbotOpen) {
+                body.style.display = 'none';
+                icon.style.display = 'inline-block';
+                closeIcon.style.display = 'none';
+                isChatbotOpen = false;
+            } else {
+                body.style.display = 'flex';
+                icon.style.display = 'none';
+                closeIcon.style.display = 'inline-block';
+                isChatbotOpen = true;
+                document.getElementById('chat-input').focus();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                
+                // Simulate AI response
+                setTimeout(() => {
+                    const response = generateAIResponse(message);
+                    addMessage(response, 'bot');
+                }, 1000);
+            }
+        }
+
+        function askQuestion(question) {
+            addMessage(question, 'user');
+            
+            setTimeout(() => {
+                const response = generateAIResponse(question);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.style.cssText = `
+                display: flex !important;
+                gap: 10px !important;
+                margin-bottom: 15px !important;
+            `;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.style.cssText = `
+                width: 30px !important;
+                height: 30px !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 0.9rem !important;
+                flex-shrink: 0 !important;
+                background: ${sender === 'user' ? '#e74c3c' : '#3498db'} !important;
+                color: white !important;
+            `;
+            
+            if (sender === 'user') {
+                avatar.innerHTML = '<i class="fas fa-user"></i>';
+            } else {
+                avatar.innerHTML = '<i class="fas fa-robot"></i>';
+            }
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            content.style.cssText = `
+                background: ${sender === 'user' ? '#3498db' : '#f8f9fa'} !important;
+                color: ${sender === 'user' ? 'white' : 'inherit'} !important;
+                padding: 10px 15px !important;
+                border-radius: 15px !important;
+                max-width: 80% !important;
+                margin-left: ${sender === 'user' ? 'auto' : '0'} !important;
+            `;
+            content.innerHTML = `<p style="margin: 0 !important; line-height: 1.4 !important;">${text}</p>`;
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content);
+            messagesContainer.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function generateAIResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            if (message.includes('url shortener') || message.includes('tinyurl')) {
+                return `🔗 <strong>URL Shortener Design</strong><br><br>
+                <strong>Requirements:</strong><br>
+                • Shorten long URLs to 6-8 characters<br>
+                • Handle 100M URLs, 100M reads/day<br>
+                • Analytics tracking<br><br>
+                <strong>Key Components:</strong><br><br>
+                <strong>1. URL Shortening Algorithm:</strong><br>
+                • Base62 encoding (A-Z, a-z, 0-9)<br>
+                • Auto-incrementing ID or hash-based<br>
+                • 6 characters = 62^6 = 56 billion possibilities<br><br>
+                <strong>2. Database Design:</strong><br>
+                • Short URL as primary key<br>
+                • Long URL, creation time, user info<br>
+                • Index on short URL for fast lookups<br><br>
+                <strong>3. Caching Strategy:</strong><br>
+                • Cache popular URLs in Redis<br>
+                • LRU eviction policy<br>
+                • 80% of traffic for 20% of URLs<br><br>
+                <strong>4. Analytics:</strong><br>
+                • Track clicks, referrers, timestamps<br>
+                • Separate analytics database<br>
+                • Batch processing for reports`;
+            }
+            
+            if (message.includes('microservices') || message.includes('microservice')) {
+                return `🔧 <strong>Microservices Architecture</strong><br><br>
+                <strong>Definition:</strong> Architectural style where application is built as a collection of small, independent services<br><br>
+                <strong>Key Characteristics:</strong><br><br>
+                <strong>1. Service Independence:</strong><br>
+                • Each service can be developed, deployed, and scaled independently<br>
+                • Different technology stacks per service<br>
+                • Independent databases<br><br>
+                <strong>2. Communication:</strong><br>
+                • HTTP/REST APIs<br>
+                • Message queues (RabbitMQ, Kafka)<br>
+                • gRPC for internal communication<br><br>
+                <strong>3. Benefits:</strong><br>
+                • Independent scaling<br>
+                • Technology diversity<br>
+                • Fault isolation<br>
+                • Team autonomy<br><br>
+                <strong>4. Challenges:</strong><br>
+                • Distributed system complexity<br>
+                • Network latency<br>
+                • Data consistency<br>
+                • Service discovery<br><br>
+                <strong>5. Design Patterns:</strong><br>
+                • API Gateway<br>
+                • Circuit Breaker<br>
+                • Event Sourcing<br>
+                • CQRS`;
+            }
+            
+            if (message.includes('sharding') || message.includes('database sharding')) {
+                return `🗄️ <strong>Database Sharding</strong><br><br>
+                <strong>Definition:</strong> Horizontal partitioning of data across multiple databases<br><br>
+                <strong>Sharding Strategies:</strong><br><br>
+                <strong>1. Hash-based Sharding:</strong><br>
+                • Use hash function on shard key<br>
+                • Even distribution of data<br>
+                • Difficult to add/remove shards<br><br>
+                <strong>2. Range-based Sharding:</strong><br>
+                • Partition by value ranges<br>
+                • Easy to add new shards<br>
+                • Potential for uneven distribution<br><br>
+                <strong>3. Directory-based Sharding:</strong><br>
+                • Lookup table for shard mapping<br>
+                • Flexible and easy to modify<br>
+                • Additional lookup overhead<br><br>
+                <strong>Key Considerations:</strong><br>
+                • Shard key selection (avoid hotspots)<br>
+                • Cross-shard queries<br>
+                • Data consistency<br>
+                • Shard rebalancing<br><br>
+                <strong>Example:</strong><br>
+                User data sharded by user_id % number_of_shards`;
+            }
+            
+            return `🏗️ I'm here to help with System Design! I can assist with:<br><br>
+            📊 <strong>Fundamentals:</strong> Scalability, reliability, availability<br>
+            🔧 <strong>Architecture:</strong> Microservices, event-driven, CQRS<br>
+            🗄️ <strong>Databases:</strong> SQL vs NoSQL, sharding, replication<br>
+            ⚡ <strong>Caching:</strong> Cache layers, invalidation, CDN<br>
+            🌐 <strong>Load Balancing:</strong> Algorithms, health checks, auto-scaling<br>
+            🔒 <strong>Security:</strong> OAuth, JWT, HTTPS, rate limiting<br><br>
+            Try asking me about specific topics like "URL shortener design", "microservices architecture", or "database sharding"!`;
+        }
+
+        // Enter key to send message
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('chat-input');
+            if (input) {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
