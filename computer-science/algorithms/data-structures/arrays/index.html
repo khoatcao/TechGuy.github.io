@@ -81,6 +81,71 @@
             <a href="#practice" class="btn btn-warning">Practice</a>
         </div>
 
+        <!-- Arrays Basics -->
+        <section id="arrays-basics" class="concept-card">
+            <h2>🔢 Arrays Basics</h2>
+            
+            <h3>What is an Array?</h3>
+            <p>An array is a collection of elements stored at contiguous memory locations. Elements can be accessed directly by using an index.</p>
+            
+            <h3>Key Characteristics</h3>
+            <ul>
+                <li><strong>Indexed:</strong> Elements are accessed by their position (0-based indexing)</li>
+                <li><strong>Contiguous:</strong> Memory locations are adjacent</li>
+                <li><strong>Fixed Size:</strong> Size is determined at creation (in most languages)</li>
+                <li><strong>Random Access:</strong> O(1) time complexity for accessing elements</li>
+            </ul>
+
+            <h3>Common Operations</h3>
+            <div class="code-example">
+                <strong>Python Example:</strong><br>
+                # Create array<br>
+                arr = [1, 2, 3, 4, 5]<br><br>
+                
+                # Access element<br>
+                print(arr[0])  # Output: 1<br><br>
+                
+                # Modify element<br>
+                arr[2] = 10<br><br>
+                
+                # Array length<br>
+                print(len(arr))  # Output: 5
+            </div>
+        </section>
+
+        <!-- Strings Basics -->
+        <section id="strings-basics" class="concept-card">
+            <h2>📝 Strings Basics</h2>
+            
+            <h3>What is a String?</h3>
+            <p>A string is a sequence of characters. In many programming languages, strings are immutable, meaning they cannot be changed after creation.</p>
+            
+            <h3>Key Characteristics</h3>
+            <ul>
+                <li><strong>Character Sequence:</strong> Ordered collection of characters</li>
+                <li><strong>Immutable:</strong> Cannot be modified after creation (in most languages)</li>
+                <li><strong>Indexed:</strong> Characters can be accessed by position</li>
+                <li><strong>Length:</strong> Number of characters in the string</li>
+            </ul>
+
+            <h3>Common Operations</h3>
+            <div class="code-example">
+                <strong>JavaScript Example:</strong><br>
+                // Create string<br>
+                let str = "Hello World";<br><br>
+                
+                // Access character<br>
+                console.log(str[0]);  // Output: H<br><br>
+                
+                // String length<br>
+                console.log(str.length);  // Output: 11<br><br>
+                
+                // String methods<br>
+                console.log(str.toUpperCase());  // Output: HELLO WORLD<br>
+                console.log(str.indexOf("World"));  // Output: 6
+            </div>
+        </section>
+
         <!-- Leetcode Problems -->
         <section id="common-problems" class="concept-card">
             <h2>List of Leetcode problems</h2>
