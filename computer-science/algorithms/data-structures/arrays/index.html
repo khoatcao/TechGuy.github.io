@@ -159,30 +159,31 @@
 
             <div class="practice-problem">
                 <h3>1. Two Pointers</h3>
+            
+                <strong>When to use:</strong>  
                 <p>
-                    <strong>When to use:</strong>  
                     A two-pointer algorithm usually requires a linear data structure, such as an array or linked list.  
-                    Indicators that a problem may be solved with two pointers:  
-                    <ul>
-                        <li>The input is sorted (or can be sorted) → common for pair-sum, triplet problems.</li>
-                        <li>The problem involves merging or comparing two sequences (arrays, strings, lists).</li>
-                        <li>The problem requires removing duplicates or rearranging elements in-place.</li>
-                        <li>The problem asks for checking symmetry (e.g., palindromes).</li>
-                        <li>The solution can be framed as expanding/shrinking a "window" (sliding window problems).</li>
-                    </ul>
+                    Indicators that a problem may be solved with two pointers:
                 </p>
-                
+                <ul>
+                    <li>The input is sorted (or can be sorted) → common for pair-sum, triplet problems.</li>
+                    <li>The problem involves merging or comparing two sequences (arrays, strings, lists).</li>
+                    <li>The problem requires removing duplicates or rearranging elements in-place.</li>
+                    <li>The problem asks for checking symmetry (e.g., palindromes).</li>
+                    <li>The solution can be framed as expanding/shrinking a "window" (sliding window problems).</li>
+                </ul>
+            
+                <strong>When NOT to use:</strong>
                 <p>
-                    <strong>When NOT to use:</strong>  
-                    Two pointers is not the right choice if:  
-                    <ul>
-                        <li>You need to count frequencies → use a hashmap or Counter instead.</li>
-                        <li>The problem involves graphs or trees (DFS/BFS are more suitable).</li>
-                        <li>You need subsets, permutations, or backtracking (recursion is required).</li>
-                        <li>The input is unsorted and order matters (sorting would break the logic).</li>
-                        <li>The problem is fundamentally divide & conquer (e.g., binary search, DP).</li>
-                    </ul>
+                    Two pointers is not the right choice if:
                 </p>
+                <ul>
+                    <li>You need to count frequencies → use a hashmap or Counter instead.</li>
+                    <li>The problem involves graphs or trees (DFS/BFS are more suitable).</li>
+                    <li>You need subsets, permutations, or backtracking (recursion is required).</li>
+                    <li>The input is unsorted and order matters (sorting would break the logic).</li>
+                    <li>The problem is fundamentally divide & conquer (e.g., binary search, DP).</li>
+                </ul>
             
                 <div class="code-example">
                     <strong>Example:</strong><br>
@@ -191,80 +192,6 @@
                     <em>Why two pointers?</em>  
                     The array is sorted and we’re asked for a pair of values → move left/right pointers toward each other until sum = target.
                 </div>
-            </div>            
-
-
-        </section>
-
-        <!-- My Notes Section -->
-        <section id="my-notes" class="note-section">
-            <h2>📝 My Notes & Insights</h2>
-            <p><em>Add your personal notes, tips, and insights about arrays and strings here:</em></p>
-            
-            <div class="note-content">
-                <h3>Key Learning Points</h3>
-                <ul>
-                    <li>Arrays provide O(1) random access but O(n) for insertions/deletions</li>
-                    <li>Strings are often treated as character arrays in many algorithms</li>
-                    <li>Two-pointer technique is very useful for array problems</li>
-                    <li>Sliding window technique works well with arrays and strings</li>
-                </ul>
-
-                <h3>Important Algorithms to Master</h3>
-                <ul>
-                    <li>Two Pointers</li>
-                    <li>Sliding Window</li>
-                    <li>Binary Search (on sorted arrays)</li>
-                    <li>Kadane's Algorithm (for subarray problems)</li>
-                </ul>
-
-                <h3>Common Mistakes to Avoid</h3>
-                <ul>
-                    <li>Forgetting to check array bounds</li>
-                    <li>Not handling edge cases (empty arrays, single element)</li>
-                    <li>Confusing array indexing (0-based vs 1-based)</li>
-                    <li>Not considering space complexity</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Practice Section -->
-        <section id="practice" class="concept-card">
-            <h2>💻 Practice Problems</h2>
-            
-            <h3>Easy Level</h3>
-            <ul>
-                <li>Remove Duplicates from Sorted Array</li>
-                <li>Best Time to Buy and Sell Stock</li>
-                <li>Valid Parentheses</li>
-                <li>Maximum Subarray</li>
-            </ul>
-
-            <h3>Medium Level</h3>
-            <ul>
-                <li>3Sum</li>
-                <li>Container With Most Water</li>
-                <li>Longest Substring Without Repeating Characters</li>
-                <li>Group Anagrams</li>
-            </ul>
-
-            <h3>Hard Level</h3>
-            <ul>
-                <li>Trapping Rain Water</li>
-                <li>Sliding Window Maximum</li>
-                <li>Longest Valid Parentheses</li>
-                <li>Edit Distance</li>
-            </ul>
-
-            <div class="note-section">
-                <h3>Practice Tips</h3>
-                <ul>
-                    <li>Start with easy problems to build confidence</li>
-                    <li>Draw out the problem on paper first</li>
-                    <li>Consider multiple approaches before coding</li>
-                    <li>Test with edge cases</li>
-                    <li>Analyze time and space complexity</li>
-                </ul>
             </div>
         </section>
 
