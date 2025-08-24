@@ -149,15 +149,52 @@
         <!-- Leetcode Problems -->
         <section id="common-problems" class="concept-card">
             <h2>List of Leetcode problems</h2>
-        <div class="practice-problem">
-            <h3>
-                <a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank">
-                    1. Merge Sorted Array
-                </a>
-            </h3>
-        </div>
+            <div class="practice-problem">
+                <h3>
+                    <a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank">
+                        1. Merge Sorted Array
+                    </a>
+                </h3>
+            </div>
 
+            <div class="practice-problem">
+                <h3>1. Two Pointers</h3>
+                <p>
+                    <strong>When to use:</strong>  
+                    A two-pointer algorithm usually requires a linear data structure, such as an array or linked list.  
+                    Indicators that a problem may be solved with two pointers:  
+                    <ul>
+                        <li>The input is sorted (or can be sorted) → common for pair-sum, triplet problems.</li>
+                        <li>The problem involves merging or comparing two sequences (arrays, strings, lists).</li>
+                        <li>The problem requires removing duplicates or rearranging elements in-place.</li>
+                        <li>The problem asks for checking symmetry (e.g., palindromes).</li>
+                        <li>The solution can be framed as expanding/shrinking a "window" (sliding window problems).</li>
+                    </ul>
+                </p>
+                
+                <p>
+                    <strong>When NOT to use:</strong>  
+                    Two pointers is not the right choice if:  
+                    <ul>
+                        <li>You need to count frequencies → use a hashmap or Counter instead.</li>
+                        <li>The problem involves graphs or trees (DFS/BFS are more suitable).</li>
+                        <li>You need subsets, permutations, or backtracking (recursion is required).</li>
+                        <li>The input is unsorted and order matters (sorting would break the logic).</li>
+                        <li>The problem is fundamentally divide & conquer (e.g., binary search, DP).</li>
+                    </ul>
+                </p>
             
+                <div class="code-example">
+                    <strong>Example:</strong><br>
+                    Input: nums = [2, 7, 11, 15], target = 9<br>
+                    Output: [0, 1] (because nums[0] + nums[1] = 2 + 7 = 9)<br>
+                    <em>Why two pointers?</em>  
+                    The array is sorted and we’re asked for a pair of values → move left/right pointers toward each other until sum = target.
+                </div>
+            </div>            
+
+
+        </section>
 
         <!-- My Notes Section -->
         <section id="my-notes" class="note-section">
